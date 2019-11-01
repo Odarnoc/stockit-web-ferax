@@ -2,6 +2,7 @@
 <html class="no-js" lang="zxx">
 
 <head>
+    
     <meta charset="utf-8">
     <meta name="author" content="Sumon Rahman">
     <meta name="description" content="">
@@ -23,6 +24,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -53,7 +55,7 @@
                     <li><a href="">Iniciar sesión</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
-                    <a href="">Registrarte</a>
+                    <a href="registrarte.html">Registrarte</a>
                 </div>
             </div>
         </div>
@@ -105,21 +107,11 @@
                                 <div class="form-group col-md-4">
                                     <a class="btn btn-search-header" href="lista-productos.html" role="button">Buscar</a>
                                 </div>
-
                             </div>
-
-
-
                         </form>
-
                     </div>
-
-
-
                 </div>
                 <div class="col-md-2"></div>
-
-
             </div>
         </div>
     </header>
@@ -192,9 +184,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
@@ -217,116 +207,15 @@
                     <div class="row">
                         <div class="div-slider-productos wow fadeInUp" data-wow-delay=".6s">
                             <!-- Carousel
-            ================================================== -->
-                            <div id="myCarousel" class="carousel slide">
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="thumbnail">
-                                                    <img src="images/proyector.png" alt="Slide11">
-                                                    <div class="info-item-slide">
-                                                        <p class="p1">Electrónica</p>
-                                                        <p class="p2">Proyector Epson S39</p>
-                                                        <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                                        <p class="p4">$ 399.<sup>00</sup></p>
-                                                        <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
+            ============ ====================================== -->
+                        <div class="owl-carousel owl-theme" id="prod-carou" >
 
-                                            <div class="col-md-4">
-                                                <div class="thumbnail">
-                                                    <img src="images/escalera.png" alt="Slide11">
-                                                    <div class="info-item-slide">
-                                                        <p class="p1">Herramientas</p>
-                                                        <p class="p2">Escalera Aluminio 3.5 mts</p>
-                                                        <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                                        <p class="p4">$ 299.<sup>00</sup></p>
-                                                        <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-4">
-                                                <div class="thumbnail">
-                                                    <img src="images/asador.png" alt="Slide11">
-                                                    <div class="info-item-slide">
-                                                        <p class="p1">Hogar</p>
-                                                        <p class="p2">Asador Circular</p>
-                                                        <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                                        <p class="p4">$ 199.<sup>00</sup></p>
-                                                        <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="item ">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="thumbnail">
-                                                    <img src="images/proyector.png" alt="Slide11">
-                                                    <div class="info-item-slide">
-                                                        <p class="p1">Electrónica</p>
-                                                        <p class="p2">Proyector Epson S39</p>
-                                                        <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                                        <p class="p4">$ 399.<sup>00</sup></p>
-                                                        <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="thumbnail">
-                                                    <img src="images/escalera.png" alt="Slide11">
-                                                    <div class="info-item-slide">
-                                                        <p class="p1">Herramientas</p>
-                                                        <p class="p2">Escalera Aluminio 3.5 mts</p>
-                                                        <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                                        <p class="p4">$ 299.<sup>00</sup></p>
-                                                        <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-4">
-                                                <div class="thumbnail">
-                                                    <img src="images/asador.png" alt="Slide11">
-                                                    <div class="info-item-slide">
-                                                        <p class="p1">Hogar</p>
-                                                        <p class="p2">Asador Circular</p>
-                                                        <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                                        <p class="p4">$ 199.<sup>00</sup></p>
-                                                        <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left fa-2x"></i></a>
-                                <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right fa-2x"></i></a>
-
-                                <ol class="carousel-indicators">
-                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                                </ol>
-                            </div><!-- End Carousel -->
+                               
+                                
                         </div><!-- End Well -->
                     </div>
                 </div>
-
-
-
             </div>
-
         </div>
     </section>
 
@@ -350,39 +239,25 @@
                         <p class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente placeat molestiae assumenda animi non</p>
                         <p class="p3">Camila Lara</p>
                         <p class="p4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-
                     </div>
-
-
                 </div>
-
                 <div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
                     <div class="div-info-testimonio text-center">
                         <p class="p1"><i class="fas fa-quote-right"></i></p>
                         <p class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente placeat molestiae assumenda animi non</p>
                         <p class="p3">Brayam Morando</p>
                         <p class="p4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-
                     </div>
-
-
                 </div>
-
                 <div class="col-md-4 wow fadeInUp" data-wow-delay=".6s">
                     <div class="div-info-testimonio text-center">
                         <p class="p1"><i class="fas fa-quote-right"></i></p>
                         <p class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente placeat molestiae assumenda animi non</p>
                         <p class="p3">Lenny Alvarez</p>
                         <p class="p4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-
                     </div>
-
-
                 </div>
-
-
             </div>
-
         </div>
     </section>
 
@@ -408,19 +283,14 @@
                                 <div class="form-group col-md-4">
                                     <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Correo electrónico" required>
                                 </div>
-
                                 <div class="form-group col-md-4">
                                     <input type="email" class="form-control" id="" placeholder="Mensaje" required>
                                 </div>
-
                                 <div class="form-group col-md-4">
                                    <a class="btn btn-enviar-contact" href="#" role="button"><i class="fas fa-paper-plane"></i> Enviar mensaje</a>
                                 </div>
-
                             </div>
-
                         </form>
-
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -486,9 +356,9 @@
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 
-    <script>
-        $('#myCarousel').carousel({
-            interval: 5000
-        });
-    </script>
+    <!--Items-Carousel-JS-->
+    <script src="js/car-prod.js"></script> 
+    
+    
+
 </body></html>

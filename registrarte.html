@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Main-Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
@@ -50,7 +51,7 @@
                     <li><a href="index.html#sec-slider-productos">Populares</a></li>
                     <li><a href="index.html#sec-testimonios">Testimonios</a></li>
                     <li><a href="index.html#sec-contacto">Contacto</a></li>
-                    <li class="active"><a href="">Registrarte</a></li>
+                    <li class="active"><a href="registrarte.html">Registrarte</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
                     <a href="iniciar-sesion.html">Iniciar sesión</a>
@@ -71,12 +72,13 @@
                         <form class="form-registrarte">
                             <div class="form-group">
                                 <label class="label-form">Nombre</label>
-                                <input type="text" class="form-control input-form" id="" required>
+                                <input type="text" class="form-control input-form" id="nombre" required>
                             </div>
 
                             <div class="form-group">
                                 <label class="label-form">Correo electrónico</label>
-                                <input type="email" class="form-control input-form" id="" aria-describedby="emailHelp" required>
+                                <input type="email" class="form-control input-form" id="correo"
+                                    aria-describedby="emailHelp" required>
                             </div>
 
                             <div class="form-group">
@@ -86,19 +88,20 @@
 
                             <div class="form-group">
                                 <label class="label-form">Contraseña</label>
-                                <input type="password" class="form-control input-form" id="" required>
+                                <input type="password" class="form-control input-form" id="pass" required>
                             </div>
 
-                            <button type="submit" class="btn btn-form-green">Registrarte ahora</button>
+                            <button type="submit" onclick="registrar()" class="btn btn-form-green">Registrarte
+                                ahora</button>
 
                         </form>
-                        
+
                         <p class="t2">¿Ya tienes una cuenta? <a href="iniciar-sesion.html">Iniciar sesión</a></p>
 
                     </div>
 
                 </div>
-                
+
                 <div class="col-md-3"></div>
 
 
@@ -107,8 +110,6 @@
         </div>
 
     </section>
-
-
 
 
 
@@ -165,10 +166,71 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+    <!--swall alert-->
+    <script src="js/sweetalert.min.js"></script>
+
+
+    <script type="text/javascript">
+        function registrar() {
+            var nombre = $("#nombre").val();
+            var correo = $("#correo").val();
+            var pass = $("#pass").val();
+
+            let jsonData = {
+                fullname: nombre,
+                email: correo,
+                password: pass
+            };
+
+            console.log(jsonData);
+
+            $.ajax({
+                type: 'post',
+                url: 'http://138.68.241.20/api/user/register',
+                data: jsonData,
+                success: function (response) {
+                    console.log(response);
+                    if (response.message == null || response.message == "" || response.message == undefined) {
+                        swal("Error!", "Problemas en el servidor", "error");
+                    } else {
+                        location.href = "iniciar-sesion.html";
+
+                    }
+
+                },
+                error: function (response) {
+                    if (response.responseJSON.message == "user.errors") {
+                        swal("Error!", "Favor de completar los campos!", "error");
+                    }
+                    
+
+
+                    if (response.responseJSON.message == "user.errors") {
+                        if (response.responseJSON.errors.message == "User validation failed: password: password.required, email: email.required") {
+                            swal("Error!", "Favor de completar los campos Contraseña y Correo", "error");
+                        }
+                        if (response.responseJSON.message == "user.errors") {
+                            if (response.responseJSON.errors.message == "User validation failed: password: password.required") {
+                                swal("Error!", "Favor de completar el campo Contraseña", "error");
+                            }
+                        }
+                            
+                        if (response.responseJSON.message == "user.errors") {
+                            if (response.responseJSON.errors.message == "User validation failed: email: email.required") {
+                                swal("Error!", "Favor de completar el campo Email", "error");
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
 
     <script>
         $('#myCarousel').carousel({
             interval: 5000
         });
     </script>
-</body></html>
+</body>
+
+</html>
