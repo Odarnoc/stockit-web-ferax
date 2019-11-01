@@ -24,7 +24,7 @@ $( document ).ready(function() {
                                                 '<p class="p2">'+item.name+'</p>'+
                                                 '<p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>'+
                                                 '<p class="p4">$'+item.price+'.<sup>00</sup></p>'+
-                                                '<a class="btn btn-slide-productos" onclick="verprod(\''+item._id+'\')" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>'+
+                                                '<a class="btn btn-slide-productos" href="producto-individual.php?id='+item._id+'" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>'+
                                             '</div>'+
                                         '</div>'+
                                     '</div>';         
@@ -61,8 +61,3 @@ $( document ).ready(function() {
     });
     
 });
-
-function verprod(id){
-    localStorage.setItem("id",id);
-    location.href="producto-individual.html";
-}

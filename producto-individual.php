@@ -1,3 +1,7 @@
+<?php
+   $idProducto = $_GET['id'];
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -113,6 +117,9 @@
     <script src="js/main.js"></script>
     <script src="js/map-style.js"></script>
      <!--Integracion Productos-JS-->
+     <script>
+        var idProductoJs = "<?php echo $idProducto; ?>";
+     </script>
     <script src="js/prod-individual.js"></script>
     <script>
         $('#myCarousel').carousel({
