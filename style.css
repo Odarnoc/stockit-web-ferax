@@ -352,18 +352,21 @@ input:-webkit-autofill:focus {
 .mainmenu-area .right-button {
     position: absolute;
     right: 15px;
-    top: 25px;
+    top: 28px;
 }
 
 .mainmenu-area .right-button a {
     color: #ffffff;
-    padding: 10px 40px;
     border-radius: 50px;
     background-color: #00CF72;
     display: inline-block;
     letter-spacing: .5px;
     font-weight: 600;
     font-size: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 .mainmenu-area .right-button a:hover {
@@ -1999,7 +2002,7 @@ btn-enviar-contact:focus {
 }
 
 .btn-form-green:hover {
-    background-color: rgba(0,207,114,.9);
+    background-color: rgba(0, 207, 114, .9);
     color: white;
 }
 
@@ -2181,12 +2184,12 @@ ul.breadcrumb li a:hover {
     font-size: 14px;
 }
 
-.input-nombre-contacto{
+.input-nombre-contacto {
     padding-left: 0px;
     padding-right: 10px;
 }
 
-.input-correo-contacto{
+.input-correo-contacto {
     padding-right: 0px;
     padding-left: 10px;
 }
@@ -2318,25 +2321,25 @@ ul.breadcrumb li a:hover {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 2px solid rgba(0,0,0,.05);
+    border-top: 2px solid rgba(0, 0, 0, .05);
     margin: 1em 0;
     padding: 0;
     margin-top: 30px;
 
 }
 
-.row-precio-pro-ind{
+.row-precio-pro-ind {
     padding-top: 5px;
 }
 
-.row-precio-pro-ind .t1{
+.row-precio-pro-ind .t1 {
     font-size: 20px;
     font-weight: 600;
     color: #01293C;
 }
 
 
-.row-precio-pro-ind .t2{
+.row-precio-pro-ind .t2 {
     font-size: 24px;
     font-weight: 600;
     color: #00CF72;
@@ -2345,15 +2348,15 @@ ul.breadcrumb li a:hover {
     text-align: right
 }
 
-.row-precio-pro-ind .t2 sup{
+.row-precio-pro-ind .t2 sup {
     font-size: 14px;
 }
 
-.row-btns-pro-ind{
+.row-btns-pro-ind {
     padding-top: 20px;
 }
 
-.btn-carrito-pro-ind{
+.btn-carrito-pro-ind {
     width: 100%;
     border: 1.5px solid #01293C;
     text-align: center;
@@ -2366,12 +2369,12 @@ ul.breadcrumb li a:hover {
     font-weight: 600;
 }
 
-.btn-carrito-pro-ind:hover{
+.btn-carrito-pro-ind:hover {
     background-color: #01293C;
     color: white;
 }
 
-.btn-rentar-pro-ind{
+.btn-rentar-pro-ind {
     width: 100%;
     background-color: #00CF72;
     color: white;
@@ -2385,8 +2388,8 @@ ul.breadcrumb li a:hover {
     font-weight: 600;
 }
 
-.btn-rentar-pro-ind:hover{
-    background-color: rgba(0,207,114,.9); 
+.btn-rentar-pro-ind:hover {
+    background-color: rgba(0, 207, 114, .9);
     color: white;
 
 }
@@ -2398,40 +2401,40 @@ ul.breadcrumb li a:hover {
     padding-top: 30px;
 }
 
-.p-title{
+.p-title {
     font-size: 28px;
     font-family: "Gilroy BOld";
-    font-weight: normal!important;
+    font-weight: normal !important;
     color: #01293C;
     margin-bottom: 5px;
 }
 
-.p-sub-title{
+.p-sub-title {
     font-size: 14px;
-    color: rgba(0,0,0,.6);
+    color: rgba(0, 0, 0, .6);
     font-weight: 600;
 }
 
 
-.table-revisar-orden thead{
-    background-color: rgba(0,0,0,.05);
+.table-revisar-orden thead {
+    background-color: rgba(0, 0, 0, .05);
     border: none;
 }
 
-.table-revisar-orden thead tr th{
+.table-revisar-orden thead tr th {
     padding-top: 14px;
     padding-bottom: 14px;
     font-size: 14px;
     font-weight: 600;
-    color: rgba(0,0,0,1);
+    color: rgba(0, 0, 0, 1);
     border: none;
 }
 
-.table-revisar-orden tbody tr td{
+.table-revisar-orden tbody tr td {
     font-size: 12px;
-    color: rgba(0,0,0,.8);
+    color: rgba(0, 0, 0, .8);
     border: none;
-    border-bottom: 1px solid rgba(0,0,0,.08);
+    border-bottom: 1px solid rgba(0, 0, 0, .08);
     font-family: "Open Sans";
     font-weight: 600;
     vertical-align: middle;
@@ -2439,87 +2442,91 @@ ul.breadcrumb li a:hover {
     padding-bottom: 18px;
 }
 
-.p-td-revisar{
+.p-td-revisar {
     margin: 0px;
 }
 
-.p-td-revisar i{
+.p-td-revisar i {
     padding-left: 10px;
     padding-right: 10px;
-    color: rgba(0,0,0,.3);
+    color: rgba(0, 0, 0, .3);
 }
 
-.b-td-revisar{
+.b-td-revisar {
     font-weight: 600;
-    color: rgba(0,0,0,.4);
+    color: rgba(0, 0, 0, .4);
 }
 
-.b-td-revisar a{
+.b-td-revisar a {
     font-weight: 600;
-    color: rgba(0,0,0,.4);
+    color: rgba(0, 0, 0, .4);
     transition: .4s;
 }
 
-.b-td-revisar a:hover{
+.b-td-revisar a:hover {
     color: black;
 }
 
-.b-td-revisar a i{
+.b-td-revisar a i {
     font-weight: 600;
-    color: rgba(0,0,0,.3);
+    color: rgba(0, 0, 0, .3);
     padding-left: 0px;
     padding-right: 4px;
 }
 
-.td-producto-revisar img{
+.td-producto-revisar img {
     width: 70px;
 }
 
-.th-producto-revisar, .td-producto-revisar{
+.th-producto-revisar,
+.td-producto-revisar {
     text-align: center;
 }
 
-.th-precio-revisar, .td-precio-revisar{
+.th-precio-revisar,
+.td-precio-revisar {
     text-align: center;
 }
 
-.th-cant-revisar, .td-cant-revisar{
+.th-cant-revisar,
+.td-cant-revisar {
     text-align: center;
 }
 
-.th-total-revisar, .td-total-revisar{
+.th-total-revisar,
+.td-total-revisar {
     text-align: center;
 }
 
-.d-table-revisar{
+.d-table-revisar {
     padding-top: 20px;
 }
 
-.d-info-total-revisar .t1{
+.d-info-total-revisar .t1 {
     font-size: 14px;
     font-weight: 400;
     font-family: "Open Sans";
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, .5);
     text-align: right;
-    
+
 }
 
-.d-info-total-revisar .t2{
+.d-info-total-revisar .t2 {
     font-size: 14px;
     font-weight: 400;
     font-family: "Open Sans";
-    color: rgba(0,0,0,1);
+    color: rgba(0, 0, 0, 1);
     text-align: right;
     padding: 0px;
-    
+
 }
 
-.row-btns-revisar{
+.row-btns-revisar {
     padding-top: 20px;
 }
 
-.btn-regresar{
-    background-color: rgba(0,0,0,.05);
+.btn-regresar {
+    background-color: rgba(0, 0, 0, .05);
     font-size: 14px;
     width: 100%;
     padding-top: 25px;
@@ -2529,20 +2536,21 @@ ul.breadcrumb li a:hover {
     transition: .4s;
 }
 
-.btn-regresar i{
+.btn-regresar i {
     padding-right: 14px;
 }
 
-.btn-regresar:hover{
-    background-color: rgba(0,0,0,.08);   
+.btn-regresar:hover {
+    background-color: rgba(0, 0, 0, .08);
 }
 
-.btn-regresar:active, .btn-regresar:focus{
+.btn-regresar:active,
+.btn-regresar:focus {
     box-shadow: none;
     outline: 0;
 }
 
-.btn-confirmar-pago{
+.btn-confirmar-pago {
     width: 100%;
     border: none;
     padding-top: 25px;
@@ -2553,17 +2561,17 @@ ul.breadcrumb li a:hover {
     background-color: #00CF72;
 }
 
-.btn-confirmar-pago:hover{
-    background-color: rgba(0,207,114,.9); 
+.btn-confirmar-pago:hover {
+    background-color: rgba(0, 207, 114, .9);
     color: white;
 }
 
-.form-tarjeta{
+.form-tarjeta {
     padding-top: 20px;
 }
 
-.btn-pasos{
-    border: 2px solid rgba(0,0,0,.1);
+.btn-pasos {
+    border: 2px solid rgba(0, 0, 0, .1);
     font-size: 14px;
     width: 100%;
     padding-top: 25px;
@@ -2572,8 +2580,8 @@ ul.breadcrumb li a:hover {
     transition: .4s;
 }
 
-.p-pasos{
-    color: rgba(0,0,0,.5);
+.p-pasos {
+    color: rgba(0, 0, 0, .5);
     font-size: 14px;
     margin-bottom: 0px;
     padding-top: 5px;
@@ -2595,7 +2603,7 @@ ul.breadcrumb li a:hover {
 
 }
 
-.d-pago-confirmado img{
+.d-pago-confirmado img {
     width: 80px;
 }
 
@@ -2614,7 +2622,7 @@ ul.breadcrumb li a:hover {
 }
 
 
-.d-info-pago-confirmado .t1{
+.d-info-pago-confirmado .t1 {
     font-family: "Gilroy Bold";
     font-size: 25px;
     letter-spacing: .2px;
@@ -2623,11 +2631,250 @@ ul.breadcrumb li a:hover {
     margin-bottom: 0px;
 }
 
-.d-info-pago-confirmado .t2{
+.d-info-pago-confirmado .t2 {
     font-size: 14px;
-    color: rgba(0,0,0,.5);
+    color: rgba(0, 0, 0, .5);
     font-weight: 600;
     margin-bottom: 30px;
     line-height: 18px;
     padding-top: 10px;
 }
+
+.p-pass {
+    margin: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: .4s;
+}
+
+.p-pass a {
+    color: rgba(0, 0, 0, .5);
+}
+
+.p-pass a:hover {
+    color: rgba(0, 0, 0, 1) !important;
+}
+
+.p-small {
+    font-size: 14px;
+    color: rgba(0, 0, 0, .5);
+    line-height: 1.5;
+    margin-bottom: 0px;
+}
+
+
+.d-right-nav {
+    position: absolute;
+    right: 15px;
+    top: 34px;
+    padding-right: 40px;
+    color: white;
+}
+
+.sec-mi-cuenta {
+    background-color: #01293C;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.img-logo-nav {
+    height: 40px;
+}
+
+.p-mi-cuenta {
+    color: white;
+    margin-bottom: 0px;
+    font-size: 25px;
+    text-align: right;
+    padding-top: 5px;
+}
+
+.d-mi-cuenta {
+    background-color: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px 10px rgba(0, 0, 0, 0.05);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+}
+
+.d-foto-cuenta img {
+    width: 80px;
+    float: left;
+    margin-right: 25px;
+}
+
+.d-foto-cuenta .t1 {
+    font-size: 22px;
+    color: #01293C;
+    font-family: "Gilroy Bold";
+    padding-top: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ul-mi-cuenta{
+    padding-top: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.ul-mi-cuenta li{
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.btn-mi-cuenta{
+    background-color: #F4F4F4;
+    width: 100%;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    font-size: 16px;
+    padding-left: 20px;
+    transition: .4s;
+    border-radius: 5px;
+}
+
+.btn-mi-cuenta:hover{
+    background-color: #00CF72;
+    color: white;
+}
+
+.btn-mi-cuenta i{
+    margin-right: 10px;
+}
+
+.d-foto-perfil{
+    text-align: center;
+}
+
+.d-foto-perfil img{
+    width: 120px;
+    padding-bottom: 15px;
+}
+
+.btn-editar-perfil{
+    background-color: #00CF72;
+    color: white;
+    border-radius: 8px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    transition: .4s;
+}
+
+.btn-editar-perfil:hover{
+    background-color: #01293C;
+    color: white;
+}
+
+
+.p-verificar-perfil{
+    text-align: center;
+    color: rgba(0,0,0,.5);
+    padding-top: 30px;
+}
+
+.p-verificar-perfil i{
+    margin-right: 5px;
+}
+
+.p-verificar-perfil{
+    font-weight: 600;
+}
+
+.p-verificar-perfil a:hover{
+    color: #00CF72;
+}
+
+.image-upload{
+    border-radius: 8px;
+    color: rgba(255,255,255,.4);
+    text-align: left;
+    padding-top: 200px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #F4F4F4;
+}
+
+.image-upload label{
+    transition: .4s;
+    font-family: "Open Sans";
+    font-weight: 400!important;
+    color: rgba(0,0,0,.4);
+    font-size: 16px;
+}
+
+.image-upload label i{
+    margin-right: 10px;
+}
+
+.image-upload label:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.image-upload label{
+    margin: 0px;
+}
+
+.image-upload input {
+  display: none;
+}
+
+
+.overlay-image-upload {
+    position: relative;
+    z-index: 1;
+}
+
+.overlay-image-upload:before {
+    border-radius: 8px;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00293c+1,26445c+100 */
+    /* Old browsers */
+    background: -moz-linear-gradient(top,  1%,   100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(to top, rgba(0,0,0,1) 1%, rgba(0,0,0,.1)  100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, rgba(1,41,60,1) 4%, rgba(1,41,60,.15) 40%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00293c', endColorstr='#26445c', GradientType=0);
+    /* IE6-9 */
+    opacity: 0.9;
+    /* IE6-9 fallback on horizontal gradient */
+    z-index: -2;
+    
+}
+
+.p-text-verificar-perfil{
+    color: #01293C;
+    text-align: 
+    
+}
+
+.p-perfil-verificado{
+    text-align: center;
+    color: #01293C;
+    padding-top: 30px;
+    font-size: 16px;
+}
+
+.p-perfil-verificado i{
+    color: #00CF72;
+    margin-right: 10px;
+}
+
+
