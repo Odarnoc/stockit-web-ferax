@@ -49,7 +49,7 @@
                     <li><a href="index.html#sec-slider-productos">Populares</a></li>
                     <li><a href="index.html#sec-testimonios">Testimonios</a></li>
                     <li><a href="index.html#sec-contacto">Contacto</a></li>
-                    <li><a href="">Iniciar sesión</a></li>
+                    <li><a href="iniciar-sesion.html">Iniciar sesión</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
                     <a href="registrarte.html">Registrarte</a>
@@ -71,10 +71,10 @@
 
                             <div class="form-group">
                                 <label class="label-form">Ingresa el PIN que se ha enviado a tu correo electrónico</label>
-                                <input type="number" class="form-control input-form" id="" required placeholder="PIN">
+                                <input type="number" class="form-control input-form" id="cd-pass" required placeholder="PIN">
                             </div>
 
-                            <a class="btn btn-form-green" href="index.html" role="button">Continuar</a>
+                            <a class="btn btn-form-green" id="code-but" role="button">Continuar</a>
                         </form>
 
                     </div>
@@ -146,6 +146,60 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+
+    <script src="js/sweetalert.min.js"></script>
+
+    <script>
+$( document ).ready(function() {
+    $("#code-but").click(function (event){
+       event.preventDefault();
+      cdpass();
+    });
+});
+
+function cdpass() {
+   var codigo = $("#cd-pass").val();
+    if(codigo=="" || codigo==null){
+        swal("Error!", "Ingresar un PIN", "error");
+        return;
+    }
+   let jsonData = {
+       code: codigo,
+   };
+
+   console.log(jsonData);
+
+   $.ajax({
+       type: 'post',
+       url: 'http://138.68.241.20/api/user/confirmCode',
+       data: jsonData,
+       success: function (response) {
+           console.log(response);
+           if (response.message == null || response.message == "" || response.message == undefined) {
+               swal("Error!", "Problemas en el servidor", "error");
+           } else {
+               location.href = "nueva-contraseña.html";
+
+           }
+           console.log(response.responseJSON.message);
+
+       },
+       error: function (response) {
+        if(response.responseJSON.message == "email.required"){
+            swal("Error!", "Completar campo Correo", "error");
+        }
+        if(response.responseJSON.message == "email.not.found"){
+            swal("Error!", "Ingresar correo valido", "error");
+        }
+    }
+
+
+   
+   });
+}
+
+    </script>
+
 
     <script>
         $('#myCarousel').carousel({
