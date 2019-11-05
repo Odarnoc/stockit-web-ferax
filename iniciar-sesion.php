@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["token"])){
+    header("Location: index.php");
+}
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -45,11 +53,11 @@
             </div>
             <div class="collapse navbar-collapse" id="primary_menu">
                 <ul class="nav navbar-nav mainmenu">
-                    <li><a href="index.html#home_page">Inicio</a></li>
-                    <li><a href="index.html#sec-categorias">Categorias</a></li>
-                    <li><a href="index.html#sec-slider-productos">Populares</a></li>
-                    <li><a href="index.html#sec-testimonios">Testimonios</a></li>
-                    <li><a href="index.html#sec-contacto">Contacto</a></li>
+                    <li><a href="index.php#home_page">Inicio</a></li>
+                    <li><a href="index.php#sec-categorias">Categorias</a></li>
+                    <li><a href="index.php#sec-slider-productos">Populares</a></li>
+                    <li><a href="index.php#sec-testimonios">Testimonios</a></li>
+                    <li><a href="index.php#sec-contacto">Contacto</a></li>
                     <li class="active"><a href="">Iniciar sesión</a></li>
                 </ul>
                 <div class="right-button hidden-xs">

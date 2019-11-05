@@ -18,7 +18,16 @@ function login(){
           if(response.token == null || response.token == "" || response.token == undefined){
             swal("Error!", "Problemas en el servidor", "error");
           }else{
-            location.href = "index.html";
+            $.ajax({
+                type: 'post',
+                url: 'user_preferences/guardar_sesion.php',
+                data: {token:response.token},
+                success: function (response2) {
+                    location.href = "index.php";
+                },
+                error: function (response2) {
+                }
+            });
           }
         },
         error: function (response) {

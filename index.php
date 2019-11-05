@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -52,7 +60,7 @@
                     <li><a href="#sec-slider-productos">Populares</a></li>
                     <li><a href="#sec-testimonios">Testimonios</a></li>
                     <li><a href="#sec-contacto">Contacto</a></li>
-                    <li><a href="iniciar-sesion.html">Iniciar sesión</a></li>
+                    <li><a href="iniciar-sesion.php">Iniciar sesión</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
                     <a href="registrarte.html">Registrarte</a>
