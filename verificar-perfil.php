@@ -1,3 +1,11 @@
+<?php
+session_start();
+$key=$_SESSION["token"];
+if(!isset($key)){
+    header("Location: iniciar-sesion.php");
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -8,7 +16,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Mi perfil | Stockit</title>
+    <title>Verificar perfil | Stockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -27,6 +35,25 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('.image-upload').attr("style", "background-image: url(" + e.target.result + ");");
+                    $('.image-upload').addClass('overlay-image-upload');
+                    $('.image-upload label').css('color', 'rgba(255,255,255,1)');
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+    </script>
+
 </head>
 
 <body>
@@ -37,7 +64,7 @@
                 <a href="lista-productos.html"><img class="img-logo-nav" src="images/logo-stockit.png" alt=""></a>
             </div>
             <div class="col-lg-6 col-md-6 col-xs-6">
-                <p class="p-mi-cuenta">Mi perfil</p>
+                <p class="p-mi-cuenta">Verificar perfil</p>
             </div>
         </div>
     </section>
@@ -52,32 +79,27 @@
 
                     <div class="d-mi-cuenta d-mi-perfil">
 
-                        <div class="d-foto-perfil">
-                            <a href="#"><img src="images/profile-brayam-morando.png" alt=""></a>
-                            <p><a class="btn btn-editar-perfil" href="#" role="button">Editar perfil</a></p>
-                        </div>
-
-                        <form class="form-mi-perfil">
+                        <form id="verifica" enctype="multipart/form-data" class="form-verificar-perfil">
 
                             <div class="form-group">
-                                <label class="label-form">Nombre de usuario</label>
-                                <input type="text" class="form-control input-form" value="Brayam Morando" required readonly>
-                            </div>
+                                <div class="image-upload" style="background-image: url(images/bg-image-upload.jpg);">
+                                    <label for="file-input">
+                                        <i class="fas fa-plus"></i> Subir foto
+                                    </label>
+                                    <input id="file-input" name="Image" type="file" onchange="readURL(this);" />
 
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
-                                <label class="label-form">Correo electrónico</label>
-                                <input type="email" class="form-control input-form" aria-describedby="emailHelp" value="brayamdesign@gmail.com" required readonly>
+                                <p class="p-text-verificar-perfil">Para verificar tu cuenta Stockit sube una fotografía de la parte frontal de una identificación oficial.</p>
                             </div>
 
-                            <div class="form-group">
-                                <label class="label-form">Teléfono</label>
-                                <input type="tel" class="form-control input-form" value="33 2269 2108" required readonly>
+                            <a class="btn btn-form-green" onclick="img()" role="button">Verificar perfil</a>
 
-                            </div>
-                            <a class="btn btn-form-green" href="index.html" role="button">Guardar</a>
                         </form>
 
-                        <p class="p-perfil-verificado"><i class="fas fa-check-circle"></i> Perfil verificado</p>
+                        <p class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Esto es con el fin de garantizar la seguridad y tranquilidad entre los usuarios Stockit.</p>
                         
                     </div>
 
@@ -90,9 +112,6 @@
         </div>
 
     </section>
-
-
-
 
 
     <!-- Footer -->
@@ -142,6 +161,12 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
+
+    <script src="js/verificar.js"></script>
 
     <script>
         $('#myCarousel').carousel({

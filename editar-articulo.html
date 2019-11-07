@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Verificar perfil | Stockit</title>
+    <title>Editar articulo | Stockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -43,7 +43,6 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-
     </script>
 
 </head>
@@ -56,7 +55,7 @@
                 <a href="lista-productos.html"><img class="img-logo-nav" src="images/logo-stockit.png" alt=""></a>
             </div>
             <div class="col-lg-6 col-md-6 col-xs-6">
-                <p class="p-mi-cuenta">Verificar perfil</p>
+                <p class="p-mi-cuenta">Editar artículo</p>
             </div>
         </div>
     </section>
@@ -69,30 +68,50 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
 
-                    <div class="d-mi-cuenta d-mi-perfil">
+                    <div class="d-mi-cuenta d-nuevo-articulo">
 
-                        <form class="form-verificar-perfil">
+                        <form class="form-nuevo-articulo">
 
                             <div class="form-group">
-                                <div class="image-upload" style="background-image: url(images/bg-image-upload.jpg);">
-                                    <label for="file-input">
+                                <div class="image-upload overlay-image-upload" style="background-image: url(images/bg-electronica.jpg);">
+                                    <label class="file-input-active" for="file-input">
                                         <i class="fas fa-plus"></i> Subir foto
                                     </label>
                                     <input id="file-input" type="file" onchange="readURL(this);" />
 
                                 </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <p class="p-text-verificar-perfil">Para verificar tu cuenta Stockit sube una fotografía de la parte frontal de una identificación oficial.</p>
+
+                                <div class="d-editar-articulo">
+                                    <p><a class="btn btn-editar-perfil" href="#" role="button">Editar artículo</a></p>
+                                </div>
+
                             </div>
 
-                            <a class="btn btn-form-green" href="mi-perfil-verificado.html" role="button">Verificar perfil</a>
+                            <div class="form-group">
+                                <label class="label-form">Nombre</label>
+                                <input type="text" class="form-control input-form" value="Dron DJI Phantom 4" required readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form">Descripción</label>
+                                <textarea style="padding-top: 10px;" class="form-control input-form" rows="3" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quis neque iure laborum sunt quisquam iusto praesentium architecto.</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form">Dirección</label>
+                                <input type="text" class="form-control input-form" value="Mesa Vista 0357. Chapala, Jalisco." required readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form">Precio por día</label>
+                                <input type="number" class="form-control input-form" value="399.00" required readonly>
+                            </div>
+
+                            <a class="btn btn-form-green" href="mi-perfil-verificado.html" role="button">Guardar</a>
 
                         </form>
 
-                        <p class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Esto es con el fin de garantizar la seguridad y tranquilidad entre los usuarios Stockit.</p>
-                        
+
                     </div>
 
                 </div>

@@ -2877,4 +2877,146 @@ ul.breadcrumb li a:hover {
     margin-right: 10px;
 }
 
+.d-item-tarjeta-nueva {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 34px;
+    padding-bottom: 34px;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+    transition: .4s;
+}
+
+.d-item-tarjeta-nueva i {
+    font-size: 35px;
+    color: rgba(0, 0, 0, .1);
+}
+
+.d-item-tarjeta-nueva .t1 {
+    font-size: 14px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.d-item-tarjeta-nueva .t1 a{
+    color: rgba(0,0,0,.5);
+}
+
+.d-item-tarjeta-nueva .t1 a:hover{
+    color: rgba(0,0,0,1);
+}
+
+.d-item-tarjeta {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    transition: .4s;
+}
+
+.d-item-tarjeta .t1 {
+    font-size: 14px;
+    color: rgba(0, 0, 0, .5);
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.d-img-card img {
+    width: 40px;
+}
+
+.d-number-card .t1 {
+    text-align: right;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .5);
+    padding-top: 3px;
+    margin-bottom: 0px;
+}
+
+.d-name-card{
+    margin-top: -5px;
+}
+
+.d-name-card .t1 {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 0px;
+}
+
+.d-name-card .t2 {
+    font-size: 13px;
+    color: rgba(0, 0, 0, .5);
+    margin-bottom: 0px;
+    margin-top: -5px;
+}
+
+.btn-card{
+    padding: 0px;
+    margin-bottom: 9px;
+    color: rgba(0,0,0,.5);
+    font-size: 12px;
+    transition: .4s;
+}
+
+.btn-card:hover{
+    color: rgba(0,0,0,1);
+}
+
+.d-metodos-pago {
+    background-color: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px 10px rgba(0, 0, 0, 0.05);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 90px;
+    padding-bottom: 70px;
+
+}
+
+.form-seleccionar-tarjeta{
+    padding-top: 20px;
+}
+
+.form-seleccionar-tarjeta .form-group{
+    padding-left: 0px;
+}
+
+
+.form-seleccionar-tarjeta .form-check-label{
+    font-size: 16px;
+    color: rgba(0,0,0,1);
+}
+
+.form-seleccionar-tarjeta .form-check-input{
+    margin-right: 15px;
+}
+
+.form-seleccionar-tarjeta .p-check-label{
+    color: rgba(0,0,0,.5);
+    padding-left: 34px;
+    padding-top: 0px;
+    margin-top: -10px;
+}
+
+.d-nuevo-articulo .t1{
+    font-size: 27px;
+    color: #01293C;
+    font-family: "Gilroy Bold";
+    padding-bottom: 10px;
+}
+
+.image-upload .file-input-active{
+    color: rgba(255,255,255,.9);
+}
+
+.d-editar-articulo{
+    text-align: center;
+    padding-top: 20px;
+}
 

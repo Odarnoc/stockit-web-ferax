@@ -10089,3 +10089,78 @@ button,
   color: black;
   transition: .4s;
 }
+
+.sec-gray {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #F4F4F4;
+}
+
+.d-title-interesados .t1 {
+  font-size: 32px;
+  font-family: "Nunito";
+}
+
+.d-title-interesados .t2 {
+  padding-top: 15px;
+  color: rgba(0, 0, 0, .5);
+  padding-bottom: 25vh
+}
+
+
+.badge-success {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #00CF72;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.badge-success i {
+  margin-right: 10px;
+}
+
+
+.info-item-historial {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+
+.info-item-historial .t1 {
+  margin-bottom: 5px;
+  font-size: 19px;
+  font-family: "Gilroy Bold";
+  color: #01293C;
+}
+
+.info-item-historial .t2{
+  color: rgba(0,0,0,.5);
+  margin-bottom: 5px;
+}
+
+.info-item-historial .t3{
+  font-size: 19px;
+}
+
+.badge-info {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #55A7FF;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.badge-info i {
+  margin-right: 10px;
+}

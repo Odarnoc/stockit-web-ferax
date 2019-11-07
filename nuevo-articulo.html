@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Mi perfil | Stockit</title>
+    <title>Nuevo articulo | Stockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -27,6 +27,24 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('.image-upload').attr("style", "background-image: url(" + e.target.result + ");");
+                    $('.image-upload').addClass('overlay-image-upload');
+                    $('.image-upload label').css('color', 'rgba(255,255,255,1)');
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -37,7 +55,7 @@
                 <a href="lista-productos.html"><img class="img-logo-nav" src="images/logo-stockit.png" alt=""></a>
             </div>
             <div class="col-lg-6 col-md-6 col-xs-6">
-                <p class="p-mi-cuenta">Mi perfil</p>
+                <p class="p-mi-cuenta">Nuevo artículo</p>
             </div>
         </div>
     </section>
@@ -50,40 +68,46 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
 
-                    <div class="d-mi-cuenta d-mi-perfil">
+                    <div class="d-mi-cuenta d-nuevo-articulo">
 
-                        <div class="d-foto-perfil">
-                            <a href="#"><img src="images/profile-brayam-morando.png" alt=""></a>
-                            <p><a class="btn btn-editar-perfil" href="#" role="button">Editar perfil</a></p>
-                        </div>
-
-                        <form class="form-mi-perfil">
+                        <form class="form-nuevo-articulo">
 
                             <div class="form-group">
-                                <label class="label-form">Nombre de usuario</label>
-                                <input type="text" class="form-control input-form" value="Brayam Morando" required readonly>
+                                <div class="image-upload" style="background-image: url(images/bg-image-upload.jpg);">
+                                    <label for="file-input">
+                                        <i class="fas fa-plus"></i> Subir foto
+                                    </label>
+                                    <input id="file-input" type="file" onchange="readURL(this);" />
+
+                                </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="label-form">Correo electrónico</label>
-                                <input type="email" class="form-control input-form" aria-describedby="emailHelp" value="brayamdesign@gmail.com" required readonly>
+                                <label class="label-form">Nombre</label>
+                                <input type="text" class="form-control input-form" required>
                             </div>
 
                             <div class="form-group">
-                                <label class="label-form">Teléfono</label>
-                                <input type="tel" class="form-control input-form" value="33 2269 2108" required readonly>
-
+                                <label class="label-form">Descripción</label>
+                                <textarea class="form-control input-form" rows="2"></textarea>
                             </div>
-                            <a class="btn btn-form-green" href="index.html" role="button">Guardar</a>
+
+                            <div class="form-group">
+                                <label class="label-form">Dirección</label>
+                                <input type="text" class="form-control input-form" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form">Precio por día</label>
+                                <input type="number" class="form-control input-form" required>
+                            </div>
+
+                            <a class="btn btn-form-green" href="mi-perfil-verificado.html" role="button">Guardar</a>
+
                         </form>
-
-                        <p class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Perfil no verificado <a href="verificar-perfil.html">Verificar perfil</a></p>
 
 
                     </div>
-
-
-
 
                 </div>
 
@@ -94,9 +118,6 @@
         </div>
 
     </section>
-
-
-
 
 
     <!-- Footer -->

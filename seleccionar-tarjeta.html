@@ -1,11 +1,3 @@
-<?php
-session_start();
-//if(isset($_SESSION["token"])){
-  //  header("Location: index.php");
-//}
-
-?>
-
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -17,7 +9,7 @@ session_start();
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Iniciar sesión | Stockit</title>
+    <title>Revisar orden | Stockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -53,15 +45,15 @@ session_start();
             </div>
             <div class="collapse navbar-collapse" id="primary_menu">
                 <ul class="nav navbar-nav mainmenu">
-                    <li><a href="index.php#home_page">Inicio</a></li>
-                    <li><a href="index.php#sec-categorias">Categorias</a></li>
-                    <li><a href="index.php#sec-slider-productos">Populares</a></li>
-                    <li><a href="index.php#sec-testimonios">Testimonios</a></li>
-                    <li><a href="index.php#sec-contacto">Contacto</a></li>
-                    <li class="active"><a href="">Iniciar sesión</a></li>
+                    <li><a href="index.html#home_page">Inicio</a></li>
+                    <li><a href="index.html#sec-categorias">Categorias</a></li>
+                    <li><a href="index.html#sec-slider-productos">Populares</a></li>
+                    <li><a href="index.html#sec-testimonios">Testimonios</a></li>
+                    <li><a href="index.html#sec-contacto">Contacto</a></li>
+                    <li><a href="">Registrarte</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
-                    <a href="registrarte.html">Registrarte</a>
+                    <a href="iniciar-sesion.html">Iniciar sesión</a>
                 </div>
             </div>
         </div>
@@ -72,39 +64,81 @@ session_start();
 
         <div class="container">
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
                     <div class="d-form-registrarte">
-                        <p class="t1"><img src="images/icon-stockit.png" alt=""> Iniciar sesión</p>
-                        <form class="form-registrarte">
-                           
-                            <div class="form-group">
-                                <label class="label-form">Correo electrónico</label>
-                                <input type="email" class="form-control input-form" id="email" aria-describedby="emailHelp" required>
+                        <p class="p-title">Tarjetas</p>
+                        <p class="p-sub-title">Seleccionar un metodo de pago.</p>
+
+
+                        <form class="form-seleccionar-tarjeta">
+
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Visa **** 4169
+                                        </label>
+                                    </div>
+                                    <p class="p-check-label">Vence el 03/2023 </p>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            Master Card **** 0357
+                                        </label>
+                                    </div>
+                                    <p class="p-check-label">Vence el 08/2022</p>
+
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                            Visa **** 9606
+                                        </label>
+                                    </div>
+                                    <p class="p-check-label">Vence el 01/2021</p>
+                                </div>
+
                             </div>
 
-                            <div class="form-group">
-                                <label class="label-form">Contraseña</label>
-                                <input type="password" class="form-control input-form" id="pass" required>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-12">
+                                    <p class="p-pasos">Paso 1 de 3</p>
+                                </div>
                             </div>
-                            
-                            <a class="btn btn-form-green" onclick="login()" role="button">Iniciar sesión</a>
-
-
                         </form>
-                        
-                        <p class="t2">¿Aún no tienes una cuenta? <a href="registrarte.html">Registrarte</a></p>
-                        <p class="t2">¿Olvidaste tu contraseña? <a href="recuperar-contrasena.html">Recuperar Contraseña</a></p>
+
+
+                        <div class="row row-btns-revisar">
+                            <div class="col-md-6 col-xs-6">
+                                <a class="btn btn-regresar" href="producto-individual.html" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <a class="btn btn-confirmar-pago" href="revisar-orden.html" role="button">Continuar</a>
+                            </div>
+
+                        </div>
 
                     </div>
-                </div>     
-                <div class="col-md-3"></div>
+
+                </div>
+
+                <div class="col-md-2"></div>
+
+
             </div>
+
         </div>
+
     </section>
-
-
-
 
 
     <!-- Footer -->
@@ -160,13 +194,6 @@ session_start();
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
-
-    <!--swall alert-->
-    <script src="js/sweetalert.min.js"></script>
-
-    <script src="js/sesion.js"></script>
-
-    
 
     <script>
         $('#myCarousel').carousel({

@@ -1,9 +1,9 @@
 <?php
 session_start();
-//if(isset($_SESSION["token"])){
-  //  header("Location: index.php");
-//}
-
+$key=$_SESSION["token"];
+if(!isset($key)){
+    header("Location: iniciar-sesion.php");
+}
 ?>
 
 <!doctype html>
@@ -11,13 +11,12 @@ session_start();
 
 <head>
     <meta charset="utf-8">
-    <meta name="author" content="Sumon Rahman">
     <meta name="description" content="">
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Iniciar sesión | Stockit</title>
+    <title>Mi perfil | Stockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -38,69 +37,70 @@ session_start();
     <![endif]-->
 </head>
 
-<body data-spy="scroll" data-target=".mainmenu-area">
+<body>
 
-    <!-- MainMenu-Area -->
-    <nav id="nav-out-header" class="mainmenu-area" data-spy="affix" data-offset-top="0">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#home_page"><img src="images/logo-stockit.png" alt="Logo"></a>
+    <section class="sec-mi-cuenta">
+        <div class="container">
+            <div class="col-lg-6 col-md-6 col-xs-6">
+                <a href="lista-productos.html"><img class="img-logo-nav" src="images/logo-stockit.png" alt=""></a>
             </div>
-            <div class="collapse navbar-collapse" id="primary_menu">
-                <ul class="nav navbar-nav mainmenu">
-                    <li><a href="index.php#home_page">Inicio</a></li>
-                    <li><a href="index.php#sec-categorias">Categorias</a></li>
-                    <li><a href="index.php#sec-slider-productos">Populares</a></li>
-                    <li><a href="index.php#sec-testimonios">Testimonios</a></li>
-                    <li><a href="index.php#sec-contacto">Contacto</a></li>
-                    <li class="active"><a href="">Iniciar sesión</a></li>
-                </ul>
-                <div class="right-button hidden-xs">
-                    <a href="registrarte.html">Registrarte</a>
-                </div>
+            <div class="col-lg-6 col-md-6 col-xs-6">
+                <p class="p-mi-cuenta">Mi perfil</p>
             </div>
         </div>
-    </nav>
+    </section>
 
 
-    <section id="sec-registrarte" class="sec-gray">
+    <section class="sec-gray">
 
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <div class="d-form-registrarte">
-                        <p class="t1"><img src="images/icon-stockit.png" alt=""> Iniciar sesión</p>
-                        <form class="form-registrarte">
-                           
+
+                    <div class="d-mi-cuenta d-mi-perfil">
+
+                        <div class="d-foto-perfil">
+                            <a href="#"><img src="images/profile-brayam-morando.png" alt=""></a>
+                            <p><a class="btn btn-editar-perfil" href="#" role="button">Editar perfil</a></p>
+                        </div>
+
+                        <form class="form-mi-perfil">
+
+                            <div class="form-group">
+                                <label class="label-form">Nombre de usuario</label>
+                                <input type="text" id="name" class="form-control input-form"  required readonly>
+                            </div>
+
                             <div class="form-group">
                                 <label class="label-form">Correo electrónico</label>
-                                <input type="email" class="form-control input-form" id="email" aria-describedby="emailHelp" required>
+                                <input type="email" id="email" class="form-control input-form" aria-describedby="emailHelp"  required readonly>
                             </div>
 
                             <div class="form-group">
-                                <label class="label-form">Contraseña</label>
-                                <input type="password" class="form-control input-form" id="pass" required>
+                                <label class="label-form">Teléfono</label>
+                                <input type="tel" id="tele" class="form-control input-form"  required readonly>
+
                             </div>
-                            
-                            <a class="btn btn-form-green" onclick="login()" role="button">Iniciar sesión</a>
-
-
+                            <a class="btn btn-form-green" href="mi-cuenta-html" role="button">Guardar</a>
                         </form>
-                        
-                        <p class="t2">¿Aún no tienes una cuenta? <a href="registrarte.html">Registrarte</a></p>
-                        <p class="t2">¿Olvidaste tu contraseña? <a href="recuperar-contrasena.html">Recuperar Contraseña</a></p>
+
+                        <p id="noval"  class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Perfil no verificado <a href="verificar-perfil.html">Verificar perfil</a></p>
+                        <p id="val" class="p-perfil-verificado"><i class="fas fa-check-circle"></i> Perfil verificado</p>
 
                     </div>
-                </div>     
+
+
+
+
+                </div>
+
                 <div class="col-md-3"></div>
+
             </div>
+
         </div>
+
     </section>
 
 
@@ -120,13 +120,7 @@ session_start();
                 </div>
                 <div class="col-md-6">
                     <div class="footer-center">
-                        <p class="p1">
-                            <a href="#home_page">Inicio</a>
-                            <a href="#sec-categorias">Categorias</a>
-                            <a href="#sec-slider-productos">Populares</a>
-                            <a href="#sec-testimonios">Testimonios</a>
-                            <a href="#sec-contacto">Contacto</a>
-                        </p>
+
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -161,12 +155,12 @@ session_start();
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 
-    <!--swall alert-->
-    <script src="js/sweetalert.min.js"></script>
+    <script>
+    var keyt = "<?php echo $key; ?>";
+    </script>
 
-    <script src="js/sesion.js"></script>
 
-    
+<script src ="js/miperfil.js"></script>
 
     <script>
         $('#myCarousel').carousel({
