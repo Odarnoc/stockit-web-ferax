@@ -59,10 +59,10 @@ $key=$_SESSION["token"];
                     <li><a href="index.html#sec-slider-productos">Populares</a></li>
                     <li><a href="index.html#sec-testimonios">Testimonios</a></li>
                     <li><a href="index.html#sec-contacto">Contacto</a></li>
-                    <li><a href="registrarte.html">Registrarte</a></li>
+                    <li><a href="registrarte.php">Registrarte</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
-                    <a href="iniciar-sesion.html">Iniciar sesión</a>
+                    <a href="iniciar-sesion.php">Iniciar sesión</a>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ if(!isset($_SESSION["token"])){
 $key=$_SESSION["token"];
 
 ?>
+
 <!doctype html>
 <html class="no-js" lang="es">
 

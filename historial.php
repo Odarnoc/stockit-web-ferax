@@ -257,15 +257,15 @@ $key=$_SESSION["token"];
                                             </ul>
                                         </li>
 
-                                        <li><a href="mi-stockit.html">Mi Stockit</a></li>
+                                        <li><a href="mi-stockit.php">Mi Stockit</a></li>
 
-                                        <li><a href="interesados.html">Interesados</a></li>
+                                        <li><a href="interesados.php">Interesados</a></li>
 
-                                        <li><a href="rentas.html">Rentas</a></li>
+                                        <li><a href="rentas.php">Rentas</a></li>
 
-                                        <li><a href="mis-favoritos.html">Favoritos</a></li>
+                                        <li><a href="mis-favoritos.php">Favoritos</a></li>
 
-                                        <li><a href="mi-cuenta.html">Mi cuenta</a></li>
+                                        <li><a href="mi-cuenta.php">Mi cuenta</a></li>
 
 
                                     </ul>
@@ -347,11 +347,11 @@ $key=$_SESSION["token"];
                                             </ul>
                                         </li>
 
-                                        <li><a href="blog-left-sidebar.html">Ofertas</a></li>
+                                        <li><a href="blog-left-sidebar.php">Ofertas</a></li>
 
                                         <li><a href="javascript:void(0)">Iniciar sesión</a></li>
 
-                                        <li><a href="contact.html">Contacto</a></li>
+                                        <li><a href="contact.php">Contacto</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -608,77 +608,6 @@ $key=$_SESSION["token"];
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/asador.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-historial">
-                                <span class="badge badge-info"><i class="fas fa-history"></i> 25/10/2019</span>
-                                <p class="t1">Asador Circular</p>
-                                <p class="t2">$199.00 <sup></sup> / día</p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/escalera.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-historial">
-                                <span class="badge badge-info"><i class="fas fa-history"></i> 03/10/2019</span>
-                                <p class="t1">Escalera 3.5 metros</p>
-                                <p class="t2">$299.00 <sup></sup> / día</p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/proyector.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-historial">
-                                <span class="badge badge-info"><i class="fas fa-history"></i> 05/11/2019</span>
-                                <p class="t1">Proyector Epson S39</p>
-                                <p class="t2">$399.00 <sup></sup> / día</p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/asador.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-historial">
-                                <span class="badge badge-info"><i class="fas fa-history"></i> 25/10/2019</span>
-                                <p class="t1">Asador Circular</p>
-                                <p class="t2">$199.00 <sup></sup> / día</p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/escalera.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-historial">
-                                <span class="badge badge-info"><i class="fas fa-history"></i> 03/10/2019</span>
-                                <p class="t1">Escalera 3.5 metros</p>
-                                <p class="t2">$299.00 <sup></sup> / día</p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-
 
                 </div>
             </div>

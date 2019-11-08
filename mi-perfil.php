@@ -42,7 +42,7 @@ if(!isset($key)){
     <section class="sec-mi-cuenta">
         <div class="container">
             <div class="col-lg-6 col-md-6 col-xs-6">
-                <a href="lista-productos.html"><img class="img-logo-nav" src="images/logo-stockit.png" alt=""></a>
+                <a href="lista-productos.php"><img class="img-logo-nav" src="images/logo-stockit.png" alt=""></a>
             </div>
             <div class="col-lg-6 col-md-6 col-xs-6">
                 <p class="p-mi-cuenta">Mi perfil</p>
@@ -82,7 +82,7 @@ if(!isset($key)){
                                 <input type="tel" id="tele" class="form-control input-form"  required readonly>
 
                             </div>
-                            <a class="btn btn-form-green" href="mi-cuenta-html" role="button">Guardar</a>
+                            <a class="btn btn-form-green" href="mi-cuenta-php" role="button">Guardar</a>
                         </form>
 
                         <p id="noval"  class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Perfil no verificado <a href="verificar-perfil.html">Verificar perfil</a></p>
