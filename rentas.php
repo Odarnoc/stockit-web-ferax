@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+$key=$_SESSION["token"];
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="es">
 
@@ -571,10 +580,10 @@
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Interesados</h2>
+                    <h2>Rentas</h2>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li>Interesados</li>
+                        <li>Rentas</li>
                     </ul>
                 </div>
             </div>
@@ -586,8 +595,8 @@
                <div class="row">
                    <div class="col-lg-12 col-md-12">
                        <div class="d-title-interesados">
-                           <p class="t1">Sin usuarios interesados</p>
-                           <p class="t2">Aquí podrás visualizar el listado con la información de los usuarios que estén interesados en tus publicaciones.</p>
+                           <p class="t1">Sin productos en renta</p>
+                           <p class="t2">Aquí podrás visualizar el listado con la información de los artículos que estés rentando.</p>
                        </div>
                    </div>
                </div>
@@ -688,5 +697,10 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
 
 </body></html>

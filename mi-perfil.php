@@ -155,12 +155,11 @@ if(!isset($key)){
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 
+    <!--Custom scripts-->
     <script>
-    var keyt = "<?php echo $key; ?>";
+        var keyt = "<?php echo $key; ?>";
     </script>
-
-
-<script src ="js/miperfil.js"></script>
+    <script src ="js/miperfil.js"></script>
 
     <script>
         $('#myCarousel').carousel({

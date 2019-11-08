@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+$key=$_SESSION["token"];
+
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -9,7 +17,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Pago confimado | Stockit</title>
+    <title>Revisar orden | Stockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -18,7 +26,8 @@
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Main-Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
@@ -50,7 +59,7 @@
                     <li><a href="index.html#sec-slider-productos">Populares</a></li>
                     <li><a href="index.html#sec-testimonios">Testimonios</a></li>
                     <li><a href="index.html#sec-contacto">Contacto</a></li>
-                    <li><a href="">Registrarte</a></li>
+                    <li><a href="registrarte.html">Registrarte</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
                     <a href="iniciar-sesion.html">Iniciar sesión</a>
@@ -64,21 +73,59 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <div class="d-pago-confirmado">
-                       <img src="images/check.png" alt="">
-                    </div>
-                    
-                    <div class="d-info-pago-confirmado">
-                        <p class="t1">Pago confirmado</p>
-                        <p class="t2">Pronto recibiras los detalles de tu compra por correo electrónico</p>
-                        <a class="btn btn-confirmar-pago" href="index.html" role="button">Volver a inicio</a>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="d-form-registrarte">
+                        <p class="p-title">Agregar tarjeta</p>
+                        <p class="p-sub-title">No te preocupes, aún no se haran cargos a tu tarjeta.</p>
+
+                        <form class="form-tarjeta">
+
+                            <div class="row">
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="label-form">Nombre en la tarjeta</label>
+                                    <input type="text" class="form-control input-form" id="" required>
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="label-form">Número de tarjeta</label>
+                                    <input type="number" class="form-control input-form" id="" required>
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="label-form">Fecha de vencimiento</label>
+                                    <input type="text" class="form-control input-form" id="" placeholder="MM/YY"
+                                        required>
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="label-form">CVV</label>
+                                    <input type="number" class="form-control input-form" id="" required>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                        <p class="p-pasos">Paso 1 de 3</p>
+
+                        <div class="row row-btns-revisar">
+                            <div class="col-md-6 col-xs-6">
+                                <a class="btn btn-regresar" href="producto-individual.html" role="button"><i
+                                        class="fas fa-chevron-left"></i> Regresar</a>
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <a class="btn btn-confirmar-pago" href="revisar-orden.html" role="button">Continuar</a>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
 
-                <div class="col-md-5"></div>
+                <div class="col-md-2"></div>
 
 
             </div>
@@ -142,9 +189,16 @@
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
+
     <script>
         $('#myCarousel').carousel({
             interval: 5000
         });
     </script>
-</body></html>
+</body>
+
+</html>

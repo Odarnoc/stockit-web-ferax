@@ -7,7 +7,7 @@ var productos = "";
                 data: "",
                 beforeSend: function (xhr) {
                     /* Authorization header */
-                    xhr.setRequestHeader("Authorization", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVkYjBjZTc1NDNlZDBlMDY5OWRiNTM4NyIsImlhdCI6MTU3MTg2ODcxMywiZXhwIjoxNTc0NDYwNzEzfQ.ZxDtDle25gyg5lK--MIOaLgG2119C7WTjL5CP8Menqk");
+                    xhr.setRequestHeader("Authorization", keyt);
                 },
                 success: function (data) {
                     console.log(data);

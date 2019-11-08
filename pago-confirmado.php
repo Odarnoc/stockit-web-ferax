@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+$key=$_SESSION["token"];
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -9,7 +18,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Revisar orden | Stockit</title>
+    <title>Pago confimado | Stockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -64,74 +73,21 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="d-form-registrarte">
-                        <p class="p-title">Tarjetas</p>
-                        <p class="p-sub-title">Seleccionar un metodo de pago.</p>
-
-
-                        <form class="form-seleccionar-tarjeta">
-
-                            <div class="form-row">
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            Visa **** 4169
-                                        </label>
-                                    </div>
-                                    <p class="p-check-label">Vence el 03/2023 </p>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
-                                        <label class="form-check-label" for="exampleRadios2">
-                                            Master Card **** 0357
-                                        </label>
-                                    </div>
-                                    <p class="p-check-label">Vence el 08/2022</p>
-
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1">
-                                        <label class="form-check-label" for="exampleRadios3">
-                                            Visa **** 9606
-                                        </label>
-                                    </div>
-                                    <p class="p-check-label">Vence el 01/2021</p>
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="form-group col-md-12">
-                                    <p class="p-pasos">Paso 1 de 3</p>
-                                </div>
-                            </div>
-                        </form>
-
-
-                        <div class="row row-btns-revisar">
-                            <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-regresar" href="producto-individual.html" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
-                            </div>
-                            <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-confirmar-pago" href="revisar-orden.html" role="button">Continuar</a>
-                            </div>
-
-                        </div>
-
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="d-pago-confirmado">
+                       <img src="images/check.png" alt="">
+                    </div>
+                    
+                    <div class="d-info-pago-confirmado">
+                        <p class="t1">Pago confirmado</p>
+                        <p class="t2">Pronto recibiras los detalles de tu compra por correo electrónico</p>
+                        <a class="btn btn-confirmar-pago" href="index.html" role="button">Volver a inicio</a>
                     </div>
 
                 </div>
 
-                <div class="col-md-2"></div>
+                <div class="col-md-5"></div>
 
 
             </div>
@@ -194,6 +150,11 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
 
     <script>
         $('#myCarousel').carousel({

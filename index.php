@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION["token"])){
     header("Location: iniciar-sesion.php");
 }
-
+$key=$_SESSION["token"];
 ?>
 
 <!doctype html>
@@ -365,7 +365,11 @@ if(!isset($_SESSION["token"])){
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 
-    <!--Items-Carousel-JS-->
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
+    
     <script src="js/car-prod.js"></script> 
     
     

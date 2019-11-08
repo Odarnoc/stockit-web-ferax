@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+$key=$_SESSION["token"];
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="es">
 
@@ -257,7 +266,7 @@
 
                                         <li><a href="#">Favoritos</a></li>
 
-                                        <li><a href="mi-cuenta.html">Mi cuenta</a></li>
+                                        <li><a href="#">Mi cuenta</a></li>
 
 
                                     </ul>
@@ -571,32 +580,116 @@
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Entregas</h2>
+                    <h2>Mi Stockit</h2>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li>Mi cuenta</li>
-                        <li>Entregas</li>
+                        <li>Mi Stockit</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- Torress's Breadcrumb Area End Here -->
-        
-        <section class="sec-gray">
-           <div class="container">
-               <div class="row">
-                   <div class="col-lg-12 col-md-12">
-                       <div class="d-title-interesados">
-                           <p class="t1">Sin entregas próximas</p>
-                           <p class="t2">Aquí podrás consultar la información de los usuarios que hayan rentado artículos de tu disposición.</p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-            
+
+
+        <section class="sec-mi-stockit">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <div class="d-img-thumbnail">
+                                <img src="images/proyector.png" alt="Slide11">
+                            </div>
+                            <div class="info-item-slide">
+                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
+                                <p class="p2">Proyector Epson S39</p>
+                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                                <p class="p4">$ 399.<sup>00 / día</sup></p>
+                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <div class="d-img-thumbnail">
+                                <img src="images/asador.png" alt="Slide11">
+                            </div>
+                            <div class="info-item-slide">
+                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
+                                <p class="p2">Asador Circular</p>
+                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                                <p class="p4">$ 199.<sup>00 / día</sup></p>
+                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <div class="d-img-thumbnail">
+                                <img src="images/escalera.png" alt="Slide11">
+                            </div>
+                            <div class="info-item-slide">
+                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
+                                <p class="p2">Escalera 3.5 metros</p>
+                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                                <p class="p4">$ 299.<sup>00 / día</sup></p>
+                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <div class="d-img-thumbnail">
+                                <img src="images/proyector.png" alt="Slide11">
+                            </div>
+                            <div class="info-item-slide">
+                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
+                                <p class="p2">Proyector Epson S39</p>
+                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                                <p class="p4">$ 399.<sup>00 / día</sup></p>
+                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <div class="d-img-thumbnail">
+                                <img src="images/asador.png" alt="Slide11">
+                            </div>
+                            <div class="info-item-slide">
+                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
+                                <p class="p2">Asador Circular</p>
+                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                                <p class="p4">$ 199.<sup>00 / día</sup></p>
+                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <div class="d-img-thumbnail">
+                                <img src="images/escalera.png" alt="Slide11">
+                            </div>
+                            <div class="info-item-slide">
+                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
+                                <p class="p2">Escalera 3.5 metros</p>
+                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                                <p class="p4">$ 299.<sup>00 / día</sup></p>
+                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+               
+                </div>
+            </div>
         </section>
-
-
 
 
     </div>
@@ -689,5 +782,10 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
 
 </body></html>

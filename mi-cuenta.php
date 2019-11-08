@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION["token"])){
     header("Location: iniciar-sesion.php");
 }
+$key=$_SESSION["token"];
 
 ?>
 
@@ -148,6 +149,11 @@ if(!isset($_SESSION["token"])){
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
 
     <script>
         $('#myCarousel').carousel({

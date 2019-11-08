@@ -162,10 +162,10 @@ if(!isset($key)){
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 
+    <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
-
     <script src="js/verificar.js"></script>
 
     <script>

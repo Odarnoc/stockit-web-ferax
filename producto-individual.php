@@ -1,5 +1,11 @@
 <?php
-   $idProducto = $_GET['id'];
+    session_start();
+    if(!isset($_SESSION["token"])){
+        header("Location: iniciar-sesion.php");
+    }
+    $key=$_SESSION["token"];
+    
+    $idProducto = $_GET['id'];
 ?>
 
 <!doctype html>
@@ -116,11 +122,14 @@
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
     <script src="js/map-style.js"></script>
-     <!--Integracion Productos-JS-->
-     <script>
+
+     <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
         var idProductoJs = "<?php echo $idProducto; ?>";
-     </script>
+    </script>
     <script src="js/prod-individual.js"></script>
+    
     <script>
         $('#myCarousel').carousel({
             interval: 5000

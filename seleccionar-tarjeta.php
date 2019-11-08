@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+$key=$_SESSION["token"];
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -18,8 +27,7 @@
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Main-Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
@@ -51,7 +59,7 @@
                     <li><a href="index.html#sec-slider-productos">Populares</a></li>
                     <li><a href="index.html#sec-testimonios">Testimonios</a></li>
                     <li><a href="index.html#sec-contacto">Contacto</a></li>
-                    <li><a href="registrarte.html">Registrarte</a></li>
+                    <li><a href="">Registrarte</a></li>
                 </ul>
                 <div class="right-button hidden-xs">
                     <a href="iniciar-sesion.html">Iniciar sesión</a>
@@ -68,44 +76,59 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <div class="d-form-registrarte">
-                        <p class="p-title">Agregar tarjeta</p>
-                        <p class="p-sub-title">No te preocupes, aún no se haran cargos a tu tarjeta.</p>
+                        <p class="p-title">Tarjetas</p>
+                        <p class="p-sub-title">Seleccionar un metodo de pago.</p>
 
-                        <form class="form-tarjeta">
 
-                            <div class="row">
+                        <form class="form-seleccionar-tarjeta">
 
-                                <div class="form-group col-md-6 ">
-                                    <label class="label-form">Nombre en la tarjeta</label>
-                                    <input type="text" class="form-control input-form" id="" required>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            Visa **** 4169
+                                        </label>
+                                    </div>
+                                    <p class="p-check-label">Vence el 03/2023 </p>
                                 </div>
 
-                                <div class="form-group col-md-6 ">
-                                    <label class="label-form">Número de tarjeta</label>
-                                    <input type="number" class="form-control input-form" id="" required>
+                                <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                            Master Card **** 0357
+                                        </label>
+                                    </div>
+                                    <p class="p-check-label">Vence el 08/2022</p>
+
                                 </div>
 
-                                <div class="form-group col-md-6 ">
-                                    <label class="label-form">Fecha de vencimiento</label>
-                                    <input type="text" class="form-control input-form" id="" placeholder="MM/YY"
-                                        required>
-                                </div>
-
-                                <div class="form-group col-md-6 ">
-                                    <label class="label-form">CVV</label>
-                                    <input type="number" class="form-control input-form" id="" required>
+                                <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1">
+                                        <label class="form-check-label" for="exampleRadios3">
+                                            Visa **** 9606
+                                        </label>
+                                    </div>
+                                    <p class="p-check-label">Vence el 01/2021</p>
                                 </div>
 
                             </div>
 
+                            <div class="form-row">
+
+                                <div class="form-group col-md-12">
+                                    <p class="p-pasos">Paso 1 de 3</p>
+                                </div>
+                            </div>
                         </form>
 
-                        <p class="p-pasos">Paso 1 de 3</p>
 
                         <div class="row row-btns-revisar">
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-regresar" href="producto-individual.html" role="button"><i
-                                        class="fas fa-chevron-left"></i> Regresar</a>
+                                <a class="btn btn-regresar" href="producto-individual.html" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
                             </div>
                             <div class="col-md-6 col-xs-6">
                                 <a class="btn btn-confirmar-pago" href="revisar-orden.html" role="button">Continuar</a>
@@ -181,11 +204,14 @@
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
+
     <script>
         $('#myCarousel').carousel({
             interval: 5000
         });
     </script>
-</body>
-
-</html>
+</body></html>

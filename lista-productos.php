@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+$key=$_SESSION["token"];
+
+?>
 <!doctype html>
 <html class="no-js" lang="es">
 
@@ -873,8 +881,7 @@
     <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
-    <!-- Lista de Produtos JS -->
-    <script src="js/lista-productos.js"></script>
+    
 
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
@@ -884,6 +891,12 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+
+    <!--Custom scripts-->
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
+    <script src="js/lista-productos.js"></script>
 
 </body></html>
 
