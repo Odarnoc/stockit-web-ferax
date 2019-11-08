@@ -23,7 +23,7 @@ function recuperar() {
            if (response.message == null || response.message == "" || response.message == undefined) {
                swal("Error!", "Problemas en el servidor", "error");
            } else {
-               location.href = "pin-confirmacion.html";
+               location.href = "pin-confirmacion.php";
 
            }
            console.log(response.responseJSON.message);

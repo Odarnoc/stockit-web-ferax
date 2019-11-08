@@ -43,35 +43,8 @@ $key=$_SESSION["token"];
 <body data-spy="scroll" data-target=".mainmenu-area">
    
     <!-- MainMenu-Area -->
-    <nav class="mainmenu-area" data-spy="affix" data-offset-top="200">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#home_page"><img src="images/logo-stockit.png" alt="Logo"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="primary_menu">
-                <ul class="nav navbar-nav mainmenu">
-                    <li class="active"><a href="#home_page">Inicio</a></li>
-                    <li><a href="#sec-categorias">Categorias</a></li>
-                    <li><a href="#sec-slider-productos">Populares</a></li>
-                    <li><a href="#sec-testimonios">Testimonios</a></li>
-                    <li><a href="#sec-contacto">Contacto</a></li>
-                    <li><a href="mi-cuenta.php">Mi Cuenta </a></li>
-                    <li><a href="iniciar-sesion.php">Iniciar sesión</a></li>
-                </ul>
-                <div class="right-button hidden-xs">
-                    <a href="registrarte.html">Registrarte</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-
-
+    <?php include("menus/menu_logged_in.php"); ?>
 
     <!-- MainMenu-Area-End -->
     <!-- Home-Area -->
@@ -312,42 +285,7 @@ $key=$_SESSION["token"];
 
 
     <!-- Footer -->
-    <footer id="footer-home">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-left">
-                        <img src="images/logo-stockit.png" alt="">
-                        <p class="p1">© Todos los derechos son reservados</p>
-                    </div>
-                    
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-center">
-                        <p class="p1">
-                            <a href="#home_page">Inicio</a>
-                            <a href="#sec-categorias">Categorias</a>
-                            <a href="#sec-slider-productos">Populares</a>
-                            <a href="#sec-testimonios">Testimonios</a>
-                            <a href="#sec-contacto">Contacto</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-right">
-                        <p class="p1">
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-youtube"></i></a></p>
-                    </div>
-                    
-                </div>
-            </div>
-
-        </div>
-
-    </footer>
+    <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
 
 

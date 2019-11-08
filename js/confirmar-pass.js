@@ -27,7 +27,7 @@ function cdpass() {
            if (response.message == null || response.message == "" || response.message == undefined) {
                swal("Error!", "Problemas en el servidor", "error");
            } else {
-               location.href = "nueva-contrasena.html";
+               location.href = "nueva-contrasena.php";
 
            }
            console.log(response.responseJSON.message);

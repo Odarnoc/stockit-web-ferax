@@ -26,7 +26,7 @@ function registrar() {
             if (response.message == null || response.message == "" || response.message == undefined) {
                 swal("Error!", "Problemas en el servidor", "error");
             } else {
-               location.href = "iniciar-sesion.html";
+               location.href = "iniciar-sesion.php";
 
             }
 
