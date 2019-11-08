@@ -60,6 +60,7 @@ if(!isset($_SESSION["token"])){
                     <li><a href="#sec-slider-productos">Populares</a></li>
                     <li><a href="#sec-testimonios">Testimonios</a></li>
                     <li><a href="#sec-contacto">Contacto</a></li>
+                    <li><a href="mi-cuenta.php">Mi Cuenta </a></li>
                     <li><a href="iniciar-sesion.php">Iniciar sesión</a></li>
                 </ul>
                 <div class="right-button hidden-xs">

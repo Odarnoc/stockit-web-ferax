@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -58,16 +66,16 @@
 
                         <ul class="ul-mi-cuenta">
                             <li>
-                            <a class="btn btn-mi-cuenta" href="#" role="button"><i class="far fa-user-circle"></i>Mi perfil</a>
+                            <a class="btn btn-mi-cuenta" href="mi-perfil.php" role="button"><i class="far fa-user-circle"></i>Mi perfil</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="#" role="button"><i class="far fa-handshake"></i>Entregas</a>
+                            <a class="btn btn-mi-cuenta" href="entregas.html" role="button"><i class="far fa-handshake"></i>Entregas</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="#" role="button"><i class="fas fa-history"></i>Historial</a>
+                            <a class="btn btn-mi-cuenta" href="historial.html" role="button"><i class="fas fa-history"></i>Historial</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="#" role="button"><i class="fas fa-credit-card"></i>Pagos</a>
+                            <a class="btn btn-mi-cuenta" href="metodos-de-pago.html" role="button"><i class="fas fa-credit-card"></i>Pagos</a>
                             </li>
                             <li>
                             <a class="btn btn-mi-cuenta" href="iniciar-sesion.html" role="button"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a>
