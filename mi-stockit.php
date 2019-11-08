@@ -69,7 +69,7 @@ $key=$_SESSION["token"];
                     <div class="row">
                         <div class="col-lg-3 col-md-5 col-sm-5">
                             <div class="header-logo">
-                                <a href="index.html">
+                                <a href="index.php">
                                     <img src="images/logo-stockit.png" alt="Stockit Logo">
                                 </a>
                             </div>
@@ -593,98 +593,7 @@ $key=$_SESSION["token"];
 
         <section class="sec-mi-stockit">
             <div class="container">
-                <div class="row">
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/proyector.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
-                                <p class="p2">Proyector Epson S39</p>
-                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                <p class="p4">$ 399.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/asador.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
-                                <p class="p2">Asador Circular</p>
-                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                <p class="p4">$ 199.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/escalera.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
-                                <p class="p2">Escalera 3.5 metros</p>
-                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                <p class="p4">$ 299.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/proyector.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
-                                <p class="p2">Proyector Epson S39</p>
-                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                <p class="p4">$ 399.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/asador.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
-                                <p class="p2">Asador Circular</p>
-                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                <p class="p4">$ 199.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/escalera.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>
-                                <p class="p2">Escalera 3.5 metros</p>
-                                <p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
-                                <p class="p4">$ 299.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="row" id="mi-stockit-productos">
 
                
                 </div>
@@ -783,9 +692,85 @@ $key=$_SESSION["token"];
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
-    <!--Custom scripts-->
-    <script>
+       <!--Custom scripts-->
+       <script>
         var keyt = "<?php echo $key; ?>";
     </script>
+
+<script>
+  var productos = "";
+  $( document ).ready(function() {
+    
+            inicial();
+            
+        });
+
+        async function inicial(){
+            await $.ajax({
+                url: "http://138.68.241.20/api/publication/myStockit",
+                method: "POST",
+                dataType: "json",
+                data: "",
+                    beforeSend: function (xhr) {
+                        /* Authorization header */
+                        xhr.setRequestHeader("Authorization", keyt);
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        data.publications.forEach(function(item) {
+                var detalle =  detallesdos(item._id);
+                detalle.then(function(value){
+                    console.log(value);     
+                });
+                console.log("Despues de value");
+                       
+                var html = 
+                            '<div class="col-md-4">'+
+                                    '<div class="thumbnail">'+
+                                        '<div class="d-img-thumbnail">'+
+                                            '<img src="http://138.68.241.20/api/image/'+data.publication.images[0]+'" alt="Slide11">'+
+                                    '</div>'+
+                                        '<div class="info-item-slide">'+
+                                            '<p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>'+
+                                            '<p class="p2">'+item.name+'</p>'+
+                                            '<p class="p3">'+data.publication.description+'</p>'+
+                                            '<p class="p4">$'+item.price+'.<sup>00 / día</sup></p>'+
+                                            '<a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+                            productos+=html;
+                      console.log(item);
+                    });
+                    $( "#mi-stockit-productos" ).append( productos );
+                      
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+      async function detallesdos(id){
+       var ajaxdatos; 
+            await $.ajax({
+                url: "http://138.68.241.20/api/publication/show/"+id,
+                method: "GET",
+                dataType: "json",
+                data: "",
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", keyt);
+                    }, 
+                    success: function (data) {    
+                        ajaxdatos = data.publication;
+
+                                }
+                        });
+                        return ajaxdatos;
+                
+            }
+</script>
+
+ 
 
 </body></html>

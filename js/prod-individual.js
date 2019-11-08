@@ -1,7 +1,6 @@
 var productos = "";
 
 $( document ).ready(function() {
-    var idres = localStorage.getItem("id");
     $.ajax({
         url: "http://138.68.241.20/api/publication/show/"+idProductoJs,
         method: "GET",

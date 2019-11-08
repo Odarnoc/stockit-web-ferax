@@ -67,19 +67,22 @@ $key=$_SESSION["token"];
 
                         <ul class="ul-mi-cuenta">
                             <li>
-                            <a class="btn btn-mi-cuenta" href="mi-perfil.php" role="button"><i class="far fa-user-circle"></i>Mi perfil</a>
+                            <a class="btn btn-mi-cuenta" href="mi-perfil.php" role="button"><i class="far fa-user-circle"></i>Mi Perfil</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="entregas.html" role="button"><i class="far fa-handshake"></i>Entregas</a>
+                            <a class="btn btn-mi-cuenta" href="mi-stockit.php" role="button"><i class="far fa-user-circle"></i>Mi Stockit</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="historial.html" role="button"><i class="fas fa-history"></i>Historial</a>
+                            <a class="btn btn-mi-cuenta" href="entregas.php" role="button"><i class="far fa-handshake"></i>Entregas</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="metodos-de-pago.html" role="button"><i class="fas fa-credit-card"></i>Pagos</a>
+                            <a class="btn btn-mi-cuenta" href="historial.php" role="button"><i class="fas fa-history"></i>Historial</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="iniciar-sesion.html" role="button"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+                            <a class="btn btn-mi-cuenta" href="metodos-de-pago.php" role="button"><i class="fas fa-credit-card"></i>Pagos</a>
+                            </li>
+                            <li>
+                            <a class="btn btn-mi-cuenta" href="iniciar-sesion.php" role="button"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
                             </li>
                         </ul>
 
