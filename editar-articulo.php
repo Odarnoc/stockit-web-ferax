@@ -4,6 +4,11 @@ if(!isset($_SESSION["token"])){
     header("Location: iniciar-sesion.php");
 }
 $key=$_SESSION["token"];
+$id = null;
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}
 
 ?>
 <!doctype html>
@@ -49,6 +54,7 @@ $key=$_SESSION["token"];
                 };
 
                 reader.readAsDataURL(input.files[0]);
+                imageChange = true;
             }
         }
     </script>
@@ -78,46 +84,60 @@ $key=$_SESSION["token"];
 
                     <div class="d-mi-cuenta d-nuevo-articulo">
 
-                        <form class="form-nuevo-articulo">
+                    <form class="form-nuevo-articulo" id="sub">
 
-                            <div class="form-group">
-                                <div class="image-upload overlay-image-upload" style="background-image: url(images/bg-electronica.jpg);">
-                                    <label class="file-input-active" for="file-input">
-                                        <i class="fas fa-plus"></i> Subir foto
-                                    </label>
-                                    <input id="file-input" type="file" onchange="readURL(this);" />
+            <div class="form-group">
+                <label for="" style="font-size:1rem;">Puedes seleccionar hasta 6 imagenes. La imagen de muestra será la principal.</label>
+                <div class="image-upload" style="background-image: url(images/bg-image-upload.jpg);">
+                    <label for="file-input">
+                        <i class="fas fa-plus"></i> Subir foto
+                    </label>
+                    <input id="file-input" type="file" onchange="readURL(this);" name="Images" multiple/>
 
-                                </div>
+                </div>
+            </div>
+                <div class="form-group">
+                    <select class="form-control input-form" style="height:50px;" name="category" id="category" required>
+                        <option hidden value="" selected="selected">Categoria</option>
+                        <option value="1">Accesorios</option>
+                        <option value="2">Camping</option>
+                        <option value="3">Cocina</option>
+                        <option value="4">Deportes</option>
+                        <option value="5">Familiar</option>
+                        <option value="6">Fiesta</option>
+                        <option value="7">Gamers</option>
+                        <option value="8">Herramientas</option>
+                        <option value="9">Hogar</option>
+                        <option value="10">Juegos</option>
+                        <option value="11">Libros</option>
+                        <option value="12">Outdoors</option>
+                        <option value="13">Probar</option>
+                        <option value="14">Viajes</option>
+                    </select>
+                </div>
+            <div class="form-group">
+                <label class="label-form">Nombre</label>
+                <input type="text" class="form-control input-form" name="name" id="name" required>
+            </div>
 
-                                <div class="d-editar-articulo">
-                                    <p><a class="btn btn-editar-perfil" href="#" role="button">Editar artículo</a></p>
-                                </div>
+            <div class="form-group">
+                <label class="label-form">Descripción</label>
+                <textarea class="form-control input-form" rows="2" name="description" id="description" required></textarea>
+            </div>
 
-                            </div>
+            <div class="form-group">
+                <label class="label-form">Dirección</label>
+                <input type="text" class="form-control input-form" name="location" id="location" required>
+            </div>
 
-                            <div class="form-group">
-                                <label class="label-form">Nombre</label>
-                                <input type="text" class="form-control input-form" value="Dron DJI Phantom 4" required readonly>
-                            </div>
+            <div class="form-group">
+                <label class="label-form">Precio por día</label>
+                <input type="number" class="form-control input-form" name="price" id="price" required>
+            </div>
 
-                            <div class="form-group">
-                                <label class="label-form">Descripción</label>
-                                <textarea style="padding-top: 10px;" class="form-control input-form" rows="3" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quis neque iure laborum sunt quisquam iusto praesentium architecto.</textarea>
-                            </div>
+            <input type="button" class="btn btn-form-green" onclick="editar()" value="Guardar">
 
-                            <div class="form-group">
-                                <label class="label-form">Dirección</label>
-                                <input type="text" class="form-control input-form" value="Mesa Vista 0357. Chapala, Jalisco." required readonly>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="label-form">Precio por día</label>
-                                <input type="number" class="form-control input-form" value="399.00" required readonly>
-                            </div>
-
-                            <a class="btn btn-form-green" href="mi-perfil-verificado.html" role="button">Guardar</a>
-
-                        </form>
+            </form>
 
 
                     </div>
@@ -191,4 +211,18 @@ $key=$_SESSION["token"];
             interval: 5000
         });
     </script>
+    <script>
+        let imageChange = false;
+        let idImagesToRemove = [];
+        let id = "<?php echo $id; ?>";
+        $(document).ready(function() {
+            if(id !== ""){
+                getPublication(id);
+            }
+        });
+    </script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/validador.js"></script>
+    <script src="js/editar-articulo.js"></script>
+    
 </body></html>
