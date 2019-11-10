@@ -1,4 +1,4 @@
-    <nav class="mainmenu-area" data-spy="affix" data-offset-top="200">
+    <nav id="nav-out-header" class="mainmenu-area" data-spy="affix" data-offset-top="0">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
