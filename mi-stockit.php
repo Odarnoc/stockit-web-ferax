@@ -595,6 +595,19 @@ $key=$_SESSION["token"];
             <div class="container">
                 <div class="row" id="mi-stockit-productos">
 
+                    <div class="col-md-4">
+                        <a href="nuevo-articulo.php">
+                            <div class="thumbnail">
+                                <div class="info-item-slide">
+                                <center>
+                                    <p class="p2"><i class="fas fa-plus"></i></p>
+                                    <p class="p2">Agregar producto</p>
+                                </center>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
                
                 </div>
             </div>
@@ -705,8 +718,8 @@ $key=$_SESSION["token"];
             
         });
 
-        async function inicial(){
-            await $.ajax({
+        function inicial(){
+            $.ajax({
                 url: "http://138.68.241.20/api/publication/myStockit",
                 method: "POST",
                 dataType: "json",
@@ -718,24 +731,18 @@ $key=$_SESSION["token"];
                     success: function (data) {
                         console.log(data);
                         data.publications.forEach(function(item) {
-                var detalle =  detallesdos(item._id);
-                detalle.then(function(value){
-                    console.log(value);     
-                });
-                console.log("Despues de value");
+                        console.log("Despues de value");
                        
                 var html = 
                             '<div class="col-md-4">'+
                                     '<div class="thumbnail">'+
                                         '<div class="d-img-thumbnail">'+
-                                            '<img src="http://138.68.241.20/api/image/'+data.publication.images[0]+'" alt="Slide11">'+
+                                            '<img src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="Slide11">'+
                                     '</div>'+
                                         '<div class="info-item-slide">'+
-                                            '<p class="p1"><i class="fas fa-map-marker-alt"></i> Chapala, Jalisco</p>'+
                                             '<p class="p2">'+item.name+'</p>'+
-                                            '<p class="p3">'+data.publication.description+'</p>'+
                                             '<p class="p4">$'+item.price+'.<sup>00 / día</sup></p>'+
-                                            '<a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>'+
+                                            '<a class="btn btn-slide-productos" href="editar-articulo.php?id='+item._id+'" role="button">Editar producto <i class="fas fa-chevron-right"></i></a>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>';
@@ -750,25 +757,6 @@ $key=$_SESSION["token"];
                 }
             });
         }
-
-      async function detallesdos(id){
-       var ajaxdatos; 
-            await $.ajax({
-                url: "http://138.68.241.20/api/publication/show/"+id,
-                method: "GET",
-                dataType: "json",
-                data: "",
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("Authorization", keyt);
-                    }, 
-                    success: function (data) {    
-                        ajaxdatos = data.publication;
-
-                                }
-                        });
-                        return ajaxdatos;
-                
-            }
 </script>
 
  
