@@ -59,95 +59,22 @@ $key=$_SESSION["token"];
                 <div class="col-md-8">
 
                     <div class="d-metodos-pago">
-                        <div class="row row-tarjetas-perfil">
+                        <div class="row row-tarjetas-perfil" id="lista-tarjeta">
                             <div class="col-md-6">
                                 <div class="d-item-tarjeta-nueva">
                                     <i class="fas fa-plus"></i>
-                                    <p class="t1"><a href="">Nueva tarjeta</a></p>
+                                    <p class="t1"><a href="agregar-tarjeta.php">Nueva tarjeta</a></p>
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="d-item-tarjeta">
-                                    <div class="row">
-                                        <div class="col-md-6 col-xs-6 d-img-card">
-                                            <img src="images/logo-visa.png" alt="">
-                                        </div>
-                                        <div class="col-md-6 col-6 d-number-card">
-                                            <p class="t1">****4169</p>
-                                        </div>
-                                    </div>
 
-                                    <div class="d-name-card">
-                                        <p class="t1">Brayam Omar Morando Pérez</p>
-                                        <p class="t2">Vence el 03/2023</p>
-                                    </div>
-
-                                    <div class="d-btn-card">
-                                        <a class="btn btn-card" href="#" role="button">Eliminar tarjeta</a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="d-item-tarjeta">
-                                    <div class="row">
-                                        <div class="col-md-6 col-xs-6 d-img-card">
-                                            <img src="images/logo-visa.png" alt="">
-                                        </div>
-                                        <div class="col-md-6 col-6 d-number-card">
-                                            <p class="t1">****9606</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-name-card">
-                                        <p class="t1">Brayam Omar Morando Pérez</p>
-                                        <p class="t2">Vence el 01/2021</p>
-                                    </div>
-
-                                    <div class="d-btn-card">
-                                        <a class="btn btn-card" href="#" role="button">Eliminar tarjeta</a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="d-item-tarjeta">
-                                    <div class="row">
-                                        <div class="col-md-6 col-xs-6 d-img-card">
-                                            <img src="images/logo-master-card.png" alt="">
-                                        </div>
-                                        <div class="col-md-6 col-6 d-number-card">
-                                            <p class="t1">****0357</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-name-card">
-                                        <p class="t1">Brayam Omar Morando Pérez</p>
-                                        <p class="t2">Vence el 08/2022</p>
-                                    </div>
-
-                                    <div class="d-btn-card">
-                                        <a class="btn btn-card" href="#" role="button">Eliminar tarjeta</a>
-                                    </div>
-
-                                </div>
-                            </div>
 
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="col-md-2"></div>
-
             </div>
-
         </div>
-
     </section>
 
 
@@ -212,4 +139,6 @@ $key=$_SESSION["token"];
             interval: 5000
         });
     </script>
+
+    <script src="js/list-card.js"></script>
 </body></html>

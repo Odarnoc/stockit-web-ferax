@@ -42,6 +42,7 @@ $key=$_SESSION["token"];
     <!-- Nice Select -->
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
 
+
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
     <!--
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
