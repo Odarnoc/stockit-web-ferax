@@ -73,6 +73,10 @@ $key=$_SESSION["token"];
                             <a class="btn btn-mi-cuenta" href="mi-stockit.php" role="button"><i class="far fa-user-circle"></i>Mi Stockit</a>
                             </li>
                             <li>
+                            <a class="btn btn-mi-cuenta" href="favoritos.php" role="button"><i class="fas fa-history"></i>Favoritos</a>
+                            </li>
+                            <li>
+                            <li>
                             <a class="btn btn-mi-cuenta" href="entregas.php" role="button"><i class="far fa-handshake"></i>Entregas</a>
                             </li>
                             <li>

@@ -11,14 +11,9 @@
             <div class="collapse navbar-collapse" id="primary_menu">
                 <ul class="nav navbar-nav mainmenu">
                     <li class="active"><a href="index.php#home_page">Inicio</a></li>
-                    <li><a href="index.php#sec-categorias">Categorias</a></li>
                     <li><a href="lista-productos.php">Productos</a></li>
-                    <li><a href="mi-stockit.php">Mi stockit</a></li>
-                    <li><a href="favoritos.php">Mis favoritos</a></li>
                     <li><a href="interesados.php">Interesados</a></li>
                     <li><a href="index.php#sec-slider-productos">Populares</a></li>
-                    <li><a href="index.php#sec-testimonios">Testimonios</a></li>
-                    <li><a href="index.php#sec-contacto">Contacto</a></li>
                     <li><a href="mi-cuenta.php">Mi Cuenta </a></li>
                     <li><a onclick="logout()">Cerrar sesión</a></li>
                 </ul>

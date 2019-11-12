@@ -592,94 +592,9 @@ $key=$_SESSION["token"];
 
         <section class="sec-mi-stockit">
             <div class="container">
-                <div class="row">
+                <div class="row" id="favorito">
 
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/proyector.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <span class="badge badge-success"><i class="fas fa-heart"></i>Favorito</span>
-                                <p class="p2">Proyector Epson S39</p>
-                                <p class="p4">$ 399.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/asador.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <span class="badge badge-success"><i class="fas fa-heart"></i>Favorito</span>
-                                <p class="p2">Asador Circular</p>
-                                <p class="p4">$ 199.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/escalera.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <span class="badge badge-success"><i class="fas fa-heart"></i>Favorito</span>
-                                <p class="p2">Escalera 3.5 metros</p>
-
-                                <p class="p4">$ 299.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/proyector.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <span class="badge badge-success"><i class="fas fa-heart"></i>Favorito</span>
-                                <p class="p2">Proyector Epson S39</p>
-                                <p class="p4">$ 399.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/asador.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <span class="badge badge-success"><i class="fas fa-heart"></i>Favorito</span>
-                                <p class="p2">Asador Circular</p>
-                                <p class="p4">$ 199.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/escalera.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-slide">
-                                <span class="badge badge-success"><i class="fas fa-heart"></i>Favorito</span>
-                                <p class="p2">Escalera 3.5 metros</p>
-
-                                <p class="p4">$ 299.<sup>00 / día</sup></p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
+                  
 
                 </div>
             </div>
@@ -768,6 +683,7 @@ $key=$_SESSION["token"];
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
 
+
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
 <script src="assets/js/vendor/vendor.min.js"></script>
@@ -781,5 +697,7 @@ $key=$_SESSION["token"];
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
+
+    <script src="js/favoritos.js"></script>
 
 </body></html>
