@@ -61,10 +61,12 @@ $key=$_SESSION["token"];
                     <div class="d-metodos-pago">
                         <div class="row row-tarjetas-perfil" id="lista-tarjeta">
                             <div class="col-md-6">
-                                <div class="d-item-tarjeta-nueva">
-                                    <i class="fas fa-plus"></i>
-                                    <p class="t1"><a href="agregar-tarjeta.php">Nueva tarjeta</a></p>
-                                </div>
+                                <a href="agregar-tarjeta.php">
+                                    <div class="d-item-tarjeta-nueva">
+                                        <i class="fas fa-plus"></i>
+                                        <p class="t1">Nueva tarjeta</p>
+                                    </div>
+                                </a>
                             </div>
 
 

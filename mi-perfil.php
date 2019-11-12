@@ -85,7 +85,7 @@ if(!isset($key)){
                             <a class="btn btn-form-green" href="mi-cuenta-php" role="button">Guardar</a>
                         </form>
 
-                        <p id="noval"  class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Perfil no verificado <a href="verificar-perfil.html">Verificar perfil</a></p>
+                        <p id="noval"  class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Perfil no verificado <a href="verificar-perfil.php">Verificar perfil</a></p>
                         <p id="val" class="p-perfil-verificado"><i class="fas fa-check-circle"></i> Perfil verificado</p>
 
                     </div>
