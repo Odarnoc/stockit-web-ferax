@@ -16,6 +16,53 @@ $( document ).ready(function() {
             
             console.log("Datos")
             console.log(data);
+            switch (parseInt(data.publication.category)) {
+                case 1:
+                    category= "Accesorios";
+                    break;
+                case 2:
+                    category= "Camping";
+                    break;
+                case 3:
+                    category= "Cocina";
+                    break;
+                case 4:
+                    category= "Deportes";
+                    break;
+                case 5:
+                    category= "Familiar";
+                    break;
+                case 6:
+                    category= "Fiesta";
+                    break;
+                case 7:
+                    category= "Gamers";
+                    break;
+                case 8:
+                    category= "Herramientas";
+                    break;
+                case 9:
+                    category= "Hogar";
+                    break;
+                case 10:
+                    category= "Juegos";
+                    break;
+                case 11:
+                    category= "Libros";
+                    break;
+                case 12:
+                    category= "Outdoors";
+                    break;
+                case 13:
+                    category= "Probar";
+                    break;
+                case 14:
+                    category= "Viajes";
+                    break;
+                default:
+                    category= "NA";
+                    break;
+              }
           
         var html = 
                            '<div class="row" >'+
@@ -39,7 +86,7 @@ $( document ).ready(function() {
 
                                         '<div class="d-info-pro-ind">'+
 
-                                            '<p class="t1">'+data.publication.category+'</p>'+
+                                            '<p class="t1">'+category+'</p>'+
                                             '<p class="t2">'+data.publication.name+'</p>'+
                                             '<p class="t3">'+data.publication.description+'</p>'+
 

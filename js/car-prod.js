@@ -13,16 +13,65 @@ $( document ).ready(function() {
             console.log(data);
              
             data.publications.forEach(function(item) {
+
+                var category = "Na";
+
+                switch (parseInt(item.category)) {
+                    case 1:
+                        category= "Accesorios";
+                        break;
+                    case 2:
+                        category= "Camping";
+                        break;
+                    case 3:
+                        category= "Cocina";
+                        break;
+                    case 4:
+                        category= "Deportes";
+                        break;
+                    case 5:
+                        category= "Familiar";
+                        break;
+                    case 6:
+                        category= "Fiesta";
+                        break;
+                    case 7:
+                        category= "Gamers";
+                        break;
+                    case 8:
+                        category= "Herramientas";
+                        break;
+                    case 9:
+                        category= "Hogar";
+                        break;
+                    case 10:
+                        category= "Juegos";
+                        break;
+                    case 11:
+                        category= "Libros";
+                        break;
+                    case 12:
+                        category= "Outdoors";
+                        break;
+                    case 13:
+                        category= "Probar";
+                        break;
+                    case 14:
+                        category= "Viajes";
+                        break;
+                    default:
+                        category= "NA";
+                        break;
+                  }
     
 
         var plantillaProductos=    
                                     '<div class="item" >'+
                                         '<div class="thumbnail">'+
-                                            '<img src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="Slide11" >'+
+                                            '<a href="producto-individual.php?id='+item._id+'"><img src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="Slide11" ></a>'+
                                             '<div class="info-item-slide">'+
-                                                '<p class="p1">'+item.category+'</p>'+
+                                                '<p class="p1">'+category+'</p>'+
                                                 '<p class="p2">'+item.name+'</p>'+
-                                                '<p class="p3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>'+
                                                 '<p class="p4">$'+item.price+'.<sup>00</sup></p>'+
                                                 '<a class="btn btn-slide-productos" href="producto-individual.php?id='+item._id+'" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>'+
                                             '</div>'+

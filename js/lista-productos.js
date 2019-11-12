@@ -16,12 +16,12 @@ var productos = "";
                                 '<div class="slide-item">'+
                                     '<div class="single-product">'+
                                         '<div class="product-img">'+
-                                            '<a href="#0">'+
+                                            '<a href="producto-individual.php?id='+item._id+'">'+
                                                 '<img class="primary-img" src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="">'+
                                             '</a>'+
                                             '<div class="add-actions">'+
                                                 '<ul>'+
-                                                    '<li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Ver producto"><i class="ion-ios-search"></i></a>'+
+                                                    '<li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="producto-individual.php?id='+item._id+'" data-toggle="tooltip" data-placement="top" title="Ver producto"><i class="ion-ios-search"></i></a>'+
                                                     '</li>'+
                                                     '<li><a href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Agregar a favoritos"><i class="ion-ios-heart-outline"></i></a>'+
                                                     '</li>'+
@@ -33,7 +33,6 @@ var productos = "";
                                         '<div class="product-content">'+
                                             '<div class="product-desc_info">'+
                                                 '<p class="name-product">'+item.name+'</p>'+
-                                                '<p class="product-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>'+
                                                 '<div class="price-box">'+
                                                     '<span class="new-price">$'+item.price+'</span>'+
                                                 '</div>'+
@@ -94,6 +93,7 @@ var productos = "";
                             productos+=html;
                       console.log(item);
                     });
+                    $("#cant_prods").text(data.total);
                     $( "#lista-productos" ).append( productos );
                 },
                 error: function (error) {
