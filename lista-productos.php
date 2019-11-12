@@ -591,54 +591,6 @@ $key=$_SESSION["token"];
                 <div class="row">
                     <div class="col-lg-3 order-2 order-lg-1">
                         <div class="torress-sidebar-catagories_area">
-                            <div class="torress-sidebar_categories d-filtar-precio">
-                                <div class="torress-categories_title first-child ">
-                                    <h5>Filtrar por precio</h5>
-                                </div>
-                                <div class="price-filter">
-                                    <div id="slider-range"></div>
-                                    <div class="price-slider-amount">
-                                        <div class="label-input">
-                                            <label>Precio : </label>
-                                            <input type="text" id="amount" name="price" placeholder="Ingresar precio" />
-                                            <br>
-                                            <button class="filter-btn">Filtrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="torress-sidebar_categories category-module">
-                                <div class="torress-categories_title">
-                                    <h5>Ubicación</h5>
-                                </div>
-                                <div class="sidebar-categories_menu">
-                                    <ul>
-                                        <li class="has-sub"><a href="javascript:void(0)">Estado <i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item estado</a></li>
-                                                <li><a href="#0">Item estado</a></li>
-                                                <li><a href="#0">Item estado</a></li>
-                                                <li><a href="#0">Item estado</a></li>
-                                                <li><a href="#0">Item estado</a></li>
-                                                <li><a href="#0">Item estado</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub"><a href="javascript:void(0)">Municipio<i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item municipio</a></li>
-                                                <li><a href="#0">Item municipio</a></li>
-                                                <li><a href="#0">Item municipio</a></li>
-                                                <li><a href="#0">Item municipio</a></li>
-                                                <li><a href="#0">Item municipio</a></li>
-                                                <li><a href="#0">Item municipio</a></li>
-                                            </ul>
-                                        </li>
-
-
-                                        <li style="display: none"><a href="javascript:void(0)">Sin categoria</a></li>
-                                    </ul>
-                                </div>
-                            </div>
 
                             <div class="torress-sidebar_categories category-module">
                                 <div class="torress-categories_title">
@@ -722,28 +674,6 @@ $key=$_SESSION["token"];
                                 </div>
                             </div>
 
-                            <div class="torress-sidebar_categories">
-                                <div class="torress-categories_title">
-                                    <h5>Marca</h5>
-                                </div>
-                                <ul class="sidebar-checkbox_list">
-                                    <li>
-                                        <a href="javascript:void(0)">Item marca</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Item marca</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Item marca</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Item marca</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">Item marca</a>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="torress-sidebar_categories torress-banner_area sidebar-banner_area">
                                 <div class="img-hover_effect">
                                     <div class="banner-img">
@@ -762,38 +692,12 @@ $key=$_SESSION["token"];
                                 <a class="list" data-target="listview" data-toggle="tooltip" data-placement="top" title="List View"><i class="fa fa-th-list"></i></a>
                             </div>
                             <div class="product-page_count">
-                                <p>Mostrando 1–9 de 40 resultados</p>
-                            </div>
-                            <div class="product-item-selection_area">
-                                <div class="product-short">
-                                    <label class="select-label">Filtrar por:</label>
-                                    <select class="nice-select">
-                                        <option value="1">Relevancia</option>
-                                        <option value="1">Recientes</option>
-                                        <option value="3">Nombre</option>
-                                        <option value="2">Menor precio</option>
-                                        <option value="2">Mayor precio</option>
-                                    </select>
-                                </div>
+                                <p>Mostrando <span id="cant_prods"></span> resultados</p>
                             </div>
                         </div>
 
                         <div class="shop-product-wrap grid gridview-3 row" id="lista-productos">
 
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="torress-paginatoin-area">
-                                    <ul class="torress-pagination-box">
-                                        <li class="active"><a href="javascript:void(0)">1</a></li>
-                                        <li><a href="javascript:void(0)">2</a></li>
-                                        <li><a href="javascript:void(0)">3</a></li>
-                                        <li><a href="javascript:void(0)">4</a></li>
-                                        <li><a href="javascript:void(0)">5</a></li>
-                                        <li><a class="Next" href="javascript:void(0)">Next</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

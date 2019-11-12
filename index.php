@@ -62,19 +62,7 @@ $key=$_SESSION["token"];
                         <form class="form-header">
 
                             <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <select class="form-control select-header" id="select-lugar">
-                                        <option hidden>Lugar</option>
-                                        <option>Guadalajara</option>
-                                        <option>Ciudad de México</option>
-                                        <option>Aguascalientes</option>
-                                        <option>Puebla</option>
-                                        <option>Toluca</option>
-                                        <option>León</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-8">
                                     <select class="form-control select-header" id="select-categorias">
                                         <option hidden>Categoria</option>
                                         <option>Electrónica</option>
@@ -87,7 +75,7 @@ $key=$_SESSION["token"];
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <a class="btn btn-search-header" href="lista-productos.html" role="button">Buscar</a>
+                                    <a class="btn btn-search-header" href="lista-productos.php" role="button">Buscar</a>
                                 </div>
                             </div>
                         </form>
@@ -100,7 +88,7 @@ $key=$_SESSION["token"];
     <!-- Home-Area-End -->
 
     <!-- Categorias-Area -->
-    <section class="section-padding" id="sec-categorias">
+    <!-- <section class="section-padding" id="sec-categorias">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -168,7 +156,7 @@ $key=$_SESSION["token"];
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <!-- Ultimos Productos -->
@@ -202,7 +190,7 @@ $key=$_SESSION["token"];
     </section>
 
     <!-- Testimonios -->
-    <section class="section-padding" id="sec-testimonios">
+    <!-- <section class="section-padding" id="sec-testimonios">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -241,11 +229,11 @@ $key=$_SESSION["token"];
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <!-- Contacto -->
-    <section class="section-padding" id="sec-contacto">
+    <!-- <section class="section-padding" id="sec-contacto">
         <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -280,7 +268,7 @@ $key=$_SESSION["token"];
           
 
         </div>
-    </section>
+    </section> -->
 
 
 
