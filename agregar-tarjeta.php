@@ -95,7 +95,7 @@ $key=$_SESSION["token"];
 
                         <div class="row row-btns-revisar">
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-regresar" href="producto-individual.html" role="button"><i
+                                <a class="btn btn-regresar" href="producto-individual.php" role="button"><i
                                         class="fas fa-chevron-left"></i> Regresar</a>
                             </div>
                             <div class="col-md-6 col-xs-6">

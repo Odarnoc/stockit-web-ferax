@@ -34,6 +34,7 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/carousel.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -47,6 +48,7 @@ $key=$_SESSION["token"];
     <?php include("menus/menu_logged_in.php"); ?>
 
     <!-- MainMenu-Area-End -->
+
     <!-- Home-Area -->
     <header class="home-area overlay" id="home_page">
         <div class="container">

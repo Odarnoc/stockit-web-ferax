@@ -42,6 +42,7 @@ if(isset($_GET['id'])){
     <![endif]-->
 
 
+
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -63,17 +64,12 @@ if(isset($_GET['id'])){
 
 <body>
 
-    <section class="sec-mi-cuenta">
-        <div class="container">
-            <div class="col-lg-6 col-md-6 col-xs-6">
-                <a href="lista-productos.html"><img class="img-logo-nav" src="images/logo-stockit.png" alt=""></a>
-            </div>
-            <div class="col-lg-6 col-md-6 col-xs-6">
-                <p class="p-mi-cuenta">Editar artículo</p>
-            </div>
-        </div>
-    </section>
 
+ <!-- MainMenu-Area -->
+
+ <?php include("menus/menu_logged_in.php"); ?>
+
+<!-- MainMenu-Area-End -->
 
     <section class="sec-gray">
 
@@ -154,36 +150,7 @@ if(isset($_GET['id'])){
 
 
     <!-- Footer -->
-    <footer id="footer-home">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-left">
-                        <img src="images/logo-stockit.png" alt="">
-                        <p class="p1">© Todos los derechos son reservados</p>
-                    </div>
-
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-center">
-
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-right">
-                        <p class="p1">
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a></p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </footer>
+    <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
 
 
