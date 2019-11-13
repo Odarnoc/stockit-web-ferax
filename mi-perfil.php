@@ -60,29 +60,32 @@ if(!isset($key)){
 
                     <div class="d-mi-cuenta d-mi-perfil">
 
-                        <div class="d-foto-perfil">
-                            <a href="#"><img src="images/profile-brayam-morando.png" alt=""></a>
-                            <p><a class="btn btn-editar-perfil" href="#" role="button">Editar perfil</a></p>
-                        </div>
+                        <form class="form-mi-perfil" id="miperfil">
 
-                        <form class="form-mi-perfil">
+                        <div class="image-upload" style="background-image: url(images/bg-image-upload.jpg);">
+                            <label for="file-input">
+                                <i class="fas fa-plus"></i> Subir foto
+                            </label>
+                                 <input id="file-input" type="file" onchange="readURL(this);" name="Image" />
+                         </div>
 
                             <div class="form-group">
                                 <label class="label-form">Nombre de usuario</label>
-                                <input type="text" id="name" class="form-control input-form"  required readonly>
+                                <input type="text" name="fullname" id="name" class="form-control input-form"  required >
                             </div>
 
                             <div class="form-group">
                                 <label class="label-form">Correo electrónico</label>
-                                <input type="email" id="email" class="form-control input-form" aria-describedby="emailHelp"  required readonly>
+                                <input type="email" name="email" id="email" class="form-control input-form" aria-describedby="emailHelp"  required readonly>
                             </div>
 
                             <div class="form-group">
                                 <label class="label-form">Teléfono</label>
-                                <input type="tel" id="tele" class="form-control input-form"  required readonly>
+                                <input type="tel" name="phone" id="tele" class="form-control input-form"  required >
 
                             </div>
-                            <a class="btn btn-form-green" href="mi-cuenta-php" role="button">Guardar</a>
+                            
+                            <button class="btn btn-form-green" onclick="update()" type="button">Guardar</button>
                         </form>
 
                         <p id="noval"  class="p-verificar-perfil"><i class="fas fa-info-circle"></i> Perfil no verificado <a href="verificar-perfil.php">Verificar perfil</a></p>
@@ -166,4 +169,21 @@ if(!isset($key)){
             interval: 5000
         });
     </script>
+
+    <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('.image-upload').attr("style", "background-image: url(" + e.target.result + ");");
+                        $('.image-upload').addClass('overlay-image-upload');
+                        $('.image-upload label').css('color', 'rgba(255,255,255,1)');
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                    imageChange = true;
+                }
+            }
+        </script>
 </body></html>

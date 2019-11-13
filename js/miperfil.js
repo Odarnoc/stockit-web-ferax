@@ -1,3 +1,5 @@
+var userdata = {};
+
 $( document ).ready(function() {
     $.ajax({
         url: "http://138.68.241.20/api/user/show",
@@ -8,8 +10,11 @@ $( document ).ready(function() {
             /* Authorization header */
             xhr.setRequestHeader("Authorization", keyt) },
         success: function (data) {
+            $('.image-upload').attr("style", "background-image: url(http://138.68.241.20/api/image/" + data.user.image + ");");
+            $('.image-upload').addClass('overlay-image-upload');
+            $('.image-upload label').css('color', 'rgba(255,255,255,1)');
             console.log(data);
-
+            userdata=data.user;
             $("#name").val(data.user.fullname);
             $("#email").val(data.user.email);
             $("#tele").val(data.user.phone);
@@ -25,7 +30,46 @@ $( document ).ready(function() {
         error: function (error) {
             console.log(error);
         }
-    });
-    
-    
+    }); 
 });
+
+function update(){
+    
+    var form = $('#miperfil')[0];
+    var formData = new FormData(form);
+    $.ajax({
+        url: `http://138.68.241.20/api/user/update`,
+        method: "PUT",
+        data: formData,
+        contentType: false,
+        processData: false,
+        beforeSend: function (xhr) {
+            /* Authorization header  */
+            xhr.setRequestHeader("Authorization", keyt);
+        },
+        success: function (data) {
+            console.log(data);
+            location.href="mi-perfil.php";
+        
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
+    $.ajax({
+        url: "http://138.68.241.20/api/user/update",
+        method: "PUT",
+        dataType: "json",
+        data: userdata,
+        beforeSend: function (xhr) {
+            /* Authorization header */
+            xhr.setRequestHeader("Authorization", keyt) },
+            success: function (data) {
+                console.log(data); 
+            }, 
+            error: function (error) {
+                console.log(error);
+            }
+    });
+}

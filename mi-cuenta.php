@@ -85,7 +85,7 @@ $key=$_SESSION["token"];
                             <a class="btn btn-mi-cuenta" href="metodos-de-pago.php" role="button"><i class="fas fa-credit-card"></i>Pagos</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="iniciar-sesion.php" role="button"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+                            <a class="btn btn-mi-cuenta" href="index.php" role="button"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
                             </li>
                         </ul>
 
