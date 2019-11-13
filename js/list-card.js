@@ -28,7 +28,7 @@ var productos = "";
                                                     '<p class="t2">Vence el '+item.expMonth+'/'+item.expYear+'</p>'+
                                                 '</div>'+
                                                 '<div class="d-btn-card">'+
-                                                    '<a class="btn btn-card" onclick="elimtarjeta()" role="button">Eliminar tarjeta</a>'
+                                                    '<a class="btn btn-card" onclick="elimtarjeta(\''+item._id+'\')" role="button">Eliminar tarjeta</a>'
                                                 '</div>'+
                                         '</div>'+
                                     '</div>';
@@ -47,14 +47,18 @@ var productos = "";
         });
 
     
-        function elimtarjeta(){
+        function elimtarjeta(id){
             $.ajax({
                 type: 'DELETE',
-                url: 'http://138.68.241.20/api/payMethod/delete/5dca2b054367a8522fd3f9a6',
+                url: 'http://138.68.241.20/api/payMethod/delete/'+id,
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    /* Authorization header */
+                    xhr.setRequestHeader("Authorization", keyt);
+                },
                 success: function (response) {
                     console.log(response);
-                    var jsondata = JSON.parse(response);
-                    if(jsondata.mensaje == "ok"){
+                    if(response.message == "publication.erased"){
                         location.href = "metodos-de-pago.php";
                     }
                 },

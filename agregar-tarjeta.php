@@ -32,6 +32,7 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="assets/css/sweetalert2.min.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -61,23 +62,29 @@ $key=$_SESSION["token"];
 
                                 <div class="form-group col-md-6 ">
                                     <label class="label-form">Nombre en la tarjeta</label>
-                                    <input type="text" class="form-control input-form" id="" required>
+                                    <input type="text" class="form-control input-form" id="nombre" required>
                                 </div>
 
                                 <div class="form-group col-md-6 ">
                                     <label class="label-form">Número de tarjeta</label>
-                                    <input type="number" class="form-control input-form" id="" required>
+                                    <input type="number" class="form-control input-form" id="noTarjeta" required>
                                 </div>
 
                                 <div class="form-group col-md-6 ">
-                                    <label class="label-form">Fecha de vencimiento</label>
-                                    <input type="text" class="form-control input-form" id="" placeholder="MM/YY"
+                                    <label class="label-form">Mes de vencimiento</label>
+                                    <input type="text" class="form-control input-form" id="mes" placeholder="MM"
+                                        required>
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="label-form">Año de vencimiento</label>
+                                    <input type="text" class="form-control input-form" id="anio" placeholder="YYYY"
                                         required>
                                 </div>
 
                                 <div class="form-group col-md-6 ">
                                     <label class="label-form">CVV</label>
-                                    <input type="number" class="form-control input-form" id="" required>
+                                    <input type="number" class="form-control input-form" id="cvv" required>
                                 </div>
 
                             </div>
@@ -92,7 +99,7 @@ $key=$_SESSION["token"];
                                         class="fas fa-chevron-left"></i> Regresar</a>
                             </div>
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-confirmar-pago" href="revisar-orden.html" role="button">Continuar</a>
+                                <a class="btn btn-confirmar-pago" onclick="addCard()" role="button">Continuar</a>
                             </div>
 
                         </div>
@@ -129,11 +136,16 @@ $key=$_SESSION["token"];
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
-
+    <!-- swall alert -->
+    <script src="assets/js/sweetalert2.all.min.js"></script>
+    <!-- conekta -->
+    <script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
     <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
+
+    <script src="js/add-card.js"></script>
 
     <script>
         $('#myCarousel').carousel({
