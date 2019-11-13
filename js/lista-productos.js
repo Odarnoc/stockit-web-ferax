@@ -1,4 +1,5 @@
 var productos = "";
+var miId = "";
         $( document ).ready(function() {
             $.ajax({
                 url: "http://138.68.241.20/api/publication/list",
@@ -12,7 +13,6 @@ var productos = "";
                 success: function (data) {
                     console.log(data);
                     data.publications.forEach(function(item) {
-
                 var html = '<div class="col-lg-4 col-md-4 col-sm-6">'+
                                 '<div class="slide-item">'+
                                     '<div class="single-product">'+
@@ -24,7 +24,7 @@ var productos = "";
                                                 '<ul>'+
                                                     '<li class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><a href="producto-individual.php?id='+item._id+'" data-toggle="tooltip" data-placement="top" title="Ver producto"><i class="ion-ios-search"></i></a>'+
                                                     '</li>'+
-                                                    '<li><a href="wishlist.html" data-toggle="tooltip" data-placement="top" title="Agregar a favoritos"><i class="ion-ios-heart-outline"></i></a>'+
+                                                    '<li><a data-toggle="tooltip" onclick="favorito(\''+item._id+'\')" data-placement="top" title="Agregar a favoritos"><i class="far fa-heart"></i></a>'+
                                                     '</li>'+
                                                     '<li><a href="cart.html" data-toggle="tooltip" data-placement="top" title="Agregar al carrito"><i class="ion-bag"></i></a>'+
                                                     '</li>'+
@@ -64,3 +64,20 @@ var productos = "";
             
             
         });
+
+    function favorito(id){
+        $.ajax({
+            url: "http://138.68.241.20/api/publication/checkFavorites/"+id,
+            method: "POST",
+            dataType: "json",
+            data: "",
+            beforeSend: function (xhr) {
+                /* Authorization header */
+                xhr.setRequestHeader("Authorization", keyt);
+            },
+            
+            success: function (message) {
+                console.log(message);
+            }
+        });  
+    }

@@ -208,51 +208,26 @@ $key=$_SESSION["token"];
                                                 <li><span class="megamenu-title">Electrónica</span>
                                                     <ul>
                                                         <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Muebles</span>
                                                     <ul>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
                                                         <li><a href="#0">Item Muebles</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Herramientas</span>
                                                     <ul>
                                                         <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Hogar</span>
                                                     <ul>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
                                                         <li><a href="#0">Item Hogar</a></li>
                                                     </ul>
                                                 </li>
 
                                                 <li><span class="megamenu-title">Foto y Video</span>
                                                     <ul>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
                                                         <li><a href="#0">Item Foto y Video</a></li>
                                                     </ul>
                                                 </li>
@@ -292,51 +267,26 @@ $key=$_SESSION["token"];
                                                 <li><span class="megamenu-title">Electrónica</span>
                                                     <ul>
                                                         <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
-                                                        <li><a href="#0">Item Electrónica</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Muebles</span>
                                                     <ul>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
-                                                        <li><a href="#0">Item Muebles</a></li>
                                                         <li><a href="#0">Item Muebles</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Herramientas</span>
                                                     <ul>
                                                         <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
-                                                        <li><a href="#0">Item Herramientas</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><span class="megamenu-title">Hogar</span>
                                                     <ul>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
-                                                        <li><a href="#0">Item Hogar</a></li>
                                                         <li><a href="#0">Item Hogar</a></li>
                                                     </ul>
                                                 </li>
 
                                                 <li><span class="megamenu-title">Foto y Video</span>
                                                     <ul>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
-                                                        <li><a href="#0">Item Foto y Video</a></li>
                                                         <li><a href="#0">Item Foto y Video</a></li>
                                                     </ul>
                                                 </li>
@@ -602,71 +552,36 @@ $key=$_SESSION["token"];
                                         <li class="has-sub"><a href="javascript:void(0)">Electrónica <i class="ion-chevron-right"></i></a>
                                             <ul>
                                                 <li><a href="#0">Item electrónica</a></li>
-                                                <li><a href="#0">Item electrónica</a></li>
-                                                <li><a href="#0">Item electrónica</a></li>
-                                                <li><a href="#0">Item electrónica</a></li>
-                                                <li><a href="#0">Item electrónica</a></li>
-                                                <li><a href="#0">Item electrónica</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-sub"><a href="javascript:void(0)">Muebles<i class="ion-chevron-right"></i></a>
                                             <ul>
-                                                <li><a href="#0">Item muebles</a></li>
-                                                <li><a href="#0">Item muebles</a></li>
-                                                <li><a href="#0">Item muebles</a></li>
-                                                <li><a href="#0">Item muebles</a></li>
-                                                <li><a href="#0">Item muebles</a></li>
                                                 <li><a href="#0">Item muebles</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-sub"><a href="javascript:void(0)">Herramientas <i class="ion-chevron-right"></i></a>
                                             <ul>
                                                 <li><a href="#0">Item herramientas</a></li>
-                                                <li><a href="#0">Item herramientas</a></li>
-                                                <li><a href="#0">Item herramientas</a></li>
-                                                <li><a href="#0">Item herramientas</a></li>
-                                                <li><a href="#0">Item herramientas</a></li>
-                                                <li><a href="#0">Item herramientas</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-sub"><a href="javascript:void(0)">Hogar<i class="ion-chevron-right"></i></a>
                                             <ul>
-                                                <li><a href="#0">Item hogar</a></li>
-                                                <li><a href="#0">Item hogar</a></li>
-                                                <li><a href="#0">Item hogar</a></li>
-                                                <li><a href="#0">Item hogar</a></li>
-                                                <li><a href="#0">Item hogar</a></li>
                                                 <li><a href="#0">Item hogar</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-sub"><a href="javascript:void(0)">Autos<i class="ion-chevron-right"></i></a>
                                             <ul>
                                                 <li><a href="#0">Item autos</a></li>
-                                                <li><a href="#0">Item autos</a></li>
-                                                <li><a href="#0">Item autos</a></li>
-                                                <li><a href="#0">Item autos</a></li>
-                                                <li><a href="#0">Item autos</a></li>
-                                                <li><a href="#0">Item autos</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-sub"><a href="javascriptEvoid(0)">Foto y Video<i class="ion-chevron-right"></i></a>
                                             <ul>
-                                                <li><a href="#0">Item foto y video</a></li>
-                                                <li><a href="#0">Item foto y video</a></li>
-                                                <li><a href="#0">Item foto y video</a></li>
-                                                <li><a href="#0">Item foto y video</a></li>
-                                                <li><a href="#0">Item foto y video</a></li>
                                                 <li><a href="#0">Item foto y video</a></li>
                                             </ul>
                                         </li>
 
                                         <li class="has-sub"><a href="javascriptEvoid(0)">Otro<i class="ion-chevron-right"></i></a>
                                             <ul>
-                                                <li><a href="#0">Item otro</a></li>
-                                                <li><a href="#0">Item otro</a></li>
-                                                <li><a href="#0">Item otro</a></li>
-                                                <li><a href="#0">Item otro</a></li>
-                                                <li><a href="#0">Item otro</a></li>
                                                 <li><a href="#0">Item otro</a></li>
                                             </ul>
                                         </li>

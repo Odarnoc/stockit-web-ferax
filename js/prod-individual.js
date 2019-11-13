@@ -65,67 +65,17 @@ $( document ).ready(function() {
               }
           
         var html = 
-                           '<div class="row" >'+
-                                '<div class="col-md-1"></div>'+
-                                '<div class="col-md-10">'+
-                                    '<ul class="breadcrumb">'+
-                                        '<li><a href="#">Chapala</a></li>'+
-                                        '<li><a href="#">Hogar</a></li>'+
-                                        '<li class="active"></li>'+
-                                    '</ul>'+
-                                '</div>'+
-                            '</div>'+
-
                             '<div class="row">'+
-
                                 '<div class="col-md-1"></div>'+
-
                                 '<div class="col-md-6">'+
                                     '<div class="item-info-pro-ind">'+
                                         '<img src="http://138.68.241.20/api/image/'+data.publication.images[0]+'" alt="">'+
-
                                         '<div class="d-info-pro-ind">'+
-
                                             '<p class="t1">'+category+'</p>'+
                                             '<p class="t2">'+data.publication.name+'</p>'+
                                             '<p class="t3">'+data.publication.description+'</p>'+
-
                                         '</div>'+
-
                                     '</div>'+
-
-                                    '<div class="d-ubicacion-pro-ind">'+
-                                        '<p class="t1">Ubicacion</p>'+
-                                   '</div>'+
-
-                                    '<div class="d-map-pro-ind">'+
-                                        '<div id="map"></div>'+
-                                    '</div>'+
-
-
-                                    '<div class="d-contacto-pro-ind">'+
-                                        '<p class="t1">Contacte al anunciante</p>'+
-                                        '<form class="form-pro-ind">'+
-
-                                            '<div class="form-row">'+
-                                                '<div  class="form-group col-md-6 input-nombre-contacto">'+
-                                                    '<input type="text" class="form-control" id="" aria-describedby="emailHelp" placeholder="Nombre">'+
-                                                '</div>'+
-                                                '<div class="form-group col-md-6 input-correo-contacto">'+
-                                                    '<input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Correo electrónico">'+
-                                                '</div>'+
-
-                                            '</div>'+
-
-                                            '<div class="form-group">'+
-                                                '<textarea class="form-control" id="" rows="3" placeholder="Mensaje"></textarea>'+
-                                            '</div>'+
-
-                                            '<button type="submit" class="btn btn-form-pro-ind"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>'+
-                                        '</form>'+
-
-                                    '</div>'+
-
                                 '</div>'+
                                 
                                 
@@ -139,12 +89,7 @@ $( document ).ready(function() {
                                             '<p class="t2">Chapala, Jalisco.</p>'+
                                         '</div>'+
 
-                                        '<div class="row row-horario-pro-ind">'+
-                                            '<div class="col-md-12">'+
-                                                '<p class="t2">Horario</p>'+
-                                                '<p class="t3">Disponible de 10:00 AM a 8:00 PM</p>'+
-                                            '</div>'+
-                                        '</div>'+
+                                       
 
                                         '<div class="row row-fechas-pro-ind">'+
                                             '<div class="col-md-6 col-xs-6">'+
@@ -160,17 +105,6 @@ $( document ).ready(function() {
 
                                        '</div>'+
 
-                                        '<div class="row row-cantidad-pro-ind">'+
-                                            '<div class="col-md-6 col-xs-6">'+
-                                                '<p class="t2">Cantidad</p>'+
-                                                '<p class="t3">5 disponibles</p>'+
-
-                                            '</div>'+
-                                            '<div class="col-md-6 col-xs-6 d-cantidad-pro-ind">'+
-                                                '<input class="input-cantidad" type="number" value="1">'+
-                                            '</div>'+
-                                        '</div>'+
-
                                         '<hr>'+
 
                                         '<div class="row row-precio-pro-ind">'+
@@ -184,10 +118,7 @@ $( document ).ready(function() {
 
 
                                         '<div class="row row-btns-pro-ind">'+
-                                            '<div class="col-md-6">'+
-                                                '<a class="btn btn-carrito-pro-ind" href="#" role="button">Agregar al carrito</a>'+
-                                            '</div>'+
-                                            '<div class="col-md-6">'+
+                                            '<div class="col-md-12">'+
                                                 '<a class="btn btn-rentar-pro-ind" href="agregar-tarjeta.html" role="button">Rentar ahora</a>'+
                                             '</div>'+
                                         '</div>'+
