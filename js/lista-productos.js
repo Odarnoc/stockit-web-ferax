@@ -34,7 +34,7 @@ var productos = "";
                                         '<div class="product-content">'+
                                             '<div class="product-desc_info">'+
                                                 '<p class="name-product">'+item.name+'</p>'+
-                                                '<div class="price-box">'+
+                                                '<div style="text-align: left;">'+
                                                     '<span class="new-price">$'+item.price+'</span>'+
                                                 '</div>'+
                                                 '<div class="rating-box">'+
