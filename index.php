@@ -180,9 +180,7 @@ $key=$_SESSION["token"];
                         <div class="div-slider-productos wow fadeInUp" data-wow-delay=".6s">
                             <!-- Carousel
             ============ ====================================== -->
-                        <div class="owl-carousel owl-theme" id="prod-carou" >
-
-                               
+                        <div class="owl-carousel owl-theme" id="prod-carou">
                                 
                         </div><!-- End Well -->
                     </div>

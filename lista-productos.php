@@ -96,7 +96,6 @@ $key=$_SESSION["token"];
                 <div class="row">
                     <div class="col-lg-3 order-2 order-lg-1">
                         <div class="torress-sidebar-catagories_area">
-
                             <div class="torress-sidebar_categories category-module">
                                 <div class="torress-categories_title">
                                     <h5>Categorias</h5>
@@ -165,26 +164,21 @@ $key=$_SESSION["token"];
                                 <p>Mostrando <span id="cant_prods"></span> resultados</p>
                             </div>
                         </div>
-
                         <div class="shop-product-wrap grid gridview-3 row" id="lista-productos">
 
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
         <!-- Torress's Content Wrapper Area End Here -->
-
     </div>
-
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
-
-
     <!-- JS
 ============================================ -->
-
     <!-- jQuery JS -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <!-- Modernizer JS -->
@@ -193,7 +187,6 @@ $key=$_SESSION["token"];
     <script src="assets/js/vendor/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="assets/js/vendor/bootstrap.min.js"></script>
-
     <!-- Slick Slider JS -->
     <script src="assets/js/plugins/slick.min.js"></script>
     <!-- Countdown JS -->
@@ -227,16 +220,13 @@ $key=$_SESSION["token"];
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
     
-
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
 <script src="assets/js/vendor/vendor.min.js"></script>
 <script src="assets/js/plugins/plugins.min.js"></script>
 -->
-
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
-
     <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
