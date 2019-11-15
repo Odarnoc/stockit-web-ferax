@@ -42,31 +42,10 @@ $key=$_SESSION["token"];
 <body data-spy="scroll" data-target=".mainmenu-area">
 
     <!-- MainMenu-Area -->
-    <nav id="nav-out-header" class="mainmenu-area" data-spy="affix" data-offset-top="0">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#home_page"><img src="images/logo-stockit.png" alt="Logo"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="primary_menu">
-                <ul class="nav navbar-nav mainmenu">
-                    <li><a href="index.html#home_page">Inicio</a></li>
-                    <li><a href="index.html#sec-categorias">Categorias</a></li>
-                    <li><a href="index.html#sec-slider-productos">Populares</a></li>
-                    <li><a href="index.html#sec-testimonios">Testimonios</a></li>
-                    <li><a href="index.html#sec-contacto">Contacto</a></li>
-                    <li><a href="registrarte.html">Registrarte</a></li>
-                </ul>
-                <div class="right-button hidden-xs">
-                    <a href="iniciar-sesion.html">Iniciar sesión</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+
+    <?php include("menus/menu_logged_in.php"); ?>
+    
+    <!-- MainMenu-Area -->
 
 
     <section id="sec-registrarte" class="sec-gray">
@@ -181,10 +160,10 @@ $key=$_SESSION["token"];
                         
                         <div class="row row-btns-revisar">
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-regresar" href="agregar-tarjeta.html" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
+                                <a class="btn btn-regresar" href="agregar-tarjeta.php" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
                             </div>
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-confirmar-pago" href="pago-confirmado.html" role="button">Confirmar pago</a>
+                                <a class="btn btn-confirmar-pago" href="pago-confirmado.php" role="button">Confirmar pago</a>
                             </div>
                             
                         </div>
@@ -208,42 +187,7 @@ $key=$_SESSION["token"];
 
 
     <!-- Footer -->
-    <footer id="footer-home">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-left">
-                        <img src="images/logo-stockit.png" alt="">
-                        <p class="p1">© Todos los derechos son reservados</p>
-                    </div>
-
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-center">
-                        <p class="p1">
-                            <a href="#home_page">Inicio</a>
-                            <a href="#sec-categorias">Categorias</a>
-                            <a href="#sec-slider-productos">Populares</a>
-                            <a href="#sec-testimonios">Testimonios</a>
-                            <a href="#sec-contacto">Contacto</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-right">
-                        <p class="p1">
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a></p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </footer>
+    <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
 
 

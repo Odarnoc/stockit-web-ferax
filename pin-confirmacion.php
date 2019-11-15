@@ -65,10 +65,6 @@
 
     </section>
 
-
-
-
-
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->

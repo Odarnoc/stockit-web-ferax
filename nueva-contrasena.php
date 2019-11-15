@@ -33,10 +33,9 @@
 
     <!-- MainMenu-Area -->
     <?php include("menus/menu_logged_out.php"); ?>
-
+    <!-- MainMenu-Area -->
 
     <section id="sec-registrarte" class="sec-gray">
-
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -55,20 +54,13 @@
                                 <input type="password" class="form-control input-form" id="pass2" required>
 
                             </div>
-
                             <a class="btn btn-form-green" id="reset-but" role="button">Aceptar</a>
                         </form>
-
                     </div>
-
                 </div>
-
                 <div class="col-md-3"></div>
-
             </div>
-
         </div>
-
     </section>
 
 

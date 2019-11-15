@@ -41,99 +41,33 @@ $key=$_SESSION["token"];
 
 <body data-spy="scroll" data-target=".mainmenu-area">
 
-    <!-- MainMenu-Area -->
-    <nav id="nav-out-header" class="mainmenu-area" data-spy="affix" data-offset-top="0">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#home_page"><img src="images/logo-stockit.png" alt="Logo"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="primary_menu">
-                <ul class="nav navbar-nav mainmenu">
-                    <li><a href="index.html#home_page">Inicio</a></li>
-                    <li><a href="index.html#sec-categorias">Categorias</a></li>
-                    <li><a href="index.html#sec-slider-productos">Populares</a></li>
-                    <li><a href="index.html#sec-testimonios">Testimonios</a></li>
-                    <li><a href="index.html#sec-contacto">Contacto</a></li>
-                    <li><a href="">Registrarte</a></li>
-                </ul>
-                <div class="right-button hidden-xs">
-                    <a href="iniciar-sesion.html">Iniciar sesión</a>
+     <!-- MainMenu-Area -->
+     <?php include("menus/menu_logged_in.php"); ?>
+     <!-- EndMainMenu-Area -->
+
+
+        <section id="sec-registrarte" class="sec-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="d-pago-confirmado">
+                        <img src="images/check.png" alt="">
+                        </div>           
+                        <div class="d-info-pago-confirmado">
+                            <p class="t1">Pago confirmado</p>
+                            <p class="t2">Pronto recibiras los detalles de tu compra por correo electrónico</p>
+                            <a class="btn btn-confirmar-pago" href="index.php" role="button">Volver a inicio</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5"></div>
                 </div>
             </div>
-        </div>
-    </nav>
-
-
-    <section id="sec-registrarte" class="sec-gray">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <div class="d-pago-confirmado">
-                       <img src="images/check.png" alt="">
-                    </div>
-                    
-                    <div class="d-info-pago-confirmado">
-                        <p class="t1">Pago confirmado</p>
-                        <p class="t2">Pronto recibiras los detalles de tu compra por correo electrónico</p>
-                        <a class="btn btn-confirmar-pago" href="index.html" role="button">Volver a inicio</a>
-                    </div>
-
-                </div>
-
-                <div class="col-md-5"></div>
-
-
-            </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
     <!-- Footer -->
-    <footer id="footer-home">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-left">
-                        <img src="images/logo-stockit.png" alt="">
-                        <p class="p1">© Todos los derechos son reservados</p>
-                    </div>
-
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-center">
-                        <p class="p1">
-                            <a href="#home_page">Inicio</a>
-                            <a href="#sec-categorias">Categorias</a>
-                            <a href="#sec-slider-productos">Populares</a>
-                            <a href="#sec-testimonios">Testimonios</a>
-                            <a href="#sec-contacto">Contacto</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-right">
-                        <p class="p1">
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a></p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </footer>
+    <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
 
 
