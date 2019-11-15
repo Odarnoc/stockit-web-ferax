@@ -710,4 +710,26 @@ $key=$_SESSION["token"];
         var keyt = "<?php echo $key; ?>";
     </script>
 
+    <script>
+        $( document ).ready(function() {
+            $.ajax({
+                url: "http://138.68.241.20/api/reservation/deliveries",
+                method: "POST",
+                dataType: "json",
+                data: "",
+                beforeSend: function (xhr) {
+                    /* Authorization header */
+                    xhr.setRequestHeader("Authorization", keyt);
+                },
+                success: function (data) {
+                    console.log(data);
+                    
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+
 </body></html>
