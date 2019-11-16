@@ -84,10 +84,9 @@ $key=$_SESSION["token"];
         <!-- Torress's Breadcrumb Area End Here -->
 
 
-        <section class="sec-mi-stockit">
-            <div class="container">
+        <section class="sec-mi-stockit" id="historial">
+        <!-- <div class="container">
                 <div class="row">
-
                     <div class="col-md-4">
                         <div class="thumbnail">
                             <div class="d-img-thumbnail">
@@ -100,7 +99,7 @@ $key=$_SESSION["token"];
                                 <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

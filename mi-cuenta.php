@@ -64,11 +64,6 @@ $key=$_SESSION["token"];
                 <div class="col-md-6">
 
                     <div class="d-mi-cuenta">
-                        <div class="clearfix d-foto-cuenta">
-                            <img src="images/profile-brayam-morando.png" alt="">
-                            <p class="t1">Brayam Morando</p>
-                        </div>
-
                         <ul class="ul-mi-cuenta">
                             <li>
                             <a class="btn btn-mi-cuenta" href="mi-perfil.php" role="button"><i class="far fa-user-circle"></i>Mi Perfil</a>
@@ -89,7 +84,7 @@ $key=$_SESSION["token"];
                             <a class="btn btn-mi-cuenta" href="metodos-de-pago.php" role="button"><i class="fas fa-credit-card"></i>Pagos</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="index.php" role="button"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+                            <a class="btn btn-mi-cuenta" href="user_preferences/cerrar_sesion.php" role="button"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
                             </li>
                         </ul>
                     </div>
@@ -117,6 +112,7 @@ $key=$_SESSION["token"];
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+    <script src="js/mi-cuenta.js"></script>
 
     <!--Custom scripts-->
     <script>

@@ -12,12 +12,18 @@ var productos = "";
                 success: function (data) {
                     console.log(data);
                     data.payMethods.forEach(function(item) {
+                        var ttarjet="";
+                        if(item.brand==	"visa"){
+                            ttarjet='logo-visa.png';
+                        }else{
+                            ttarjet='logo-master-card.png';    
+                        }
                 var html = 
-                                        '<div class="col-md-6" >'+
-                                        '<div class="d-item-tarjeta">'+
-                                            '<div class="row">'+
+                                    '<div class="col-md-6" >'+
+                                        '<div class="d-item-tarjeta" >'+
+                                            '<div class="row" >'+
                                                 '<div class="col-md-6 col-xs-6 d-img-card">'+
-                                                    '<img src="images/logo-visa.png" alt="">'+
+                                                    '<img src="images/'+ttarjet+'" alt="">'+
                                                 '</div>'+
                                                 '<div class="col-md-6 col-6 d-number-card">'+
                                                     '<p class="t1">****'+item.last4Digits+'</p>'+
@@ -28,11 +34,10 @@ var productos = "";
                                                     '<p class="t2">Vence el '+item.expMonth+'/'+item.expYear+'</p>'+
                                                 '</div>'+
                                                 '<div class="d-btn-card">'+
-                                                    '<a class="btn btn-card" onclick="elimtarjeta(\''+item._id+'\')" role="button">Eliminar tarjeta</a>'
+                                                    '<a class="btn btn-card" onclick="elimtarjeta(\''+item._id+'\')" role="button">Eliminar tarjeta</a>'+
                                                 '</div>'+
                                         '</div>'+
                                     '</div>';
-
                             productos+=html;
                       console.log(item);
                     });
@@ -42,8 +47,6 @@ var productos = "";
                     console.log(error);
                 }
             });
-            
-            
         });
 
     

@@ -96,53 +96,6 @@ $key=$_SESSION["token"];
                 <div class="row">
                     <div class="col-lg-3 order-2 order-lg-1">
                         <div class="torress-sidebar-catagories_area">
-                            <div class="torress-sidebar_categories category-module">
-                                <div class="torress-categories_title">
-                                    <h5>Categorias</h5>
-                                </div>
-                                <div class="sidebar-categories_menu">
-                                    <ul>
-                                        <li class="has-sub"><a href="javascript:void(0)">Electrónica <i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item electrónica</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub"><a href="javascript:void(0)">Muebles<i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item muebles</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub"><a href="javascript:void(0)">Herramientas <i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item herramientas</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub"><a href="javascript:void(0)">Hogar<i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item hogar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub"><a href="javascript:void(0)">Autos<i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item autos</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-sub"><a href="javascriptEvoid(0)">Foto y Video<i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item foto y video</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="has-sub"><a href="javascriptEvoid(0)">Otro<i class="ion-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#0">Item otro</a></li>
-                                            </ul>
-                                        </li>
-                                        <li style="display: none"><a href="javascript:void(0)">Sin categoria</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
                             <div class="torress-sidebar_categories torress-banner_area sidebar-banner_area">
                                 <div class="img-hover_effect">
                                     <div class="banner-img">
@@ -165,15 +118,12 @@ $key=$_SESSION["token"];
                             </div>
                         </div>
                         <div class="shop-product-wrap grid gridview-3 row" id="lista-productos">
-
-                        </div>
-                        
+                        </div>      
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Torress's Content Wrapper Area End Here -->
-    </div>
+        
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->

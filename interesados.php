@@ -46,7 +46,6 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     -->
-
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
@@ -61,12 +60,9 @@ $key=$_SESSION["token"];
 
     <div class="main-wrapper">
 
-         <!-- MainMenu-Area -->
-
+        <!-- MainMenu-Area -->
         <?php include("menus/menu_logged_in.php"); ?>
-
         <!-- MainMenu-Area-End -->
-
 
         <!-- Begin Torress's Breadcrumb Area -->
         <div class="main-wrapper" style="margin-top:80px;">
@@ -83,19 +79,19 @@ $key=$_SESSION["token"];
             </div>
         </div>
         <!-- Torress's Breadcrumb Area End Here -->
-        
-        <section class="sec-gray">
-           <div class="container">
-               <div class="row">
-                   <div class="col-lg-12 col-md-12">
-                       <div class="d-title-interesados">
-                           <p class="t1">Sin usuarios interesados</p>
-                           <p class="t2">Aquí podrás visualizar el listado con la información de los usuarios que estén interesados en tus publicaciones.</p>
-                       </div>
-                   </div>
-               </div>
-           </div> 
-        </section>
+
+        <div class="torress-content_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <div class="shop-toolbar">
+                        </div>
+                        <div class="shop-product-wrap grid gridview-3 row" id="interes">
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -114,7 +110,6 @@ $key=$_SESSION["token"];
     <script src="assets/js/vendor/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="assets/js/vendor/bootstrap.min.js"></script>
-
     <!-- Slick Slider JS -->
     <script src="assets/js/plugins/slick.min.js"></script>
     <!-- Countdown JS -->
@@ -147,6 +142,7 @@ $key=$_SESSION["token"];
     <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
+    <script src="js/interested.js"></script>
 
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--

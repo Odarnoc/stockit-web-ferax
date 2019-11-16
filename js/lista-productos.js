@@ -13,12 +13,12 @@ var miId = "";
                 success: function (data) {
                     console.log(data);
                     data.publications.forEach(function(item) {
-                var html = '<div class="col-lg-4 col-md-4 col-sm-6">'+
+                var html = '<div class="col-lg-4 col-md-4 col-sm-6" style="paddign-top: 15px">'+
                                 '<div class="slide-item">'+
                                     '<div class="single-product">'+
                                         '<div class="product-img">'+
                                             '<a href="producto-individual.php?id='+item._id+'">'+
-                                                '<img class="primary-img" src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="">'+
+                                                '<img class="primary-img" src="http://138.68.241.20/api/image/'+item.images[0]+'">'+
                                             '</a>'+
                                             '<div class="add-actions">'+
                                                 '<ul>'+
@@ -56,7 +56,7 @@ var miId = "";
                                     '<div class="single-product">'+
                                         '<div class="product-img">'+
                                         '<a href="producto-individual.php?id='+item._id+'">'+
-                                                '<img src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="">'+
+                                                '<img src="http://138.68.241.20/api/image/'+item.images[0]+'">'+
                                             '</a>'+
                                         '</div>'+
                                         '<div class="torress-product-content">'+

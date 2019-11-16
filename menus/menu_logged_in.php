@@ -15,26 +15,8 @@
                     <li><a href="interesados.php">Interesados</a></li>
                     <li><a href="index.php#sec-slider-productos">Populares</a></li>
                     <li><a href="mi-cuenta.php">Mi Cuenta </a></li>
-                    <li><a onclick="logout()">Cerrar sesión</a></li>
+                    <li><a href="user_preferences/cerrar_sesion.php">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <script>
-        function logout(){
-            $.ajax({
-                type: 'get',
-                url: '../user_preferences/cerrar_sesion.php',
-                success: function (response) {
-                    console.log(response);
-                    var jsondata = JSON.parse(response);
-                    if(jsondata.mensaje == "ok"){
-                        location.href = "iniciar-sesion.php";
-                    }
-                },
-                error: function (response) {
-                }
-            });
-        }
-    </script>
