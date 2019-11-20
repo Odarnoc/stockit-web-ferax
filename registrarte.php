@@ -36,9 +36,7 @@
     <!-- MainMenu-Area -->
     <?php include("menus/menu_logged_out.php"); ?>
 
-
     <section id="sec-registrarte" class="sec-gray">
-
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -48,42 +46,24 @@
                         <form class="form-registrarte">
                             <div class="form-group">
                                 <label class="label-form">Nombre</label>
-                                <input type="text" class="form-control input-form" id="nombre" required>
+                                <input placeholder="Jesus Martinez" type="text" class="form-control input-form" id="nombre" required>
                             </div>
-
                             <div class="form-group">
                                 <label class="label-form">Correo electrónico</label>
-                                <input type="email" class="form-control input-form" id="correo"
-                                    aria-describedby="emailHelp" required>
+                                <input type="email" placeholder="ejemplo@dominio.com"class="form-control input-form" id="correo" aria-describedby="emailHelp" required>
                             </div>
-
-                            <div class="form-group">
-                                <label class="label-form">Teléfono</label>
-                                <input type="text" class="form-control input-form" id="" required>
-                            </div>
-
                             <div class="form-group">
                                 <label class="label-form">Contraseña</label>
-                                <input type="password" class="form-control input-form" id="pass" required>
+                                <input type="password" placeholder="Mayor o igual a 8 caracteres" class="form-control input-form" id="pass" required>
                             </div>
-
                             <button type="submit" id="registrar_but" class="btn btn-form-green">Registrarte ahora</button>
-
                         </form>
-
                         <p class="t2">¿Ya tienes una cuenta? <a href="iniciar-sesion.php">Iniciar sesión</a></p>
-
                     </div>
-
                 </div>
-
                 <div class="col-md-3"></div>
-
-
             </div>
-
         </div>
-
     </section>
 
 

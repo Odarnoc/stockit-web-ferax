@@ -47,13 +47,11 @@ if(isset($_GET['id'])){
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
-
                 reader.onload = function(e) {
                     $('.image-upload').attr("style", "background-image: url(" + e.target.result + ");");
                     $('.image-upload').addClass('overlay-image-upload');
                     $('.image-upload label').css('color', 'rgba(255,255,255,1)');
                 };
-
                 reader.readAsDataURL(input.files[0]);
                 imageChange = true;
             }
@@ -65,9 +63,9 @@ if(isset($_GET['id'])){
 <body>
 
 
- <!-- MainMenu-Area -->
+<!-- MainMenu-Area -->
 
- <?php include("menus/menu_logged_in.php"); ?>
+<?php include("menus/menu_logged_in.php"); ?>
 
 <!-- MainMenu-Area-End -->
 

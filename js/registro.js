@@ -29,14 +29,14 @@ function registrar() {
         },
         error: function (response) {
         if (response.responseJSON.message == "user.errors") {
-                    swal("Error!", "Favor de completar los campos!", "error");
+                    swal("Error!", "Complete todos los campos!", "error");
                 if (response.responseJSON.message == "user.errors") {
                     if (response.responseJSON.errors.message == "User validation failed: password: password.required, email: email.required") {
                         swal("Error!", "Favor de completar los campos Contraseña y Correo", "error");
                     }
                     if (response.responseJSON.message == "user.errors") {
                         if (response.responseJSON.errors.message == "User validation failed: fullname: fullname.minlength") {
-                            swal("Error!", "Favor de ingresar un nombre mayor o igual a 8 caracteres", "error");
+                            swal("Error!", "Favor de ingresar un Nombre mayor o igual a 8 caracteres", "error");
                         }
                     }
                     if (response.responseJSON.message == "user.errors") {
@@ -56,7 +56,7 @@ function registrar() {
                     }
                     if (response.responseJSON.message == "user.errors") {
                         if (response.responseJSON.errors.message == "User validation failed: password: password.minlength") {
-                            swal("Error!", "Favor de ingresar un Contraseña mayor o igual a 8 caracteres", "error");
+                            swal("Error!", "Favor de ingresar una Contraseña mayor o igual a 8 caracteres", "error");
                         }
                     }
                 }
