@@ -10014,6 +10014,71 @@ button,
   text-align: center;
 }
 
+.one-line {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.two-lines {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.info-item-interesados {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+.info-item-interesados .t1{
+  font-size: 20px;
+  font-family: "Open Sans";
+  margin-bottom: 0px;
+}
+
+.info-item-interesados .t1 sup{
+  font-size: 12px;
+}
+
+.info-item-interesados .t2{
+  font-size: 14px;
+  margin-bottom: 0px;
+  font-family: "Open Sans";
+  color: rgba(0,0,0,.5);
+}
+
+.d-interesados{
+  background-color: #303D4E;
+   padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.image-round{
+  width: 50px;
+  border-radius: 100px;
+}
+
+.d-interesados ul li{
+  display: inline;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+
+}
+
 .info-item-slide {
   padding-left: 25px;
   padding-right: 25px;
@@ -10121,6 +10186,22 @@ button,
 }
 
 .badge-success i {
+  margin-right: 10px;
+}
+
+.badge-inactive {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(0,0,0,.05);
+  border-radius: 8px;
+  color: rgba(0,0,0,0.4);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.badge-inactive i {
   margin-right: 10px;
 }
 
