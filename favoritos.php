@@ -87,9 +87,7 @@ $key=$_SESSION["token"];
         <section class="sec-mi-stockit">
             <div class="container">
                 <div class="row" id="favorito">
-
-                  
-
+                
                 </div>
             </div>
         </section>

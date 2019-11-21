@@ -29,30 +29,27 @@ var miId = "";
                     productos=nointeres;
                 }else{
                 data.publications.forEach(function(item) {
-                var html = '<div class="col-lg-4 col-md-4 col-sm-6" style="paddign-top: 15px">'+
-                                '<div class="slide-item">'+
-                                    '<div class="single-product">'+
-                                        '<div class="product-img">'+
-                                                '<a href="producto-individual.php?id='+item._id+'">'+
-                                                    '<img class="primary-img" src="http://138.68.241.20/api/image/'+item.images[0]+'">'+
-                                                '</a>'+
-                                            '</div>'+
-                                            '<div class="product-content">'+
-                                                '<div class="product-desc_info">'+
-                                                    '<p class="name-product">'+item.name+'</p>'+
-                                                    '<div style="text-align: left;">'+
-                                                        '<span class="new-price">$'+item.price+'.00</span>'+
-                                                    '</div>'+
-                                                    '<div class="rating-box">'+
-                                                        '<ul>'+
-                                                            '<li><i class="ion-ios-star"></i></li>'+
-                                                            '<li><i class="ion-ios-star"></i></li>'+
-                                                            '<li><i class="ion-ios-star"></i></li>'+
-                                                            '<li class="silver-color"><i class="ion-ios-star-half"></i></li>'+
-                                                            '<li class="silver-color"><i class="ion-ios-star-outline"></i></li>'+
-                                                        '</ul>'+
-                                                    '</div>'+
-                                            '</div>'+
+                var html = 
+                            '<div class="col-md-4">'+
+                                    '<div class="thumbnail">'+
+                                        '<div class="d-img-thumbnail">'+
+                                            '<img src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="Slide11">'+
+                                        '</div>'+
+                                        '<div class="info-item-interesados">'+
+                                            '<span class="badge badge-success"><i class="fas fa-bookmark"></i>Guardado</span>'+
+                                            '<p class="t1">$'+item.price+'<sup>00 / día</sup></p>'+
+                                            '<p class="t2 one-line">'+item.name+'</p>'+
+                                        '</div>'+
+                                        '<div class="d-interesados">'+
+                                            '<ul>';
+                                            item.prereservations.forEach(function(item2) {
+                                                var defect = '<li><i class="fas fa-user-circle" style="color: white; font-size: 50px"></i></li>';
+                                                if(!(item2.interesed.image == null || item2.interesed.image == "")){ 
+                                                    defect= '<li><a href=""><img class="image-round" style="height: 50px;" src="http://138.68.241.20/api/image/'+item2.interesed.image+'" alt=""></a></li>'
+                                                }
+                                                html+=defect;
+                                                });
+                                            html+='</ul>'+
                                         '</div>'+
                                     '</div>'+
                                 '</div>';

@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(!isset($_SESSION["token"])){
+    header("Location: iniciar-sesion.php");
+}
+$key=$_SESSION["token"];
+
+?>
+
+
 <!doctype html>
 <html class="no-js" lang="es">
 
@@ -13,7 +23,6 @@
 
     <!-- CSS
 	============================================ -->
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <!-- Fontawesome -->
@@ -31,18 +40,19 @@
     <!-- Venobox.css -->
     <link rel="stylesheet" href="assets/css/plugins/venobox.css">
     <!-- Nice Select -->
+
+    <link rel="stylesheet" href="css/avatar-image.css">
+
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
 
     <link rel="stylesheet" href="style.css">
 
 
-    
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
     <!--
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     -->
-
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
@@ -69,41 +79,19 @@
                 </div>
             </div>
         </div>
+
         <!-- Torress's Breadcrumb Area End Here -->
         <section class="sec-mi-stockit">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/proyector.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-interesados">
-                                <span class="badge badge-success"><i class="fas fa-bookmark"></i>Guardado</span>
-                                <p class="t1">$ 399.<sup>00 / día</sup></p>
-                                <p class="t2 one-line">Proyector Epson S39</p>
-                                
-                            </div>
-                            
-                            <div class="d-interesados">
-                                <ul>
-                                    <li><a href=""><img class="image-round" src="images/profiles/1.jpg" alt=""></a></li>
-                                    <li><a href=""><img class="image-round" src="images/profiles/2.jpg" alt=""></a></li>
-                                    <li><a href=""><img class="image-round" src="images/profiles/3.jpg" alt=""></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="interes">
+
                 </div>
             </div>
         </section>
     </div>
-
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
-
-
     <!-- JS
 ============================================ -->
 
@@ -157,5 +145,10 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    <script>
+        var keyt = "<?php echo $key; ?>";
+    </script>
+    <script src="js/interested.js"></script>
+    
 
 </body></html>
