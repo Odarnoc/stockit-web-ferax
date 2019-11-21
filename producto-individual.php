@@ -19,7 +19,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Asador circular, Chapala, Jalisco | Stockit</title>
+    <title>wwwwwwwwStockit</title>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- Plugin-CSS -->
@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKW5XPX9NHuUvH1kByiebdSvHVrRPYFoo&libraries=places&callback=initialize"></script>
 
 </head>
 
@@ -66,7 +65,6 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
-    <script src="js/map-style.js"></script>
 
      <!--Custom scripts-->
     <script>
