@@ -42,7 +42,7 @@ if(!isset($key)){
 
     <!-- MainMenu-Area -->
 
-     <?php include("menus/menu_logged_in.php"); ?>
+    <?php include("menus/menu_logged_in.php"); ?>
 
     <!-- MainMenu-Area-End -->
 
@@ -61,12 +61,12 @@ if(!isset($key)){
                             <label for="file-input">
                                 <i class="fas fa-plus"></i> Subir foto
                             </label>
-                                 <input id="file-input" type="file" onchange="readURL(this);" name="Image" />
-                         </div>
+                                <input id="file-input" type="file" onchange="readURL(this);" name="Image" />
+                        </div>
 
                             <div class="form-group">
                                 <label class="label-form">Nombre de usuario</label>
-                                <input type="text" name="fullname" id="name" class="form-control input-form"  required >
+                                <input type="text" placeholder="Jesus Martinez" name="fullname" id="name" class="form-control input-form"  required >
                             </div>
 
                             <div class="form-group">
@@ -76,7 +76,7 @@ if(!isset($key)){
 
                             <div class="form-group">
                                 <label class="label-form">Teléfono</label>
-                                <input type="tel" name="phone" id="tele" class="form-control input-form"  required >
+                                <input  placeholder="3315859643" type="tel" name="phone" id="tele" class="form-control input-form"  required >
 
                             </div>
                             

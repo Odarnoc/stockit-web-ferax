@@ -47,12 +47,12 @@ var miId = "";
                                                     '</ul>'+
                                                 '</div>'+
                                             '</div>'+
-                                       '</div>'+
+                                        '</div>'+
                                     '</div>'+
                                 '</div>'+
                         
 
-                             '<div class="list-slide_item">'+
+                            '<div class="list-slide_item">'+
                                     '<div class="single-product">'+
                                         '<div class="product-img">'+
                                         '<a href="producto-individual.php?id='+item._id+'">'+
@@ -67,7 +67,7 @@ var miId = "";
                                                     '<span class="new-price">$'+item.price+'.00</span>'+
                                                 '</div>'+
                                                 '<div class="rating-box">'+
-                                                   '<ul>'+
+                                                    '<ul>'+
                                                         '<li><i class="ion-ios-star"></i></li>'+
                                                         '<li><i class="ion-ios-star"></i></li>'+
                                                         '<li><i class="ion-ios-star"></i></li>'+
@@ -91,7 +91,7 @@ var miId = "";
                                 '</div>'+
                             '</div>';
                             productos+=html;
-                      console.log(item);
+                    console.log(item);
                     });
                     $("#cant_prods").text(data.total);
                     $( "#lista-productos" ).append( productos );

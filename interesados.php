@@ -6,6 +6,8 @@ if(!isset($_SESSION["token"])){
 $key=$_SESSION["token"];
 
 ?>
+
+
 <!doctype html>
 <html class="no-js" lang="es">
 
@@ -21,7 +23,6 @@ $key=$_SESSION["token"];
 
     <!-- CSS
 	============================================ -->
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <!-- Fontawesome -->
@@ -39,7 +40,13 @@ $key=$_SESSION["token"];
     <!-- Venobox.css -->
     <link rel="stylesheet" href="assets/css/plugins/venobox.css">
     <!-- Nice Select -->
+
+    <link rel="stylesheet" href="css/avatar-image.css">
+
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+
+    <link rel="stylesheet" href="style.css">
+
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
     <!--
@@ -50,55 +57,41 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="assets/css/style.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
 </head>
 
 <body class="template-color-1">
 
     <div class="main-wrapper">
 
-        <!-- MainMenu-Area -->
+        <!-- Begin Torress's Header Main Area -->
         <?php include("menus/menu_logged_in.php"); ?>
-        <!-- MainMenu-Area-End -->
+        <!-- Torress's Header Main Area End Here -->
 
         <!-- Begin Torress's Breadcrumb Area -->
-        <div class="main-wrapper" style="margin-top:80px;">
-            <div class="breadcrumb-area">
-                <div class="container">
-                    <div class="breadcrumb-content">
-                        <h2>Interesados</h2>
-                        <ul>
-                            <li><a href="index.php">Inicio</a></li>
-                            <li>Interesados</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Torress's Breadcrumb Area End Here -->
-
-        <div class="torress-content_wrapper">
+        <div class="breadcrumb-area">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 order-1 order-lg-2">
-                        <div class="shop-toolbar">
-                        </div>
-                        <div class="shop-product-wrap grid gridview-3 row" id="interes">
-                        </div>      
-                    </div>
+                <div class="breadcrumb-content" style="margin-top: 50px">
+                    <h2>Interesados</h2>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li>Interesados</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Torress's Breadcrumb Area End Here -->
+        <section class="sec-mi-stockit">
+            <div class="container">
+                <div class="row" id="interes">
+
+                </div>
+            </div>
+        </section>
+    </div>
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
-
-
     <!-- JS
 ============================================ -->
 
@@ -110,6 +103,7 @@ $key=$_SESSION["token"];
     <script src="assets/js/vendor/popper.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="assets/js/vendor/bootstrap.min.js"></script>
+
     <!-- Slick Slider JS -->
     <script src="assets/js/plugins/slick.min.js"></script>
     <!-- Countdown JS -->
@@ -142,7 +136,6 @@ $key=$_SESSION["token"];
     <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
-    <script src="js/interested.js"></script>
 
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
@@ -152,10 +145,10 @@ $key=$_SESSION["token"];
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
-
-    <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
+    <script src="js/interested.js"></script>
+    
 
 </body></html>
