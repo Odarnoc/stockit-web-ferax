@@ -46,6 +46,7 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
@@ -54,14 +55,15 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     -->
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="css/responsive.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
 </head>
 
 <body class="template-color-1">
 
-    <div class="main-wrapper">
+    <div class="main-wrapper" style="margin-top:80px;">
 
         <!-- Begin Torress's Header Main Area -->
         <?php include("menus/menu_logged_in.php"); ?>
@@ -70,7 +72,7 @@ $key=$_SESSION["token"];
         <!-- Begin Torress's Breadcrumb Area -->
         <div class="breadcrumb-area">
             <div class="container">
-                <div class="breadcrumb-content" style="margin-top: 50px">
+                <div class="breadcrumb-content">
                     <h2>Interesados</h2>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
