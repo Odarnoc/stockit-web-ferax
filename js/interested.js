@@ -1,4 +1,5 @@
 var productos = "";
+var listaproductos;
 var miId = "";
         $( document ).ready(function() {
             $.ajax({
@@ -28,9 +29,11 @@ var miId = "";
                     console.log(data.publications.length);
                     productos=nointeres;
                 }else{
+                    var cont=0;
+                    listaproductos=data.publications;
                 data.publications.forEach(function(item) {
                 var html = 
-                            '<div class="col-md-4">'+
+                                '<div class="col-md-4">'+
                                     '<div class="thumbnail">'+
                                         '<div class="d-img-thumbnail">'+
                                             '<img src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="Slide11">'+
@@ -45,7 +48,7 @@ var miId = "";
                                             item.prereservations.forEach(function(item2) {
                                                 var defect = '<li><i class="fas fa-user-circle" style="color: white; font-size: 50px"></i></li>';
                                                 if(!(item2.interesed.image == null || item2.interesed.image == "")){ 
-                                                    defect= '<li><a href=""><img class="image-round" style="height: 50px;" src="http://138.68.241.20/api/image/'+item2.interesed.image+'" alt=""></a></li>'
+                                                    defect= '<li><Button onclick="senddata('+cont+')" data-toggle="modal" data-target="#exampleModalCenter"><img class="image-round" style="height: 50px;" src="http://138.68.241.20/api/image/'+item2.interesed.image+'" alt=""></Button></li>'
                                                 }
                                                 html+=defect;
                                                 });
@@ -54,15 +57,21 @@ var miId = "";
                                     '</div>'+
                                 '</div>';
                             productos+=html;
+                                cont++;
                     console.log(item);
                     });
+                    
                     }
                     $( "#interes" ).append( productos );
                 },
                 error: function (error) {
                     console.log(error);
                 }
-            });
-            
-            
+            });  
         });
+        function senddata(items){ 
+            var objetselect=listaproductos[items];
+            console.log(objetselect);
+                $("#price-in").text(objetselect.price+".00 MXN / Día"); 
+                $("#name-in").text(objetselect.fullname); 
+        }

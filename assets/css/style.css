@@ -63,9 +63,7 @@ INDEX:
 /*  00 - Base - Typography
 /*----------------------------------------*/
 body {
-  font-family: "Nunito", sans-serif;
   color: #333333;
-  font-size: 16px;
   line-height: 24px;
 }
 
@@ -1324,10 +1322,6 @@ button,
 
 .bg--snow_color {
   background-color: #f9f9f9;
-}
-
-.template-color-1 a:hover {
-  color: #00CF72 !important;
 }
 
 .template-color-1 a.torress-banner_btn:hover {
@@ -10039,26 +10033,26 @@ button,
   padding-top: 10px;
 }
 
-.info-item-interesados .t1{
+.info-item-interesados .t1 {
   font-size: 20px;
   font-family: "Open Sans";
   margin-bottom: 0px;
 }
 
-.info-item-interesados .t1 sup{
+.info-item-interesados .t1 sup {
   font-size: 12px;
 }
 
-.info-item-interesados .t2{
+.info-item-interesados .t2 {
   font-size: 14px;
   margin-bottom: 0px;
   font-family: "Open Sans";
-  color: rgba(0,0,0,.5);
+  color: rgba(0, 0, 0, .5);
 }
 
-.d-interesados{
+.d-interesados {
   background-color: #303D4E;
-   padding-left: 25px;
+  padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 15px;
   padding-top: 15px;
@@ -10066,12 +10060,14 @@ button,
   border-bottom-right-radius: 15px;
 }
 
-.image-round{
+.image-round {
   width: 50px;
   border-radius: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.d-interesados ul li{
+.d-interesados ul li {
   display: inline;
   padding-left: 5px;
   padding-right: 5px;
@@ -10183,6 +10179,7 @@ button,
   color: white;
   font-size: 12px;
   margin-bottom: 10px;
+  font-family: "Nunito";
 }
 
 .badge-success i {
@@ -10194,9 +10191,9 @@ button,
   padding-bottom: 6px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0, 0, 0, .05);
   border-radius: 8px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0, 0, 0, 0.4);
   font-size: 12px;
   margin-bottom: 10px;
 }
@@ -10221,12 +10218,12 @@ button,
   color: #01293C;
 }
 
-.info-item-historial .t2{
-  color: rgba(0,0,0,.5);
+.info-item-historial .t2 {
+  color: rgba(0, 0, 0, .5);
   margin-bottom: 5px;
 }
 
-.info-item-historial .t3{
+.info-item-historial .t3 {
   font-size: 19px;
 }
 
@@ -10244,4 +10241,333 @@ button,
 
 .badge-info i {
   margin-right: 10px;
+}
+
+.d-interesados .t1 {
+  margin-bottom: 0px;
+}
+
+.one-line {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.two-lines {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 10px;
+}
+
+.modal-header-interesados {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 5px;
+}
+
+.modal-body-interesados .t1 {
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-family: "Open Sans";
+}
+
+.modal-body-interesados .t1 sup {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.modal-body-interesados .t2 {
+  font-size: 14px;
+  padding-top: 10px;
+  color: rgba(0, 0, 0, .5);
+}
+
+.modal-body-interesados .t3 {
+  margin-bottom: 0px;
+}
+
+.modal-body-interesados .t4 {
+  font-size: 14px;
+}
+
+.btn-close-modal {
+  background-color: #F4F4F4;
+  border-radius: 100px;
+  margin: 0px;
+  line-height: 0px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, .5);
+  transition: .4s;
+}
+
+.btn-close-modal:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.btn-close-modal:active,
+.btn-close-modal:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.image-user-table {
+  width: 70px;
+  border-radius: 100px;
+}
+
+.table-interesados td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.td-img-int {
+  width: 100px;
+}
+
+.td-name-int {
+  font-size: 16px;
+  text-align: left !important;
+  font-weight: 600;
+}
+
+.btn-cancel-table {
+  color: rgba(0, 0, 0, .3);
+  transition: .4s;
+}
+
+.btn-cancel-table:hover {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.btn-check-table {
+  color: rgba(0, 0, 0, .3);
+  transition: .4s;
+}
+
+.btn-check-table:hover {
+  color: #00CF72;
+}
+
+.d-fechas-interesados {
+  border-radius: 15px;
+  background-color: white;
+  -webkit-box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.05);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+
+.d-foto-interesados > img {
+  width: 130px;
+  border-radius: 100%;
+  margin-bottom: 15px;
+}
+
+.d-foto-interesados .t1 {
+  font-size: 22px;
+  font-family: "Nunito";
+}
+
+.btn-contacto-int {
+  font-size: 14px;
+  background-color: #F4F4F4;
+  border-radius: 4px;
+  font-family: "Nunito";
+  padding-bottom: 10px;
+  border-radius: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgba(0, 0, 0, .5);
+  transition: .4s;
+}
+
+.btn-contacto-int:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.btn-contacto-int:active,
+.btn-contacto-int:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.d-dias-int {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.d-dias-renta {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.d-dias-renta .t1 {
+  font-size: 40px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: #00CF72;
+}
+
+.d-dias-renta .t2 {
+  font-size: 14px;
+  font-family: "Open Sans";
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+.d-item-fechas {
+  margin-bottom: 40px;
+}
+
+.d-item-fechas .t1 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Open Sans";
+}
+
+.d-item-fechas ul {
+  padding-left: 0px;
+}
+
+.d-item-fechas ul li {
+  display: inline-block;
+  background-color: #00CF72;
+  color: white;
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.sec-fechas-int {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.d-precio-int {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.d-precio-int .t1 {
+  font-size: 20px;
+  font-family: "Open Sans";
+  color: rgba(0, 0, 0, .3);
+  margin-bottom: 0px;
+}
+
+.d-precio-int b {
+  font-size: 30px;
+  font-weight: 300;
+  padding-left: 10px;
+  color: black;
+}
+
+.d-precio-int b sup {
+  font-size: 17px;
+}
+
+.btn-lg-green {
+  background-color: #00CF72;
+  width: 100%;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 16px;
+  transition: .4s;
+  border-radius: 4px;
+}
+
+.btn-lg-green:hover {
+  color: white !important;
+  background-color: #01293C;
+}
+
+.btn-lg-green:active,
+.btn-lg-green:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.d-btns-int {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+}
+
+.btn-link-muted {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  transition: .4s;
+  font-size: 16px;
+  font-family: "Open Sans";
+}
+
+.btn-link-muted:hover {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.btn-link-muted:active, .btn-link-muted:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.mb-int-contact {
+  text-align: center;
+}
+
+.mb-int-contact>img {
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+.mb-int-contact .t1 {
+  font-size: 22px;
+  font-family: "Nunito";
+}
+
+.d-links-contact{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.d-links-contact .t1 a{
+  font-size: 16px;
+  color: rgba(0,0,0,.5);
+  transition: .4s;
+}
+
+.d-links-contact .t1 a i{
+  margin-right: 13px;
 }

@@ -105,10 +105,9 @@ body {
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 32px;
+    line-height: 36px;
     color: #8790af;
 }
 
@@ -367,6 +366,7 @@ input:-webkit-autofill:focus {
     padding-right: 30px;
     padding-top: 5px;
     padding-bottom: 10px;
+    font-family: "Nunito";
 }
 
 .mainmenu-area .right-button a:hover {
@@ -3026,3 +3026,5 @@ ul.breadcrumb li a:hover {
     text-align: left;
     margin-bottom: 0px;
 }
+
+

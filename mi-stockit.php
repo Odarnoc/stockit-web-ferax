@@ -50,14 +50,16 @@ $key=$_SESSION["token"];
 
     <!-- Plugin-CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">s
     <link rel="stylesheet" href="css/responsive.css">
 
 
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
-
+    <style> 
+    a.btn.btn-danger:hover{color:white !important};
+    </style>
 </head>
 
 <body class="template-color-1">
@@ -168,60 +170,10 @@ $key=$_SESSION["token"];
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
-       <!--Custom scripts-->
-       <script>
+        <!--Custom scripts-->
+    <script>
         var keyt = "<?php echo $key; ?>";
     </script>
 
-<script>
-  var productos = "";
-  $( document ).ready(function() {
-    
-            inicial();
-            
-        });
-
-        function inicial(){
-            $.ajax({
-                url: "http://138.68.241.20/api/publication/myStockit",
-                method: "POST",
-                dataType: "json",
-                data: "",
-                    beforeSend: function (xhr) {
-                        /* Authorization header */
-                        xhr.setRequestHeader("Authorization", keyt);
-                    },
-                    success: function (data) {
-                        console.log(data);
-                        data.publications.forEach(function(item) {
-                        console.log("Despues de value");
-                       
-                var html = 
-                            '<div class="col-md-4">'+
-                                    '<div class="thumbnail">'+
-                                        '<div class="d-img-thumbnail">'+
-                                            '<img src="http://138.68.241.20/api/image/'+item.images[0]+'" alt="Slide11">'+
-                                    '</div>'+
-                                        '<div class="info-item-slide">'+
-                                            '<p class="p2">'+item.name+'</p>'+
-                                            '<p class="p4">$'+item.price+'.<sup>00 / día</sup></p>'+
-                                            '<a class="btn btn-slide-productos" href="editar-articulo.php?id='+item._id+'" role="button">Editar producto <i class="fas fa-chevron-right"></i></a>'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>';
-                            productos+=html;
-                      console.log(item);
-                    });
-                    $( "#mi-stockit-productos" ).append( productos );
-                      
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        }
-</script>
-
- 
-
+    <script src="js/mi-stockit.js"></script>
 </body></html>
