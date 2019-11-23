@@ -119,7 +119,7 @@ $( document ).ready(function() {
 
                                         '<div class="row row-btns-pro-ind">'+
                                             '<div class="col-md-12">'+
-                                                '<a class="btn btn-rentar-pro-ind" href="agregar-tarjeta.html" role="button">Rentar ahora</a>'+
+                                                '<a class="btn btn-rentar-pro-ind" onclick="rentar()" role="button">Rentar ahora</a>'+
                                             '</div>'+
                                         '</div>'+
 
@@ -140,3 +140,7 @@ $( document ).ready(function() {
     
     
 });
+
+function rentar(){
+    location.href="seleccionar-tarjeta.php";
+}

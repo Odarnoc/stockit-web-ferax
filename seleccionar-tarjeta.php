@@ -60,38 +60,7 @@ $key=$_SESSION["token"];
 
                         <form class="form-seleccionar-tarjeta">
 
-                            <div class="form-row">
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                                        <label class="form-check-label" for="exampleRadios1">
-                                            Visa **** 4169
-                                        </label>
-                                    </div>
-                                    <p class="p-check-label">Vence el 03/2023 </p>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1">
-                                        <label class="form-check-label" for="exampleRadios2">
-                                            Master Card **** 0357
-                                        </label>
-                                    </div>
-                                    <p class="p-check-label">Vence el 08/2022</p>
-
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1">
-                                        <label class="form-check-label" for="exampleRadios3">
-                                            Visa **** 9606
-                                        </label>
-                                    </div>
-                                    <p class="p-check-label">Vence el 01/2021</p>
-                                </div>
+                            <div class="form-row" id="tarjetas">
 
                             </div>
 
@@ -106,10 +75,10 @@ $key=$_SESSION["token"];
 
                         <div class="row row-btns-revisar">
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-regresar" href="producto-individual.php" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
+                                <a class="btn btn-regresar" onclick="back()" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
                             </div>
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-confirmar-pago" href="revisar-orden.php" role="button">Continuar</a>
+                                <a class="btn btn-confirmar-pago" onclick="continuar()" role="button">Continuar</a>
                             </div>
 
                         </div>
@@ -146,11 +115,14 @@ $key=$_SESSION["token"];
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+    <!--swall alert-->
+    <script src="js/sweetalert.min.js"></script>
 
     <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
+    <script src="js/seleccioner-tarjeta.js"></script>
 
     <script>
         $('#myCarousel').carousel({
