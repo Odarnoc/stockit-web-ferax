@@ -91,6 +91,40 @@ $key=$_SESSION["token"];
             </div>
         </section>
     </div>
+
+    <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal-header-interesados" style="background-image: url(images/asador-circular.jpg)">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body modal-body-interesados">
+                            <p class="t1" id="price-in"></p>
+                            <p class="t3" id="user-in"> <span class="badge badge-success">4 Usuario(s)</span></p>
+                            <p class="t4">Solicitan rentar este articulo</p>
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-interesados">
+                                    <tbody id="interested">
+                                        <tr>
+                                            <td class="td-img-int"><img id="image-in" class="image-user-table" src="images/profiles/4.jpg" alt=""></td>
+                                            <td class="td-name-int" id="name-in">Steph Leroy</td>
+                                            <td class="td-cancel-int"><a class="btn btn-cancel-table" href="#" role=""><i class="fas fa-times"></i></a></td>
+                                            <td class="td-check-int"><a class="btn btn-check-table" href="fechas-interesados.html" role=""><i class="fas fa-check"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
