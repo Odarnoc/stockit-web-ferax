@@ -96,14 +96,14 @@ $key=$_SESSION["token"];
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header modal-header-interesados" style="background-image: url(images/asador-circular.jpg)">
+                        <div id="modalImg" class="modal-header modal-header-interesados" style="background-image: url(images/asador-circular.jpg)">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body modal-body-interesados">
                             <p class="t1" id="price-in"></p>
-                            <p class="t3" id="user-in"> <span class="badge badge-success">4 Usuario(s)</span></p>
+                            <p class="t3" id="user-in"> <span id="cantInteresados" class="badge badge-success">4 Usuario(s)</span></p>
                             <p class="t4">Solicitan rentar este articulo</p>
                             <div class="table-responsive">
                                 <table class="table table-borderless table-interesados">
