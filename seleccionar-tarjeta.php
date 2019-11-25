@@ -1,10 +1,11 @@
 <?php
-session_start();
-if(!isset($_SESSION["token"])){
-    header("Location: iniciar-sesion.php");
-}
-$key=$_SESSION["token"];
+    session_start();
+    if(!isset($_SESSION["token"])){
+        header("Location: iniciar-sesion.php");
+    }
+    $key=$_SESSION["token"];
 
+    $idPreReservation = $_GET['id'];
 ?>
 
 <!doctype html>
@@ -27,7 +28,8 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Main-Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
@@ -44,7 +46,7 @@ $key=$_SESSION["token"];
     <!-- MainMenu-Area -->
 
     <?php include("menus/menu_logged_in.php"); ?>
-    
+
     <!-- MainMenu-Area -->
 
 
@@ -67,7 +69,7 @@ $key=$_SESSION["token"];
                             <div class="form-row">
 
                                 <div class="form-group col-md-12">
-                                    <p class="p-pasos">Paso 1 de 3</p>
+                                    
                                 </div>
                             </div>
                         </form>
@@ -75,7 +77,8 @@ $key=$_SESSION["token"];
 
                         <div class="row row-btns-revisar">
                             <div class="col-md-6 col-xs-6">
-                                <a class="btn btn-regresar" onclick="back()" role="button"><i class="fas fa-chevron-left"></i> Regresar</a>
+                                <a class="btn btn-regresar" onclick="back()" role="button"><i
+                                        class="fas fa-chevron-left"></i> Regresar</a>
                             </div>
                             <div class="col-md-6 col-xs-6">
                                 <a class="btn btn-confirmar-pago" onclick="continuar()" role="button">Continuar</a>
@@ -97,9 +100,9 @@ $key=$_SESSION["token"];
     </section>
 
 
-     <!-- Footer -->
-     <?php include("footer/footer.php"); ?>
-     <!-- Footer-Area-End -->
+    <!-- Footer -->
+    <?php include("footer/footer.php"); ?>
+    <!-- Footer-Area-End -->
 
 
     <!--Vendor-JS-->
@@ -121,12 +124,15 @@ $key=$_SESSION["token"];
     <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
+        var idPreReservation = "<?php echo $idPreReservation; ?>";
     </script>
     <script src="js/seleccioner-tarjeta.js"></script>
 
     <script>
-        $('#myCarousel').carousel({
-            interval: 5000
-        });
+    $('#myCarousel').carousel({
+        interval: 5000
+    });
     </script>
-</body></html>
+</body>
+
+</html>

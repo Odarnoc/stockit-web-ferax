@@ -142,15 +142,15 @@ $key=$_SESSION["token"];
     <script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
     <!--Custom scripts-->
     <script>
-        var keyt = "<?php echo $key; ?>";
+    var keyt = "<?php echo $key; ?>";
     </script>
 
     <script src="js/add-card.js"></script>
 
     <script>
-        $('#myCarousel').carousel({
-            interval: 5000
-        });
+    $('#myCarousel').carousel({
+        interval: 5000
+    });
     </script>
 </body>
 

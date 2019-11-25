@@ -32,15 +32,17 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
 
 </head>
 
 <body data-spy="scroll" data-target=".mainmenu-area">
 
-     <!-- MainMenu-Area -->
-     <?php include("menus/menu_logged_in.php"); ?>
-     <!-- EndMainMenu-Area -->
+    <!-- MainMenu-Area -->
+    <?php include("menus/menu_logged_in.php"); ?>
+    <!-- EndMainMenu-Area -->
 
     <section id="sec-producto-ind" class="sec-gray">
         <div class="container" id="prod-ineterno"></div>
@@ -64,17 +66,23 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <!--swall alert-->
+    <script src="js/sweetalert.min.js"></script>
 
-     <!--Custom scripts-->
+    <!--Custom scripts-->
     <script>
-        var keyt = "<?php echo $key; ?>";
-        var idProductoJs = "<?php echo $idProducto; ?>";
+    var keyt = "<?php echo $key; ?>";
+    var idProductoJs = "<?php echo $idProducto; ?>";
     </script>
     <script src="js/prod-individual.js"></script>
-    
+
     <script>
-        $('#myCarousel').carousel({
-            interval: 5000
-        });
+    $('#myCarousel').carousel({
+        interval: 5000
+    });
     </script>
-</body></html>
+</body>
+
+</html>

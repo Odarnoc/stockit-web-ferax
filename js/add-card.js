@@ -1,7 +1,7 @@
 var successResponseHandler = function(token) {
     console.log("entro");
     console.log(token);
-    let  data = {
+    let data = {
         tokenCardId: token.id
     }
 
@@ -10,34 +10,35 @@ var successResponseHandler = function(token) {
         method: "POST",
         dataType: "json",
         data: data,
-        beforeSend: function (xhr) {
+        beforeSend: function(xhr) {
             /* Authorization header */
-            xhr.setRequestHeader("Authorization", keyt) },
-        success: function (data) {
+            xhr.setRequestHeader("Authorization", keyt)
+        },
+        success: function(data) {
             location.href = "";
         },
-        error: function (error) {
+        error: function(error) {
             console.log(error);
         }
     });
 };
 
 var errorResponseHandler = function(error) {
-    Swal.fire('Error',error.message_to_purchaser,'error');
-    
+    Swal.fire('Error', error.message_to_purchaser, 'error');
+
     console.log(error);
 };
 
-function addCard(){
+function addCard() {
     console.log("generando token");
     var nombre = $("#nombre").val();
     var num = $("#noTarjeta").val();
     var mes = $("#mes").val();
     var anio = $("#anio").val();
     var cvv = $("#cvv").val();
-    if(Conekta.card.validateNumber(num)){
-        if(Conekta.card.validateExpirationDate(mes, anio)){
-            if(Conekta.card.validateCVC(cvv)){
+    if (Conekta.card.validateNumber(num)) {
+        if (Conekta.card.validateExpirationDate(mes, anio)) {
+            if (Conekta.card.validateCVC(cvv)) {
 
                 Conekta.setPublicKey("key_UzxusuNmrsqxSocRFHfzbUg");
                 Conekta.setLanguage("es");
@@ -53,13 +54,13 @@ function addCard(){
                 console.log(tokenParams);
 
                 Conekta.Token.create(tokenParams, successResponseHandler, errorResponseHandler);
-            }else{
-                Swal.fire('Error','CVV no valido!','error');
+            } else {
+                Swal.fire('Error', 'CVV no valido!', 'error');
             }
-        }else{
-            Swal.fire('Error','fecha de expiracion no valida!','error');
+        } else {
+            Swal.fire('Error', 'fecha de expiracion no valida!', 'error');
         }
-    }else{
-        Swal.fire('Error','Numero de targeta no valido!','error');
+    } else {
+        Swal.fire('Error', 'Numero de targeta no valido!', 'error');
     }
 }
