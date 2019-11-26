@@ -47,20 +47,20 @@ $(document).ready(function() {
                         '<p class="t2 one-line">' + item.name + '</p>' +
                         '</div>' +
                         '<div class="d-interesados">' +
-                        '<div class="row">';
+                        '<ul>';
                     var terminar = 0;
                     item.prereservations.forEach(function(item2) {
                         if (terminar == 2) {
                             return;
                         }
-                        var defect = '<div class="col-md-6"><i class="fas fa-user-circle" style="color: white; font-size: 50px"></i></div>';
+                        var defect = '<li><i class="fas fa-user-circle" style="color: white; font-size: 50px"></i></li>';
                         if (!(item2.interesed.image == null || item2.interesed.image == "")) {
-                            defect = '<div class="col-md-6"><img class="image-round" style="height: 50px;" src="http://138.68.241.20/api/image/' + item2.interesed.image + '" alt=""></div>';
+                            defect = '<li><img class="image-round" style="height: 50px;" src="http://138.68.241.20/api/image/' + item2.interesed.image + '" alt=""></li>';
                         }
                         html += defect;
                         terminar++;
                     });
-                    html += '</div>' +
+                    html += '</ul>' +
                         '</div>' +
                         '</Button>' +
                         '</div>' +
@@ -108,5 +108,37 @@ function senddata(items) {
 }
 
 function cancelarPreReservation(id) {
-    console.log(id);
+    
+    swal({
+        title: "Deseas cancelar la reservacion?",
+        text: "La reservacion se eliminara de la lista de interesados!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+        })
+    .then((willDelete) => {
+        if (willDelete) {
+            swal("Se cancelo la reservacion seleccionada!", {
+            icon: "success",
+                
+            });
+            deleteReservation();
+        } 
+    });
+}
+
+function deleteReservation(){
+    $.ajax({
+        url: "http://138.68.241.20/api/reservation/reject",
+        method: "POST",
+        dataType: "json",
+        data: "",
+        beforeSend: function(xhr) {
+            /* Authorization header */
+            xhr.setRequestHeader("Authorization", keyt);
+        },
+        success: function(data) {
+            location.reload();
+        }
+    });
 }

@@ -39,76 +39,98 @@ $key=$_SESSION["token"];
     <!-- Venobox.css -->
     <link rel="stylesheet" href="assets/css/plugins/venobox.css">
     <!-- Nice Select -->
+
+    <link rel="stylesheet" href="css/avatar-image.css">
+
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
     <!--
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     -->
-
-    <!-- Plugin-CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="css/responsive.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
 </head>
 
 <body class="template-color-1">
 
-    <div class="main-wrapper">
+<div class="main-wrapper" style="margin-top:80px;">
 
-    <!-- MainMenu-Area -->
+<!-- Begin Torress's Header Main Area -->
+<?php include("menus/menu_logged_in.php"); ?>
+<!-- Torress's Header Main Area End Here -->
 
-     <?php include("menus/menu_logged_in.php"); ?>
+<!-- Begin Torress's Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2>Interesados</h2>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li>Interesados</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-    <!-- MainMenu-Area -->
+<!-- Torress's Breadcrumb Area End Here -->
+<section class="sec-mi-stockit">
+    <div class="container">
+        <div class="row" id="historial">
 
-        <!-- Begin Torress's Breadcrumb Area -->
-        <div class="breadcrumb-area" style="margin-top: 80px">
-            <div class="container">
-                <div class="breadcrumb-content">
-                    <h2>Historial</h2>
-                    <ul>
-                        <li><a href="index.php">Inicio</a></li>
-                        <li>Mi cuenta</li>
-                        <li>Historial</li>
-                    </ul>
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div id="modalImg" class="modal-header modal-header-interesados" style="background-image: url(images/asador-circular.jpg)">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-interesados">
+                    <p class="t1" id="text4"></p>
+                    <p class="t4" id="price-in"></p>
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-interesados">
+                            <tbody id="interested">
+                                <tr>
+                                    <td class="td-img-int"><img style="height: 65px" id="image-in" class="image-user-table" src="images/profiles/4.jpg" alt=""></td>
+                                    <td class="td-name-int" id="name-in">Steph Leroy</td> 
+                                </tr>
+                                <tr>
+                                    <div class="container">
+                                        <span id="rateMe2"  class="empty-stars"></span>
+                                    </div>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
-        <!-- Torress's Breadcrumb Area End Here -->
-
-
-        <section class="sec-mi-stockit" id="historial">
-        <!-- <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <div class="d-img-thumbnail">
-                                <img src="images/proyector.png" alt="Slide11">
-                            </div>
-                            <div class="info-item-historial">
-                                <span class="badge badge-info"><i class="fas fa-history"></i> 05/11/2019</span>
-                                <p class="t1">Proyector Epson S39</p>
-                                <p class="t2">$399.00 <sup></sup> / día</p>
-                                <a class="btn btn-slide-productos" href="#" role="button">Ver producto <i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div> -->
-
-                </div>
-            </div>
-        </section>
     </div>
 
-    <!-- Footer -->
-     <?php include("footer/footer.php"); ?>
-    <!-- Footer-Area-End -->
+<!-- Footer -->
+<?php include("footer/footer.php"); ?>
+<!-- Footer-Area-End -->
 
 
     <!-- JS
@@ -156,6 +178,11 @@ $key=$_SESSION["token"];
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
 
+    <script type="text/javascript" src="js/js2/mdb.min.js"></script>
+
+    <!--swall alert-->
+    <script src="js/sweetalert.min.js"></script>
+
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
 <script src="assets/js/vendor/vendor.min.js"></script>
@@ -165,31 +192,12 @@ $key=$_SESSION["token"];
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
+
     <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
 
-    <script>
-        $( document ).ready(function() {
-            $.ajax({
-                url: "http://138.68.241.20/api/reservation/deliveries",
-                method: "POST",
-                dataType: "json",
-                data: "",
-                beforeSend: function (xhr) {
-                    /* Authorization header */
-                    xhr.setRequestHeader("Authorization", keyt);
-                },
-                success: function (data) {
-                    console.log(data);
-                    
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        });
-    </script>
+    <script src="js/historial.js"></script>
 
 </body></html>

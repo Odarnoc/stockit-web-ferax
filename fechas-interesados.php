@@ -43,6 +43,8 @@
     <!-- Nice Select -->
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
     <!--
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
@@ -100,25 +102,15 @@
                             </div>
 
                             <div class="d-fechas-int">
-                                <div class="d-item-fechas">
-                                    <p class="t1">Marzo 2019</p>
-                                    <ul>
-                                        <li>5</li>
-                                        <li>16</li>
-                                        <li>27</li>
-                                        <li>28</li>
-                                    </ul>
-
+                                <div class="d-item-fechas form-group">
+                                    <p class="t1">Fecha de entrega</p>
+                                    
+                                    <input style="text-align:center" class="form-control" type="text" id="daterenta">
                                 </div>
 
-                                <div class="d-item-fechas">
-                                    <p class="t1">Diciembre 2019</p>
-                                    <ul>
-                                        <li>10</li>
-                                        <li>20</li>
-                                        <li>21</li>
-                                    </ul>
-
+                                <div class="d-item-fechas form-group">
+                                    <label for="comment">Mensaje privado</label>
+                                    <textarea id="mensaje" class="form-control" rows="5" id="comment"></textarea>
                                 </div>
 
                             </div>
@@ -128,7 +120,7 @@
                             </div>
 
                             <div class="d-btns-int">
-                                <a class="btn btn-lg-green" href="#" role="button">Confirmar</a>
+                                <a class="btn btn-lg-green"  onclick="rentar()" role="button">Confirmar</a>
                                 <p><a class="btn btn-link-muted mt-3" href="interesados.html" role="button">Cancelar</a></p>
 
                             </div>
@@ -173,37 +165,7 @@
     </div>
 
     <!-- Footer -->
-    <footer id="footer-home">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-left">
-                        <img src="images/logo-stockit.png" alt="">
-                        <p class="p1">© Todos los derechos son reservados</p>
-                    </div>
-
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-center">
-                        <p class="p1">
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-right">
-                        <p class="p1">
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a></p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </footer>
+        <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
 
 
@@ -252,6 +214,10 @@
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
 
+    <script src="js/moment.min.js"></script>
+
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
 <script src="assets/js/vendor/vendor.min.js"></script>
@@ -263,7 +229,9 @@
 
     <script>
     var keyt = "<?php echo $key; ?>";
-    var idProductoJs = "<?php echo $idPreReservation; ?>";
+    var idConfirmar = "<?php echo $idPreReservation; ?>";
     </script>
+
+<script src="js/interested-date.js"></script>
 
 </body></html>
