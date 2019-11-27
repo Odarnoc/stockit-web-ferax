@@ -24,6 +24,7 @@ $key=$_SESSION["token"];
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
     <!-- Fontawesome Star -->
@@ -109,10 +110,10 @@ $key=$_SESSION["token"];
 <div class="breadcrumb-area">
     <div class="container">
         <div class="breadcrumb-content">
-            <h2>Interesados</h2>
+            <h2>Historial</h2>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li>Interesados</li>
+                <li><a href="index.php">Inicio</a></li>
+                <li>Historial</li>
             </ul>
         </div>
     </div>
@@ -128,7 +129,7 @@ $key=$_SESSION["token"];
 </div>
 
 <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div id="modalImg" class="modal-header modal-header-interesados" style="background-image: url(images/asador-circular.jpg)">
@@ -162,8 +163,8 @@ $key=$_SESSION["token"];
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="botonGuardar" type="button" onclick="puntuar()" class="btn btn-close-modal" data-dismiss="modal" style="background-color: #20c997;color: white;">Guardar puntuación</button>
-                    <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
+                    <button id="botonGuardar" type="button" onclick="puntuar()" class="btn btn-close-modal" data-dismiss="modal" style="background-color: #20c997;color: white;font-size: 1.2rem;">Guardar puntuación</button>
+                    <button type="button" class="btn btn-close-modal" data-dismiss="modal" style="font-size: 1.2rem;">Cerrar</button>
                 </div>
             </div>
         </div>

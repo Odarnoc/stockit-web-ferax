@@ -28,3 +28,6 @@
         </div>
 
     </footer>
+
+    <!--Configuracion url api-->
+    <script src="config.js"></script>

@@ -4,7 +4,7 @@ $(document).ready(function() {
     console.log(categoriaFiltro);
     console.log(busquedaFiltro);
     $.ajax({
-        url: "http://138.68.241.20/api/publication/list",
+        url: serverURL + "publication/list",
         method: "POST",
         dataType: "json",
         data: "",
@@ -21,7 +21,7 @@ $(document).ready(function() {
                     '<div class="single-product">' +
                     '<div class="product-img">' +
                     '<a href="producto-individual.php?id=' + item._id + '">' +
-                    '<img class="primary-img" src="http://138.68.241.20/api/image/' + item.images[0] + '">' +
+                    '<img class="primary-img" src="' + serverURL + 'image/' + item.images[0] + '">' +
                     '</a>' +
                     '<div class="add-actions">' +
                     '<ul>' +
@@ -59,7 +59,7 @@ $(document).ready(function() {
                     '<div class="single-product">' +
                     '<div class="product-img">' +
                     '<a href="producto-individual.php?id=' + item._id + '">' +
-                    '<img src="http://138.68.241.20/api/image/' + item.images[0] + '">' +
+                    '<img src="' + serverURL + 'image/' + item.images[0] + '">' +
                     '</a>' +
                     '</div>' +
                     '<div class="torress-product-content">' +
@@ -129,7 +129,7 @@ $(document).ready(function() {
 
 function favorito(id) {
     $.ajax({
-        url: "http://138.68.241.20/api/publication/checkFavorites/" + id,
+        url: serverURL + "publication/checkFavorites/" + id,
         method: "POST",
         dataType: "json",
         data: "",

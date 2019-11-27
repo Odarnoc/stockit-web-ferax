@@ -25,6 +25,7 @@ $key=$_SESSION["token"];
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
     <!-- Fontawesome Star -->
@@ -129,7 +130,7 @@ $key=$_SESSION["token"];
     </div>
 
         <!-- Modal-->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header mh-int-contact">

@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 
     $.ajax({
-        url: "http://138.68.241.20/api/reservation/records",
+        url: serverURL + "reservation/records",
         method: "POST",
         dataType: "json",
         data: "",
@@ -58,7 +58,7 @@ $(document).ready(function() {
                         '<div class="col-md-4">' +
                         '<div class="thumbnail">' +
                         '<div class="d-img-thumbnail">' +
-                        '<img src="http://138.68.241.20/api/image/' + item.prereservation.publication.images[0] + '" alt="Slide11">' +
+                        '<img src="' + serverURL + 'image/' + item.prereservation.publication.images[0] + '" alt="Slide11">' +
                         '</div>' +
                         '<div class="info-item-interesados">' +
                         '<p class="t1">$' + item.prereservation.publication.price + '<sup>00 / día</sup></p>' +
@@ -81,7 +81,7 @@ $(document).ready(function() {
                         '</div>' +
                         '</div>';
                     if (item.evaluation == null) {
-                        html += '<a style="width: 100%;color: #20c997;" class="btn btn-slide-productos" onclick="idCapture(\'' + cont + '\')" data-toggle="modal" data-target="#exampleModalCenter" role="button">Calificar producto<i class="fas fa-chevron-right"></i></a>';
+                        html += '<a style="width: 100%;color: #20c997;font-size: 1rem;" class="btn btn-slide-productos" onclick="idCapture(\'' + cont + '\')" data-toggle="modal" data-target="#exampleModalCenter" role="button">Calificar producto<i class="fas fa-chevron-right"></i></a>';
                     }
                     html += '</div>' +
                         '</div>' +
@@ -103,17 +103,26 @@ function idCapture(captureId) {
     var elementIguality = listaHistorial[captureId];
 
     $("#name-in").text(elementIguality.owner.fullname);
-    $("#image-in").attr("style", "background-image: url(http://138.68.241.20/api/image/" + elementIguality.owner.image + ");");
+    if (!(elementIguality.owner.image == null || elementIguality.owner.image == "")) {
+        $("#image-in").attr("style", "background-image: url(" + serverURL + "image/" + elementIguality.owner.image + ");");
+    } else {
+        $("#image-in").attr("style", "background-image: url(images/avatar.png);");
+    }
+
 
     $("#text4").text(elementIguality.prereservation.publication.name);
     $("#price-in").text(elementIguality.prereservation.publication.price + ".00 MXN / Día");
-    $("#modalImg").attr("style", "background-image: url(http://138.68.241.20/api/image/" + elementIguality.prereservation.publication.images[0] + ");");
+    $("#modalImg").attr("style", "background-image: url(" + serverURL + "image/" + elementIguality.prereservation.publication.images[0] + ");");
 
     console.log(listaHistorial[captureId]);
 
     reservacionSeleccionada = elementIguality._id;
     $("#botonGuardar").hide();
-    markStarsAsActive(elementIguality.evaluation.stars);
+    if(elementIguality.evaluation.stars != null && elementIguality.evaluation.stars != ""){
+        markStarsAsActive(elementIguality.evaluation.stars);
+    }else{
+        markStarsAsActive(0);
+    }
 
 
 
@@ -126,7 +135,7 @@ function puntuar() {
 
 
     $.ajax({
-        url: "http://138.68.241.20/api/evaluation/create",
+        url: serverURL + "evaluation/create",
         method: "POST",
         dataType: "json",
         data: {

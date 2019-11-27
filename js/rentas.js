@@ -2,7 +2,7 @@ var productos = "";
 var listaproductos = [];
 $(document).ready(function() {
     $.ajax({
-        url: "http://138.68.241.20/api/reservation/list",
+        url: serverURL + "reservation/list",
         method: "POST",
         dataType: "json",
         data: "",
@@ -33,11 +33,11 @@ $(document).ready(function() {
                 data.reservations.forEach(function(item) {
                     var formato = item.prereservation.publication;
                     var html =
-                        '<Button onclick="datosInteresado(' + cont + ')" data-toggle="modal" data-target="#exampleModalCenter">' +
                         '<div class="col-md-4">' +
+                        '<Button onclick="datosInteresado(' + cont + ')" data-toggle="modal" data-target="#exampleModalCenter">' +
                         '<div class="thumbnail">' +
                         '<div class="d-img-thumbnail">' +
-                        '<img src="http://138.68.241.20/api/image/' + formato.images[0] + '" alt="Slide11">' +
+                        '<img src="' + serverURL + 'image/' + formato.images[0] + '" alt="Slide11">' +
                         '</div>' +
                         '<div class="info-item-slide">' +
                         '<p class="p2">' + formato.name + '</p>' +
@@ -54,8 +54,8 @@ $(document).ready(function() {
                         '</div>' +
                         '</div>' +
                         '</div>' +
-                        '</div>' +
-                        '</Button>';
+                        '</Button>' +
+                        '</div>';
                     productos += html;
                     cont++;
                     console.log(item);
@@ -70,8 +70,13 @@ function datosInteresado(dato) {
     var objetselect = listaproductos[dato];
     console.log(objetselect);
 
+    if (!(objetselect.interesed.image == null || objetselect.interesed.image == "")) {
+        $("#modalImage").attr("style", "background-image: url(" + serverURL + "image/" + objetselect.interesed.image + ");");
+    } else {
+        $("#modalImage").attr("style", "background-image: url(images/avatar.png);");
+    }
 
-    $("#modalImage").attr("style", "background-image: url(http://138.68.241.20/api/image/" + objetselect.interesed.image + ");");
+
     $("#nameInteresadModal").text(objetselect.interesed.fullname);
     $("#correoInteresado").text(objetselect.interesed.email);
     $("#telInteresado").text(objetselect.interesed.phone);

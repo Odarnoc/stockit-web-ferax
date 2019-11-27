@@ -26,6 +26,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
     <!-- Fontawesome Star -->
@@ -56,6 +57,41 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
+    <style>
+    .caption div {
+        box-shadow: 0 0 5px #C8C8C8;
+        transition: all 0.3s ease 0s;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-circle {
+        border-radius: 0;
+    }
+
+    .ratio {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 0;
+        padding-bottom: 100px;
+        position: relative;
+        width: 100px;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100px;
+    }
+    </style>
 
 </head>
 
@@ -86,7 +122,9 @@
                     <div class="col-lg-6 col-md-6 offset-lg-3 offset-md-3">
                         <div class="d-fechas-interesados">
                             <div class="d-foto-interesados">
-                                <img  id="interesadoPerfil" >
+                                <center style="margin-bottom: 1rem;">
+                                    <div id="interesadoPerfil" class="ratio img-responsive img-circle"></div>
+                                </center>
                                 <p class="t1" id="nameInteresad"></p>
                                 <button type="button" class="btn btn-contacto-int" data-toggle="modal" data-target="#exampleModalCenter">
                                     Contacto
@@ -124,7 +162,7 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header mh-int-contact">
@@ -133,7 +171,9 @@
                         </button>
                     </div>
                     <div class="modal-body mb-int-contact">
-                        <img id="modalImage">
+                        <center style="margin-bottom: 1rem;">
+                            <div id="modalImage" class="ratio img-responsive img-circle"></div>
+                        </center>
                         <p class="t1" id="nameInteresadModal">Brayam Morando</p>
                         
                         <div class="d-links-contact">

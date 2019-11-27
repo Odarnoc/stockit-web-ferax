@@ -6,7 +6,7 @@ var successResponseHandler = function(token) {
     }
 
     $.ajax({
-        url: "http://138.68.241.20/api/payMethod/create",
+        url: serverURL + "payMethod/create",
         method: "POST",
         dataType: "json",
         data: data,

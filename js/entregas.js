@@ -1,7 +1,7 @@
 var productos = "";
 $(document).ready(function() {
     $.ajax({
-        url: "http://138.68.241.20/api/reservation/deliveries",
+        url: serverURL + "reservation/deliveries",
         method: "POST",
         dataType: "json",
         data: "",
@@ -27,11 +27,17 @@ $(document).ready(function() {
                     console.log(fecha.format('h:mm a'));
                     console.log(fecha.format('DD/MM/YYYY'));
 
+                    var profile = 'images/avatar.png';
+
+                    if (!(item.interesed.image == null || item.interesed.image == "")) {
+                        profile = serverURL + "image/" + item.interesed.image;
+                    }
+
                     var html = '<div class="col-md-4 sticky">' +
                         '<div class="d-checkout-pro-ind">' +
                         '<div class="clearfix d-2">' +
                         '<center style="margin-bottom: 1rem;">' +
-                        '<div class="ratio img-responsive img-circle" style="background-image: url(http://138.68.241.20/api/image/' + item.interesed.image + ');"></div>' +
+                        '<div class="ratio img-responsive img-circle" style="background-image: url(' + profile + ');"></div>' +
                         '<p class="t1">' + item.interesed.fullname + '</p>' +
                         '</center>' +
                         '</div>' +

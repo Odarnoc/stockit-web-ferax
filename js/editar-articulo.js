@@ -1,16 +1,16 @@
-function getPublication(id){
+function getPublication(id) {
     $.ajax({
-        url: `http://138.68.241.20/api/publication/show/${id}`,
+        url: serverURL + `publication/show/${id}`,
         method: "GET",
         contentType: false,
         processData: false,
-        beforeSend: function (xhr) {
-            /* Authorization header */ 
+        beforeSend: function(xhr) {
+            /* Authorization header */
             xhr.setRequestHeader("Authorization", keyt);
         },
-        success: function (data) {
+        success: function(data) {
             console.log(data);
-            $('.image-upload').attr("style", "background-image: url(http://138.68.241.20/api/image/" + data.publication.images[0] + ");");
+            $('.image-upload').attr("style", "background-image: url(" + serverURL + "image/" + data.publication.images[0] + ");");
             $('.image-upload').addClass('overlay-image-upload');
             $('.image-upload label').css('color', 'rgba(255,255,255,1)');
             $("#name").val(data.publication.name);
@@ -20,12 +20,13 @@ function getPublication(id){
             $("#price").val(data.publication.price);
             idImagesToRemove = data.publication.images;
         },
-        error: function (error) {
+        error: function(error) {
             console.log(error);
         }
     });
 }
-function editar(){
+
+function editar() {
     var inp = document.getElementById('file-input');
     var numberOfImages = inp.files.length;
     let name = document.getElementById('name').value;
@@ -35,63 +36,63 @@ function editar(){
     let description = document.getElementById('description').value;
     let locat = document.getElementById('location').value;
     if (!imageChange) {
-            if(validar(name, "Nombre")
-                && validar(category, "Categoria")
-                && validar(price, "Precio por día") 
-                && validar(description, "Descripción")
-                && validar(locat, "Dirección")){
-                    var form = $('#sub')[0];
-                    var formData = new FormData(form);
-                    formData.delete("Images");
-                    $.ajax({
-                        url: `http://138.68.241.20/api/publication/update/${id}`,
-                        method: "PUT",
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        beforeSend: function (xhr) {
-                            /* Authorization header */ 
-                            xhr.setRequestHeader("Authorization", keyt);
-                        },
-                        success: function (data) {
-                            console.log(data);
-                            location.href="mi-perfil.php";
-                        
-                        },
-                        error: function (error) {
-                            console.log(error);
-                        }
-                    });
-            }
-    }else{
-        if(numberOfImages > 0 && numberOfImages <= 6){
-            if(validar(name, "Nombre")
-                && validar(category, "Categoria")
-                && validar(price, "Precio por día") 
-                && validar(description, "Descripción")
-                && validar(locat, "Dirección")){
-                    var form = $('#sub')[0];
-                    var formData = new FormData(form);
-                    formData.append('imagesRemovedIds', idImagesToRemove.toString());
-                    $.ajax({
-                        url: `http://138.68.241.20/api/publication/update/${id}`,
-                        method: "PUT",
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        beforeSend: function (xhr) {
-                            /* Authorization header  */
-                            xhr.setRequestHeader("Authorization", keyt);
-                        },
-                        success: function (data) {
-                            console.log(data);
-                            location.href="mi-perfil.php";
-                        
-                        },
-                        error: function (error) {
-                            console.log(error);
-                        }
-                    });
+        if (validar(name, "Nombre") &&
+            validar(category, "Categoria") &&
+            validar(price, "Precio por día") &&
+            validar(description, "Descripción") &&
+            validar(locat, "Dirección")) {
+            var form = $('#sub')[0];
+            var formData = new FormData(form);
+            formData.delete("Images");
+            $.ajax({
+                url: serverURL + `publication/update/${id}`,
+                method: "PUT",
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: function(xhr) {
+                    /* Authorization header */
+                    xhr.setRequestHeader("Authorization", keyt);
+                },
+                success: function(data) {
+                    console.log(data);
+                    location.href = "mi-perfil.php";
+
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    } else {
+        if (numberOfImages > 0 && numberOfImages <= 6) {
+            if (validar(name, "Nombre") &&
+                validar(category, "Categoria") &&
+                validar(price, "Precio por día") &&
+                validar(description, "Descripción") &&
+                validar(locat, "Dirección")) {
+                var form = $('#sub')[0];
+                var formData = new FormData(form);
+                formData.append('imagesRemovedIds', idImagesToRemove.toString());
+                $.ajax({
+                    url: serverURL + `publication/update/${id}`,
+                    method: "PUT",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function(xhr) {
+                        /* Authorization header  */
+                        xhr.setRequestHeader("Authorization", keyt);
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        location.href = "mi-perfil.php";
+
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
             }
         }
     }

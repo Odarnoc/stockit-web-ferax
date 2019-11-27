@@ -4,7 +4,7 @@ var precioPublication = 0;
 
 $(document).ready(function() {
     $.ajax({
-        url: "http://138.68.241.20/api/publication/show/" + idProductoJs,
+        url: serverURL + "publication/show/" + idProductoJs,
         method: "GET",
         dataType: "json",
         data: "",
@@ -65,13 +65,17 @@ $(document).ready(function() {
                     category = "NA";
                     break;
             }
+            var profile = 'images/avatar.png';
+            if (!(data.publication.owner.image == null || data.publication.owner.image == "")) {
+                profile = serverURL + 'image/' + data.publication.owner.image;
+            }
 
             var html =
                 '<div class="row">' +
                 '<div class="col-md-1"></div>' +
                 '<div class="col-md-6">' +
                 '<div class="item-info-pro-ind">' +
-                '<img src="http://138.68.241.20/api/image/' + data.publication.images[0] + '" alt="">' +
+                '<img src="' + serverURL + 'image/' + data.publication.images[0] + '" alt="">' +
                 '<div class="d-info-pro-ind">' +
                 '<p class="t1">' + category + '</p>' +
                 '<p class="t2">' + data.publication.name + '</p>' +
@@ -87,7 +91,7 @@ $(document).ready(function() {
 
                 ' <div class="clearfix d-2">' +
                 '<center>' +
-                '<div  class="ratio img-responsive img-circle" style="background-image: url(http://138.68.241.20/api/image/' + data.publication.owner.image + ');"></div>' +
+                '<div  class="ratio img-responsive img-circle" style="background-image: url(' + profile + ');"></div>' +
                 '<p class="t1">' + data.publication.owner.fullname + '</p>' +
                 '<p class="t2">' + data.publication.location + '</p>' +
                 '</center>' +
@@ -217,7 +221,7 @@ function rentar() {
     console.log(datajson);
 
     $.ajax({
-        url: "http://138.68.241.20/api/prereservation/create",
+        url: serverURL + "prereservation/create",
         method: "POST",
         dataType: "json",
         data: datajson,

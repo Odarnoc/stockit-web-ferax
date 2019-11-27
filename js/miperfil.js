@@ -1,75 +1,77 @@
 var userdata = {};
 
-$( document ).ready(function() {
+$(document).ready(function() {
     $.ajax({
-        url: "http://138.68.241.20/api/user/show",
+        url: serverURL + "user/show",
         method: "GET",
         dataType: "json",
         data: "",
-        beforeSend: function (xhr) {
+        beforeSend: function(xhr) {
             /* Authorization header */
-            xhr.setRequestHeader("Authorization", keyt) },
-        success: function (data) {
-            $('.image-upload').attr("style", "background-image: url(http://138.68.241.20/api/image/" + data.user.image + ");");
+            xhr.setRequestHeader("Authorization", keyt)
+        },
+        success: function(data) {
+            $('.image-upload').attr("style", "background-image: url(" + serverURL + "image/" + data.user.image + ");");
             $('.image-upload').addClass('overlay-image-upload');
             $('.image-upload label').css('color', 'rgba(255,255,255,1)');
             console.log(data);
-            userdata=data.user;
+            userdata = data.user;
             $("#name").val(data.user.fullname);
             $("#email").val(data.user.email);
             $("#tele").val(data.user.phone);
 
-            if(data.user.credential != null ){
+            if (data.user.credential != null) {
                 $("#noval").hide();
                 $("#val").show();
-            }else{
+            } else {
                 $("#noval").show();
                 $("#val").hide();
             }
         },
-        error: function (error) {
+        error: function(error) {
             console.log(error);
         }
-    }); 
+    });
 });
 
-function update(){
-    
+function update() {
+
     var form = $('#miperfil')[0];
     var formData = new FormData(form);
     $.ajax({
-        url: `http://138.68.241.20/api/user/update`,
+        url: serverURL + `user/update`,
         method: "PUT",
         data: formData,
         contentType: false,
         processData: false,
-        beforeSend: function (xhr) {
+        beforeSend: function(xhr) {
             /* Authorization header  */
             xhr.setRequestHeader("Authorization", keyt);
         },
-        success: function (data) {
+        success: function(data) {
             console.log(data);
-            location.href="mi-perfil.php";
-        
+            location.href = "mi-perfil.php";
+
         },
-        error: function (error) {
+        error: function(error) {
             console.log(error);
         }
     });
 
     $.ajax({
-        url: "http://138.68.241.20/api/user/update",
+        url: serverURL + "user/update",
         method: "PUT",
         dataType: "json",
         data: userdata,
-        beforeSend: function (xhr) {
+        beforeSend: function(xhr) {
             /* Authorization header */
-            xhr.setRequestHeader("Authorization", keyt) },
-            success: function (data) {
-                console.log(data); 
-            }, 
-            error: function (error) {
-                console.log(error);
-            }
+            xhr.setRequestHeader("Authorization", keyt)
+        },
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(error) {
+            console.log(error);
+        }
     });
 }

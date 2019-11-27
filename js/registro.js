@@ -18,7 +18,7 @@ function registrar() {
     console.log(jsonData);
     $.ajax({
         type: 'post',
-        url: 'http://138.68.241.20/api/user/register',
+        url: serverURL + 'user/register',
         data: jsonData,
         success: function(response) {
             console.log(response);

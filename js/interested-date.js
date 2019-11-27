@@ -62,7 +62,7 @@ function rentar() {
     console.log(jsonData);
 
     $.ajax({
-        url: "http://138.68.241.20/api/reservation/create",
+        url: serverURL + "reservation/create",
         method: "POST",
         data: jsonData,
         beforeSend: function(xhr) {
@@ -77,7 +77,7 @@ function rentar() {
 
 function rentaDatos() {
     $.ajax({
-        url: "http://138.68.241.20/api/prereservation/show/" + idConfirmar,
+        url: serverURL + "prereservation/show/" + idConfirmar,
         method: "POST",
         dataType: "json",
         data: "",
@@ -91,10 +91,17 @@ function rentaDatos() {
             $("#nameInteresad").text(interesado.fullname);
             $("#diasRenta").text(data.prereservation.numberDays);
             $("#total").text(data.prereservation.total);
-            $("#interesadoPerfil").attr("src", "http://138.68.241.20/api/image/" + interesado.image);
+
+            if (!(interesado.image == null || interesado.image == "")) {
+                $("#interesadoPerfil").attr("style", "background-image: url(" + serverURL + "image/" + interesado.image + ");");
+                $("#modalImage").attr("style", "background-image: url(" + serverURL + "image/" + interesado.image + ");");
+            } else {
+                $("#interesadoPerfil").attr("style", "background-image: url(images/avatar.png)");
+                $("#modalImage").attr("style", "background-image: url(images/avatar.png)");
+            }
+
 
             /*Modal*/
-            $("#modalImage").attr("src", "http://138.68.241.20/api/image/" + interesado.image);
             $("#nameInteresadModal").text(interesado.fullname);
             $("#correoInteresado").text(interesado.email);
             $("#telInteresado").text(interesado.phone);

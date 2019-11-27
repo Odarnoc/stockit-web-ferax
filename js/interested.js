@@ -3,7 +3,7 @@ var listaproductos;
 var miId = "";
 $(document).ready(function() {
     $.ajax({
-        url: "http://138.68.241.20/api/publication/interesed",
+        url: serverURL + "publication/interesed",
         method: "POST",
         dataType: "json",
         data: "",
@@ -37,7 +37,7 @@ $(document).ready(function() {
                         '<div class="thumbnail">' +
                         '<div class="d-img-thumbnail">' +
                         '<Button onclick="senddata(' + cont + ')" data-toggle="modal" data-target="#exampleModalCenter" style="width:100%">' +
-                        '<img src="http://138.68.241.20/api/image/' + item.images[0] + '" alt="Slide11">' +
+                        '<img src="' + serverURL + 'image/' + item.images[0] + '" alt="Slide11">' +
                         '</Button>' +
                         '</div>' +
                         '<Button onclick="senddata(' + cont + ')" data-toggle="modal" data-target="#exampleModalCenter" style="width:100%;text-align: unset;">' +
@@ -53,9 +53,13 @@ $(document).ready(function() {
                         if (terminar == 2) {
                             return;
                         }
-                        var defect = '<li><i class="fas fa-user-circle" style="color: white; font-size: 50px"></i></li>';
+                        var defect = '<li>' +
+                            '<div class="ratio img-responsive img-circle" style="background-image: url(images/avatar.png);"></div>' +
+                            '</li>';
                         if (!(item2.interesed.image == null || item2.interesed.image == "")) {
-                            defect = '<li><img class="image-round" style="height: 50px;" src="http://138.68.241.20/api/image/' + item2.interesed.image + '" alt=""></li>';
+                            defect = '<li>' +
+                                '<div class="ratio img-responsive img-circle" style="background-image: url(' + serverURL + 'image/' + item2.interesed.image + ');"></div>' +
+                                '</li>';
                         }
                         html += defect;
                         terminar++;
@@ -84,11 +88,11 @@ function senddata(items) {
     console.log(objetselect);
     var htmlInsertar = "";
     objetselect.prereservations.forEach(function(item) {
-        var imagen = '<i class="fas fa-user-circle" style="color: gray; font-size: 70px"></i>';
+        var imagen = '<div class="ratio img-responsive img-circle" style="background-image: url(images/avatar.png);"></div>';
         console.log(item.interesed.image);
 
         if (!(item.interesed.image == null || item.interesed.image == "")) {
-            imagen = '<img id="image-in" class="image-user-table" src="http://138.68.241.20/api/image/' + item.interesed.image + '" alt="" style="height: 65px;">';
+            imagen = '<div class="ratio img-responsive img-circle" style="background-image: url(' + serverURL + 'image/' + item.interesed.image + ');"></div>';
         }
         var htmlinteresado =
             '<tr>' +
@@ -104,35 +108,35 @@ function senddata(items) {
     $("#interested").append(htmlInsertar);
     $("#price-in").text(objetselect.price + ".00 MXN / Día");
     $("#cantInteresados").text(objetselect.prereservations.length + " Usuario(s)");
-    $("#modalImg").attr("style", "background-image: url(http://138.68.241.20/api/image/" + objetselect.images[0] + ");");
+    $("#modalImg").attr("style", "background-image: url(" + serverURL + "image/" + objetselect.images[0] + ");");
 }
 
 function cancelarPreReservation(id) {
-    
+
     swal({
-        title: "Deseas cancelar la reservacion?",
-        text: "La reservacion se eliminara de la lista de interesados!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
+            title: "Deseas cancelar la reservacion?",
+            text: "La reservacion se eliminara de la lista de interesados!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
         })
-    .then((willDelete) => {
-        if (willDelete) {
-            swal("Se cancelo la reservacion seleccionada!", {
-            icon: "success",
-                
-            });
-            deleteReservation();
-        } 
-    });
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Se cancelo la reservacion seleccionada!", {
+                    icon: "success",
+
+                });
+                deleteReservation();
+            }
+        });
 }
 
-function deleteReservation(){
+function deleteReservation() {
     $.ajax({
-        url: "http://138.68.241.20/api/reservation/reject",
+        url: serverURL + "reservation/reject",
         method: "POST",
         dataType: "json",
-        data: {prereservationId: item._id},
+        data: { prereservationId: item._id },
         beforeSend: function(xhr) {
             /* Authorization header */
             xhr.setRequestHeader("Authorization", keyt);

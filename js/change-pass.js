@@ -1,53 +1,53 @@
-$( document ).ready(function() {
-    $("#reset-but").click(function (event){
-       event.preventDefault();
-       restpass();
+$(document).ready(function() {
+    $("#reset-but").click(function(event) {
+        event.preventDefault();
+        restpass();
     });
 });
 
 function restpass() {
 
-   var codigo =  localStorage.getItem('cod'); ;
-   var pass1 =  $("#pass1").val();
-   var pass2 =  $("#pass2").val();
+    var codigo = localStorage.getItem('cod');;
+    var pass1 = $("#pass1").val();
+    var pass2 = $("#pass2").val();
 
-   if(pass1 == "" || pass2 == null){
+    if (pass1 == "" || pass2 == null) {
         swal("Error!", "Agregar nueva Contraseña", "error");
-       return;
+        return;
     }
 
-    if(pass1!=pass2){
+    if (pass1 != pass2) {
         swal("Error!", "Las Contraseñas no coinciden", "error");
         return;
     }
-   
 
-   let jsonData = {
-       code: codigo,
-       password: pass1
-   };
 
-   console.log(jsonData);
+    let jsonData = {
+        code: codigo,
+        password: pass1
+    };
 
-   $.ajax({
-       type: 'post',
-       url: 'http://138.68.241.20/api/user/resetPassword',
-       data: jsonData,
-       success: function (response) {
-           console.log(response);
-           if (response.message == null || response.message == "" || response.message == undefined) {
-               swal("Error!", "Problemas en el servidor", "error");
-           } else {
-               location.href = "iniciar-sesion.php";
+    console.log(jsonData);
 
-           }
-           console.log(response.responseJSON.message);
+    $.ajax({
+        type: 'post',
+        url: serverURL + 'user/resetPassword',
+        data: jsonData,
+        success: function(response) {
+            console.log(response);
+            if (response.message == null || response.message == "" || response.message == undefined) {
+                swal("Error!", "Problemas en el servidor", "error");
+            } else {
+                location.href = "iniciar-sesion.php";
 
-       },
-       error: function (response) {
-            if(response.responseJSON.message == "registerToken.errors"){
+            }
+            console.log(response.responseJSON.message);
+
+        },
+        error: function(response) {
+            if (response.responseJSON.message == "registerToken.errors") {
                 swal("Error!", "La contraseña es muy corta", "error");
             }
         }
-   });
+    });
 }

@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "http://138.68.241.20/api/payMethod/list",
+        url: serverURL + "payMethod/list",
         method: "POST",
         dataType: "json",
         data: "",
@@ -50,7 +50,7 @@ function continuar() {
         };
         console.log(datajson);
         $.ajax({
-            url: "http://138.68.241.20/api/prereservation/pay/" + idPreReservation,
+            url: serverURL + "prereservation/pay/" + idPreReservation,
             method: "POST",
             dataType: "json",
             data: datajson,
