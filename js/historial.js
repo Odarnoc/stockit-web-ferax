@@ -1,7 +1,9 @@
 var productos = "";
+var listaHistorial;
         $( document ).ready(function() {
+                $('#rateMe2').mdbRate();
             $.ajax({
-                url: "http://138.68.241.20/api/payMethod/list",
+                url: "http://138.68.241.20/api/reservation/records",
                 method: "POST",
                 dataType: "json",
                 data: "",
@@ -11,30 +13,25 @@ var productos = "";
                 },
                 success: function (data) {
                     console.log(data);
-                    data.payMethods.forEach(function(item) {
-                var html = 
-                                    '<div class="container">'+
-                                        '<div class="row">'+
-                                            '<div class="col-md-2"></div>'+
-                                            '<div class="col-md-8">'+
-                                                '<div class="d-metodos-pago">'+
-                                                    '<div class="row row-tarjetas-perfil" id="lista-tarjeta">'+
-                                                        '<div class="col-md-6">'+
-                                                            '<a href="agregar-tarjeta.php">'+
-                                                                '<div class="d-item-tarjeta-nueva">'+
-                                                                    '<i class="fas fa-plus"></i>'+
-                                                                    '<p class="t1">Nueva tarjeta</p>'+
-                                                                '</div>'+
-                                                            '</a>'+
-                                                        '</div>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>'+
-                                            '<div class="col-md-2"></div>'+
-                                        '</div>'+
-                                    '</div>';
-                            productos+=html;
+                    var cont = 0;
+                    listaHistorial = data.records;
+                    data.records.forEach(function(item) {
+                        var html =
+                            '<div class="col-md-4">' +
+                            '<div class="thumbnail">' +
+                            '<div class="d-img-thumbnail">' +
+                            '<img src="http://138.68.241.20/api/image/' + item.prereservation.publication.images[0] + '" alt="Slide11">' +
+                            '</div>' +
+                            '<div class="info-item-interesados">' +
+                            '<p class="t1">$' + item.prereservation.publication.price + '<sup>00 / día</sup></p>' +
+                            '<p class="t2 one-line">' + item.prereservation.publication.name + '</p>' +
+                            '<a class="btn btn-slide-productos" onclick="idCapture(\''+cont+'\')" data-toggle="modal" data-target="#exampleModalCenter" role="button">Calificar producto<i class="fas fa-chevron-right"></i></a>'+
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                        productos += html;
                         console.log(item);
+                        cont++;
                     });
                     $( "#historial" ).append( productos );
                 },
@@ -43,3 +40,19 @@ var productos = "";
                 }
             });
         });
+
+        function idCapture(captureId){
+            var elementIguality = listaHistorial[captureId];
+
+        $("#name-in").text(elementIguality.owner.fullname);
+        $("#image-in").attr("src", "http://138.68.241.20/api/image/" + elementIguality.owner.image);
+        
+        $("#text4").text(elementIguality.prereservation.publication.name);
+        $("#price-in").text(elementIguality.prereservation.publication.price + ".00 MXN / Día");
+        $("#modalImg").attr("style", "background-image: url(http://138.68.241.20/api/image/" + elementIguality.prereservation.publication.images[0] + ");");
+
+        console.log(listaHistorial[captureId]);
+        
+        
+        
+    }
