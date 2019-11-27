@@ -19,13 +19,29 @@ function login() {
                 swal("Error!", "Problemas en el servidor", "error");
             } else {
                 $.ajax({
-                    type: 'post',
-                    url: 'user_preferences/guardar_sesion.php',
-                    data: { token: response.token },
-                    success: function(response2) {
-                        location.href = "index.php";
+                    url: serverURL + "user/show",
+                    method: "GET",
+                    dataType: "json",
+                    data: "",
+                    beforeSend: function(xhr) {
+                        /* Authorization header */
+                        xhr.setRequestHeader("Authorization", response.token)
                     },
-                    error: function(response2) {}
+                    success: function(data) {
+                        console.log(data);
+                        $.ajax({
+                            type: 'post',
+                            url: 'user_preferences/guardar_sesion.php',
+                            data: { token: response.token, user_id: data.user._id },
+                            success: function(response2) {
+                                location.href = "index.php";
+                            },
+                            error: function(response2) {}
+                        });
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
                 });
             }
         },
