@@ -68,8 +68,12 @@ function continuar() {
             },
             error: function(error) {
                 console.log(error.responseJSON);
-                if (error.responseJSON.errors.errors.daysReservation == "daysReservation.must.to.be.after.today") {
-                    swal("Error!", "Asegurese que la fecha seleccionada sea mayor al dia actual", "error");
+                if (error.responseJSON.errors.details) {
+                    var mensaje = "";
+                    error.responseJSON.errors.details.forEach(function(item) {
+                        mensaje += item.message;
+                    });
+                    swal("Error!", mensaje, "error");
                 }
             }
         });
