@@ -83,52 +83,41 @@
         <section class="sec-mi-stockit sec-fechas-int">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-md-6 offset-lg-3 offset-md-3">
                         <div class="d-fechas-interesados">
                             <div class="d-foto-interesados">
-                                <img src="images/profiles/profile-brayam-morando.png" alt="">
-                                <p class="t1">Brayam Morando</p>
+                                <img  id="interesadoPerfil" >
+                                <p class="t1" id="nameInteresad"></p>
                                 <button type="button" class="btn btn-contacto-int" data-toggle="modal" data-target="#exampleModalCenter">
                                     Contacto
                                 </button>
                             </div>
-
                             <div class="d-dias-int">
                                 <div class="d-dias-renta">
-                                    <p class="t1">7</p>
+                                    <p class="t1" id="diasRenta"></p>
                                     <p class="t2">Días de renta</p>
                                 </div>
                             </div>
-
                             <div class="d-fechas-int">
                                 <div class="d-item-fechas form-group">
-                                    <p class="t1">Fecha de entrega</p>
+                                    <p class="t1">Programar fecha de entrega</p>
                                     
                                     <input style="text-align:center" class="form-control" type="text" id="daterenta">
                                 </div>
-
                                 <div class="d-item-fechas form-group">
                                     <label for="comment">Mensaje privado</label>
                                     <textarea id="mensaje" class="form-control" rows="5" id="comment"></textarea>
                                 </div>
-
                             </div>
-
                             <div class="d-precio-int">
-                                <p class="t1">Total <b>$1,389.<sup>00</sup></b></p>
+                                <p class="t1">Total <b>$ <span id="total"></span><sup>.00</sup></b></p>
                             </div>
-
                             <div class="d-btns-int">
                                 <a class="btn btn-lg-green"  onclick="rentar()" role="button">Confirmar</a>
                                 <p><a class="btn btn-link-muted mt-3" href="interesados.html" role="button">Cancelar</a></p>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section>
@@ -144,13 +133,13 @@
                         </button>
                     </div>
                     <div class="modal-body mb-int-contact">
-                        <img src="images/profile-brayam-morando.png" alt="">
-                        <p class="t1">Brayam Morando</p>
+                        <img id="modalImage">
+                        <p class="t1" id="nameInteresadModal">Brayam Morando</p>
                         
                         <div class="d-links-contact">
-                            <p class="t1"><a href="mailto:brayamdesign@gmail.com"><i class="fas fa-envelope"></i>brayamdesign@gmail.com</a></p>
+                            <p class="t1"><i class="fas fa-envelope" ></i> <a href="" id="correoInteresado"></a></p>
                             
-                            <p class="t1"><a href="tel:3322692108"><i class="fas fa-phone"></i>33 2269 2108</a></p>
+                            <p class="t1"><i class="fas fa-phone" ></i> <a href="" id="telInteresado"></a></p>
                             
                         </div>
                         

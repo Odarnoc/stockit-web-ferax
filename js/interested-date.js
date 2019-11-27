@@ -84,9 +84,19 @@ function rentaDatos(){
             xhr.setRequestHeader("Authorization", keyt);
         },
         success: function(data) {
+            var interesado=data.prereservation.interesed;
             console.log(data);
+            $("#nameInteresad").text(interesado.fullname);
+            $("#diasRenta").text(data.prereservation.numberDays);
+            $("#total").text(data.prereservation.total);
+            $("#interesadoPerfil").attr("src","http://138.68.241.20/api/image/" + interesado.image);
+
+            /*Modal*/
+            $("#modalImage").attr("src","http://138.68.241.20/api/image/" + interesado.image);
+            $("#nameInteresadModal").text(interesado.fullname);
+            $("#correoInteresado").text(interesado.email);
+            $("#telInteresado").text(interesado.phone);
 
         }
     });
 }
-
