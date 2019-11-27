@@ -107,7 +107,7 @@
                 <div class="breadcrumb-content">
                     <h2>Interesados</h2>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.php">Inicio</a></li>
                         <li>Interesados</li>
                     </ul>
                 </div>
@@ -152,7 +152,7 @@
                             </div>
                             <div class="d-btns-int">
                                 <a class="btn btn-lg-green"  onclick="rentar()" role="button">Confirmar</a>
-                                <p><a class="btn btn-link-muted mt-3" href="interesados.html" role="button">Cancelar</a></p>
+                                <p><a class="btn btn-link-muted mt-3" href="interesados.php" role="button">Cancelar</a></p>
                             </div>
                         </div>
                     </div>

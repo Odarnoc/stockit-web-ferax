@@ -91,7 +91,9 @@ if(isset($_GET['id'])){
                 </div>
             </div>
                 <div class="form-group">
+                    <label class="label-form">Categoría</label>
                     <select class="form-control input-form" style="height:50px;padding-bottom: 0;padding-top: 0;" name="category" id="category" required>
+                
                         <option hidden value="" selected="selected">Categoria</option>
                         <option value="1">Accesorios</option>
                         <option value="2">Camping</option>
