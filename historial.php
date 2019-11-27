@@ -44,8 +44,6 @@ $key=$_SESSION["token"];
 
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
 
-    <link href="css/mdb.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -58,6 +56,7 @@ $key=$_SESSION["token"];
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
     
     <link rel="stylesheet" href="css/responsive.css">
+    <link href="css/mdb.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
 </head>
@@ -87,7 +86,6 @@ $key=$_SESSION["token"];
 <section class="sec-mi-stockit">
     <div class="container">
         <div class="row" id="historial">
-
         </div>
     </div>
 </section>
@@ -105,6 +103,15 @@ $key=$_SESSION["token"];
                 <div class="modal-body modal-body-interesados">
                     <p class="t1" id="text4"></p>
                     <p class="t4" id="price-in"></p>
+                    <div>
+                        <span id="rateMe" class="empty-stars">
+                            <i class="fas fa-star py-2 px-1 rate-popover" data-index="1" data-html="true" data-toggle="popover" data-placement="top" title="Muy malo"></i>
+                            <i class="fas fa-star py-2 px-1 rate-popover" data-index="2" data-html="true" data-toggle="popover" data-placement="top" title="Malo"></i>
+                            <i class="fas fa-star py-2 px-1 rate-popover" data-index="3" data-html="true" data-toggle="popover" data-placement="top" title="OK"></i>
+                            <i class="fas fa-star py-2 px-1 rate-popover" data-index="4" data-html="true" data-toggle="popover" data-placement="top" title="Bueno"></i>
+                            <i class="fas fa-star py-2 px-1 rate-popover" data-index="5" data-html="true" data-toggle="popover" data-placement="top" title="Exelente"></i>
+                        </span>
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-borderless table-interesados">
                             <tbody id="interested">
@@ -113,15 +120,13 @@ $key=$_SESSION["token"];
                                     <td class="td-name-int" id="name-in">Steph Leroy</td> 
                                 </tr>
                                 <tr>
-                                    <div class="container">
-                                        <span id="rateMe2"  class="empty-stars"></span>
-                                    </div>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button id="botonGuardar" type="button" onclick="puntuar()" class="btn btn-close-modal" data-dismiss="modal" style="background-color: #20c997;color: white;">Guardar puntuación</button>
                     <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
@@ -136,14 +141,13 @@ $key=$_SESSION["token"];
     <!-- JS
 ============================================ -->
 
-    <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <!-- Modernizer JS -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- Popper JS -->
     <script src="assets/js/vendor/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     <!-- Slick Slider JS -->
     <script src="assets/js/plugins/slick.min.js"></script>
@@ -178,7 +182,10 @@ $key=$_SESSION["token"];
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
 
-    <script type="text/javascript" src="js/js2/mdb.min.js"></script>
+    <!--swall alert-->
+    <script src="js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script src="js/addons/rating.js"></script>
 
     <!--swall alert-->
     <script src="js/sweetalert.min.js"></script>
@@ -197,6 +204,7 @@ $key=$_SESSION["token"];
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
+    
 
     <script src="js/historial.js"></script>
 
