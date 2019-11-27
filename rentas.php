@@ -20,7 +20,7 @@ $key=$_SESSION["token"];
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 
-    <!-- CSS
+<!-- CSS
 	============================================ -->
 
     <!-- Bootstrap CSS -->
@@ -41,6 +41,8 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="assets/css/plugins/venobox.css">
     <!-- Nice Select -->
     <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
     <!-- Vendor & Plugins CSS (Please remove the comment from below vendor.min.css & plugins.min.css for better website load performance and remove css files from the above) -->
     <!--
@@ -48,13 +50,10 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     -->
 
-    <!-- Plugin-CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
 </head>
@@ -63,9 +62,9 @@ $key=$_SESSION["token"];
 
     <div class="main-wrapper">
 
-     <!-- MainMenu-Area -->
-     <?php include("menus/menu_logged_in.php"); ?>
-     <!-- EndMainMenu-Area -->
+    <!-- MainMenu-Area -->
+    <?php include("menus/menu_logged_in.php"); ?>
+    <!-- EndMainMenu-Area -->
 
         <!-- Begin Torress's Breadcrumb Area -->
         <div class="main-wrapper" style="margin-top:80px;">
@@ -83,19 +82,58 @@ $key=$_SESSION["token"];
         </div>
         <!-- Torress's Breadcrumb Area End Here -->
         
-        <section class="sec-gray">
-           <div class="container">
-               <div class="row">
-                   <div class="col-lg-12 col-md-12">
-                       <div class="d-title-interesados">
-                           <p class="t1">Sin productos en renta</p>
-                           <p class="t2">Aquí podrás visualizar el listado con la información de los artículos que estés rentando.</p>
-                       </div>
-                   </div>
-               </div>
-           </div>   
+        <section class="sec-mi-stockit">
+            <div class="container">
+                <div class="row" id="rentas">
+                
+                </Button>
+                </div>
+            </div>
         </section>
     </div>
+
+        <!-- Modal-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header mh-int-contact">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-int-contact">
+                        <img id="modalImage">
+                        <p class="t1" id="nameInteresadModal">Brayam Morando</p>
+                        
+                        <div class="d-links-contact">
+                            <p class="t1"><i class="fas fa-envelope" ></i> <a href="" id="correoInteresado"></a></p>
+                            <p class="t1"><i class="fas fa-phone" ></i> <a href="" id="telInteresado"></a></p>    
+                        </div>
+                        <div>
+                            <div class="d-dias-renta">
+                                <p class="t1" id="diasRenta"></p>
+                                <p class="t2">Días de renta</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-dias-renta">
+                            <div id="rentaFechas"></div>
+                            <p class="t2"> Dias de reservacion</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-dias-renta">
+                                <p class="t1">$ <span id="rentaTotal"></span><span>.</span><sup>00</sup></p>
+                                <p class="t2">Total</p>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
@@ -147,6 +185,7 @@ $key=$_SESSION["token"];
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
 
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
 <script src="assets/js/vendor/vendor.min.js"></script>
@@ -160,5 +199,7 @@ $key=$_SESSION["token"];
     <script>
         var keyt = "<?php echo $key; ?>";
     </script>
+
+<script src="js/rentas.js"></script>
 
 </body></html>

@@ -62,7 +62,7 @@ $key=$_SESSION["token"];
 
     <div class="main-wrapper">
 
-           <!-- MainMenu-Area -->
+        <!-- MainMenu-Area -->
 
             <?php include("menus/menu_logged_in.php"); ?>
 
@@ -87,16 +87,16 @@ $key=$_SESSION["token"];
         <!-- Torress's Breadcrumb Area End Here -->
         
         <section class="sec-gray">
-           <div class="container">
-               <div class="row">
-                   <div class="col-lg-12 col-md-12">
-                       <div class="d-title-interesados">
-                           <p class="t1">Sin entregas próximas</p>
-                           <p class="t2">Aquí podrás consultar la información de los usuarios que hayan rentado artículos de tu disposición.</p>
-                       </div>
-                   </div>
-               </div>
-           </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="d-title-interesados">
+                            <p class="t1">Sin entregas próximas</p>
+                            <p class="t2">Aquí podrás consultar la información de los usuarios que hayan rentado artículos de tu disposición.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 

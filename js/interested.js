@@ -132,7 +132,7 @@ function deleteReservation(){
         url: "http://138.68.241.20/api/reservation/reject",
         method: "POST",
         dataType: "json",
-        data: "",
+        data: {prereservationId: item._id},
         beforeSend: function(xhr) {
             /* Authorization header */
             xhr.setRequestHeader("Authorization", keyt);
