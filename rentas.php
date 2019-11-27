@@ -56,6 +56,42 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="css/responsive.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
+    <style>
+    .caption div {
+        box-shadow: 0 0 5px #C8C8C8;
+        transition: all 0.3s ease 0s;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-circle {
+        border-radius: 0;
+    }
+
+    .ratio {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 0;
+        padding-bottom: 100px;
+        position: relative;
+        width: 100px;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100px;
+    }
+    </style>
+
 </head>
 
 <body class="template-color-1">
@@ -102,7 +138,9 @@ $key=$_SESSION["token"];
                         </button>
                     </div>
                     <div class="modal-body mb-int-contact">
-                        <img id="modalImage">
+                        <center style="margin-bottom: 1rem;">
+                            <div id="modalImage" class="ratio img-responsive img-circle"></div>
+                        </center>
                         <p class="t1" id="nameInteresadModal">Brayam Morando</p>
                         
                         <div class="d-links-contact">

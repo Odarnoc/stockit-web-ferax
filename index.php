@@ -58,7 +58,7 @@ $key=$_SESSION["token"];
                 <div class="col-xs-12 col-md-8">
                     <div class="div-info-header">
                         <p class="p1 wow fadeInUp" data-wow-delay=".2s">Renta los mejores productos</p>
-                        <input type="text" class="form-control input-search-header" placeholder="Buscar...">
+                        <input type="text" class="form-control input-search-header" id="text-busqueda" placeholder="Buscar...">
                         <p class="p2">Navegue entre miles de productos en renta</p>
 
                         <form class="form-header">
@@ -66,18 +66,26 @@ $key=$_SESSION["token"];
                             <div class="form-row">
                                 <div class="form-group col-md-8">
                                     <select class="form-control select-header" id="select-categorias">
-                                        <option hidden>Categoria</option>
-                                        <option>Electrónica</option>
-                                        <option>Muebles</option>
-                                        <option>Herramientas</option>
-                                        <option>Hogar</option>
-                                        <option>Autos</option>
-                                        <option>Foto y Video</option>
+                                        <option value="0" hidden>Categoria</option>
+                                        <option value="1">Accesorios</option>
+                                        <option value="2">Camping</option>
+                                        <option value="3">Cocina</option>
+                                        <option value="4">Deportes</option>
+                                        <option value="5">Familiar</option>
+                                        <option value="6">Fiesta</option>
+                                        <option value="7">Gamers</option>
+                                        <option value="8">Herramientas</option>
+                                        <option value="9">Hogar</option>
+                                        <option value="10">Juegos</option>
+                                        <option value="11">Libros</option>
+                                        <option value="12">Outdoors</option>
+                                        <option value="13">Probar</option>
+                                        <option value="14">Viajes</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group col-md-4">
-                                    <a class="btn btn-search-header" href="lista-productos.php" role="button">Buscar</a>
+                                    <a class="btn btn-search-header" onclick="buscar()" role="button">Buscar</a>
                                 </div>
                             </div>
                         </form>
@@ -297,6 +305,16 @@ $key=$_SESSION["token"];
     </script>
     
     <script src="js/car-prod.js"></script> 
+
+    <script>
+        function buscar() {
+            var busqueda = $("#text-busqueda").val();
+            var categoria = $("#select-categorias").val();
+
+            location.href="lista-productos.php?categoria="+categoria+"&busqueda="+busqueda;
+        }
+        
+    </script>
     
     
 

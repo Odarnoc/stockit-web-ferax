@@ -47,7 +47,7 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     -->
 
-      <!-- Plugin-CSS -->
+    <!-- Plugin-CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -55,6 +55,41 @@ $key=$_SESSION["token"];
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
+    <style>
+    .caption div {
+        box-shadow: 0 0 5px #C8C8C8;
+        transition: all 0.3s ease 0s;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-circle {
+        border-radius: 0;
+    }
+
+    .ratio {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 0;
+        padding-bottom: 100px;
+        position: relative;
+        width: 100px;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100px;
+    }
+    </style>
 
 </head>
 
@@ -64,9 +99,9 @@ $key=$_SESSION["token"];
 
         <!-- MainMenu-Area -->
 
-            <?php include("menus/menu_logged_in.php"); ?>
+        <?php include("menus/menu_logged_in.php"); ?>
 
-            <!-- MainMenu-Area-End -->
+        <!-- MainMenu-Area-End -->
 
 
         <!-- Begin Torress's Breadcrumb Area -->
@@ -83,18 +118,13 @@ $key=$_SESSION["token"];
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
         <!-- Torress's Breadcrumb Area End Here -->
-        
+
         <section class="sec-gray">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="d-title-interesados">
-                            <p class="t1">Sin entregas próximas</p>
-                            <p class="t2">Aquí podrás consultar la información de los usuarios que hayan rentado artículos de tu disposición.</p>
-                        </div>
-                    </div>
+                <div class="row" id="entregas">
+                    
                 </div>
             </div>
         </section>
@@ -158,10 +188,15 @@ $key=$_SESSION["token"];
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    <script src="js/moment.min.js"></script>
 
     <!--Custom scripts-->
     <script>
-        var keyt = "<?php echo $key; ?>";
+    var keyt = "<?php echo $key; ?>";
     </script>
 
-</body></html>
+    <script src="js/entregas.js"></script>
+
+</body>
+
+</html>

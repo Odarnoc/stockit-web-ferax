@@ -34,6 +34,41 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+    .caption div {
+        box-shadow: 0 0 5px #C8C8C8;
+        transition: all 0.3s ease 0s;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-circle {
+        border-radius: 0;
+    }
+
+    .ratio {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 0;
+        padding-bottom: 100px;
+        position: relative;
+        width: 100px;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100px;
+    }
+    </style>
 
 
 </head>

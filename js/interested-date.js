@@ -1,7 +1,8 @@
 var fecha;
-$( document ).ready(function() {
+$(document).ready(function() {
     rentaDatos();
     var hoy = new Date(Date.now());
+    hoy.setDate(hoy.getDate() + 1);
     var hoystr = "" + hoy.getDate() + "/" + (hoy.getMonth() + 1) + "/" + hoy.getFullYear();
     $('#daterenta').daterangepicker({
         "locale": {
@@ -52,14 +53,14 @@ $( document ).ready(function() {
     });
 });
 
-function rentar(){
-    let jsonData = { 
-        prereservationId:idConfirmar,
-        dateTimeDelivery:fecha,
-        message:$("#mensaje").val()
-    }; 
+function rentar() {
+    let jsonData = {
+        prereservationId: idConfirmar,
+        dateTimeDelivery: fecha,
+        message: $("#mensaje").val()
+    };
     console.log(jsonData);
-    
+
     $.ajax({
         url: "http://138.68.241.20/api/reservation/create",
         method: "POST",
@@ -69,13 +70,14 @@ function rentar(){
             xhr.setRequestHeader("Authorization", keyt);
         },
         success: function(data) {
+            window.history.back();
         }
     });
 }
 
-function rentaDatos(){
+function rentaDatos() {
     $.ajax({
-        url: "http://138.68.241.20/api/prereservation/show/"+idConfirmar,
+        url: "http://138.68.241.20/api/prereservation/show/" + idConfirmar,
         method: "POST",
         dataType: "json",
         data: "",
@@ -84,15 +86,15 @@ function rentaDatos(){
             xhr.setRequestHeader("Authorization", keyt);
         },
         success: function(data) {
-            var interesado=data.prereservation.interesed;
+            var interesado = data.prereservation.interesed;
             console.log(data);
             $("#nameInteresad").text(interesado.fullname);
             $("#diasRenta").text(data.prereservation.numberDays);
             $("#total").text(data.prereservation.total);
-            $("#interesadoPerfil").attr("src","http://138.68.241.20/api/image/" + interesado.image);
+            $("#interesadoPerfil").attr("src", "http://138.68.241.20/api/image/" + interesado.image);
 
             /*Modal*/
-            $("#modalImage").attr("src","http://138.68.241.20/api/image/" + interesado.image);
+            $("#modalImage").attr("src", "http://138.68.241.20/api/image/" + interesado.image);
             $("#nameInteresadModal").text(interesado.fullname);
             $("#correoInteresado").text(interesado.email);
             $("#telInteresado").text(interesado.phone);

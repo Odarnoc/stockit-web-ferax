@@ -1,7 +1,7 @@
-var productos="";
+var productos = "";
 $(document).ready(function() {
     $.ajax({
-        url: "http://138.68.241.20/api/reservation/list",
+        url: "http://138.68.241.20/api/reservation/deliveries",
         method: "POST",
         dataType: "json",
         data: "",
@@ -11,51 +11,54 @@ $(document).ready(function() {
         },
         success: function(data) {
             console.log(data);
-            var nofavorito=  '<section class="sec-gray">'+
-                                    '<div class="container">'+
-                                        '<div class="row">'+
-                                            '<div class="col-lg-12 col-md-12">'+
-                                                '<div class="d-title-interesados">'+
-                                                    '<p class="t1">Sin rentas disponibles</p>'+
-                                                    '<p class="t2">Aquí podrás visualizar el listado con los articulos en renta.</p>'+
-                                                '</div>'+
-                                            '</div>'+
-                                        '</div>'+
-                                    '</div>'+ 
-                                '</section>';
-        if(data.reservations.length == 0){
-            console.log(data.reservations.length);
-            productos=nofavorito;
-        }else{
-        data.reservations.forEach(function(item) {
-            var formato = item.prereservation.publication;
-        var html = 
-                        '<div class="col-md-4">'+
-                        '<div class="thumbnail">'+
-                            '<div class="d-img-thumbnail">'+
-                                '<img src="http://138.68.241.20/api/image/'+formato.images[0]+'" alt="Slide11">'+
-                            '</div>'+
-                            '<div class="info-item-slide">'+
-                                '<p class="p2">'+formato.name+'</p>'+
-                                '<p class="p4">$'+formato.price+'.<sup>00 / día</sup></p>'+
-                            '</div>'+
-                            '<div class="row">'+
-                                '<div class="col-6" style="text-align: center">'+
-                                    '<p><i class="far fa-flag"></i>  Inicia</p>'+
-                                    '<p>'+String(item.prereservation.daysReservation[0]).substr(0,10)+'</p>'+
-                                '</div>'+
-                                '<div class="col-6" style="text-align: center">'+
-                                    '<p><i class="fas fa-flag-checkered"></i>  Termina</p>'+
-                                    '<p>'+String(item.prereservation.daysReservation[item.prereservation.daysReservation.length-1]).substr(0,10)+'</p>'+ 
-                                '</div>'+
-                            '</div>'+ 
-                        '</div>'+
+            var noEntregas =
+                '<div class="col-lg-12 col-md-12">' +
+                '<div class="d-title-interesados">' +
+                '<p class="t1">Sin entregas próximas</p>' +
+                '<p class="t2">Aquí podrás consultar la información de los usuarios que hayan rentado artículos de tu disposición.</p>' +
+                '</div>' +
+                '</div>';
+            if (data.deliveries.length == 0) {
+                console.log(data.deliveries.length);
+                productos = noEntregas;
+            } else {
+                data.deliveries.forEach(function(item) {
+                    var fecha = moment(item.dateTimeDelivery);
+                    console.log(fecha.format('h:mm a'));
+                    console.log(fecha.format('DD/MM/YYYY'));
+
+                    var html = '<div class="col-md-4 sticky">' +
+                        '<div class="d-checkout-pro-ind">' +
+                        '<div class="clearfix d-2">' +
+                        '<center style="margin-bottom: 1rem;">' +
+                        '<div class="ratio img-responsive img-circle" style="background-image: url(http://138.68.241.20/api/image/' + item.interesed.image + ');"></div>' +
+                        '<p class="t1">' + item.interesed.fullname + '</p>' +
+                        '</center>' +
+                        '</div>' +
+                        '<hr>' +
+                        '<div class="row" style="text-align:center;">' +
+                        '<div class="col-md-6 col-xs-6">' +
+                        '<p class="t2">Fecha:</p>' +
+                        '<p class="t1">' + fecha.format('DD/MM/YYYY') + '</p>' +
+                        '</div>' +
+                        '<div class="col-md-6 col-xs-6">' +
+                        '<p class="t2">Hora:</p>' +
+                        '<p class="t1">' + fecha.format('h:mm a') + '</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="row" style="text-align:center;">' +
+                        '<div class="col-md-12 col-xs-12">' +
+                        '<p class="t2">Mensaje:</p>' +
+                        '<p class="t1">' + item.message + '</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
                         '</div>';
-                    productos+=html;
-            console.log(item);
-            });
-        }
-            $("#rentas").append(productos);
-        },    
+                    productos += html;
+                    console.log(item);
+                });
+            }
+            $("#entregas").append(productos);
+        },
     });
 });

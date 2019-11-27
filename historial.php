@@ -59,6 +59,42 @@ $key=$_SESSION["token"];
     <link href="css/mdb.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="assets/css/style.min.css">-->
 
+    <style>
+    .caption div {
+        box-shadow: 0 0 5px #C8C8C8;
+        transition: all 0.3s ease 0s;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-circle {
+        border-radius: 0;
+    }
+
+    .ratio {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        height: 0;
+        padding-bottom: 65px;
+        position: relative;
+        width: 65px;
+    }
+
+    .img-circle {
+        border-radius: 50px;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 65px;
+    }
+    </style>
+
 </head>
 
 <body class="template-color-1">
@@ -116,7 +152,7 @@ $key=$_SESSION["token"];
                         <table class="table table-borderless table-interesados">
                             <tbody id="interested">
                                 <tr>
-                                    <td class="td-img-int"><img style="height: 65px" id="image-in" class="image-user-table" src="images/profiles/4.jpg" alt=""></td>
+                                    <td class="td-img-int"><div id="image-in" class="ratio img-responsive img-circle"></div></td>
                                     <td class="td-name-int" id="name-in">Steph Leroy</td> 
                                 </tr>
                                 <tr>

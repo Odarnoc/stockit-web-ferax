@@ -16,17 +16,6 @@ $(document).ready(function() {
         markStarsAsActive(index);
     });
 
-    function markStarsAsActive(index) {
-        unmarkActive();
-        for (var i = 0; i <= index - 1; i++) {
-            $($stars.get(i)).addClass('amber-text');
-        }
-    }
-
-    function unmarkActive() {
-        $stars.removeClass('amber-text');
-    }
-
     $stars.on('click', function() {
         var index = $(this).attr('data-index');
         puntos = index;
@@ -46,26 +35,62 @@ $(document).ready(function() {
         },
         success: function(data) {
             console.log(data);
-            var cont = 0;
-            listaHistorial = data.records;
-            data.records.forEach(function(item) {
-                var html =
-                    '<div class="col-md-4">' +
-                    '<div class="thumbnail">' +
-                    '<div class="d-img-thumbnail">' +
-                    '<img src="http://138.68.241.20/api/image/' + item.prereservation.publication.images[0] + '" alt="Slide11">' +
-                    '</div>' +
-                    '<div class="info-item-interesados">' +
-                    '<p class="t1">$' + item.prereservation.publication.price + '<sup>00 / día</sup></p>' +
-                    '<p class="t2 one-line">' + item.prereservation.publication.name + '</p>' +
-                    '<a style="width: 100%;color: #20c997;" class="btn btn-slide-productos" onclick="idCapture(\'' + cont + '\')" data-toggle="modal" data-target="#exampleModalCenter" role="button">Calificar producto<i class="fas fa-chevron-right"></i></a>' +
-                    '</div>' +
-                    '</div>' +
-                    '</div>';
-                productos += html;
-                console.log(item);
-                cont++;
-            });
+            var noHistory = '<section class="sec-gray">' +
+                '<div class="container">' +
+                '<div class="row">' +
+                '<div class="col-lg-12 col-md-12">' +
+                '<div class="d-title-interesados">' +
+                '<p class="t1">Sin historial disponible</p>' +
+                '<p class="t2">Aquí podrás puntuar y visualizar tu historial.</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</section>';
+            if (data.records.length == 0) {
+                console.log(data.records.length);
+                productos = noHistory;
+            } else {
+                var cont = 0;
+                listaHistorial = data.records;
+                data.records.forEach(function(item) {
+                    var html =
+                        '<div class="col-md-4">' +
+                        '<div class="thumbnail">' +
+                        '<div class="d-img-thumbnail">' +
+                        '<img src="http://138.68.241.20/api/image/' + item.prereservation.publication.images[0] + '" alt="Slide11">' +
+                        '</div>' +
+                        '<div class="info-item-interesados">' +
+                        '<p class="t1">$' + item.prereservation.publication.price + '<sup>00 / día</sup></p>' +
+                        '<p class="t2 one-line">' + item.prereservation.publication.name + '</p>' +
+                        '<span>';
+                    if (item.evaluation != null) {
+                        for (let i = 0; i < item.evaluation.stars; i++) {
+                            html += '<i class="fas fa-star py-2 px-1 rate-popover amber-text"></i>';
+                        }
+                    }
+                    html += '</span>' +
+                        '<div class="row" style="margin-top: 1rem;">' +
+                        '<div class="col-6" style="text-align: center">' +
+                        '<p><i class="fas fa-calendar-alt"></i> Días rentados</p>' +
+                        '<p>' + item.prereservation.numberDays + '</p>' +
+                        '</div>' +
+                        '<div class="col-6" style="text-align: center">' +
+                        '<p><i class="far fa-money-bill-alt"></i> Total de renta</p>' +
+                        '<p>$ ' + item.prereservation.total + '</p>' +
+                        '</div>' +
+                        '</div>';
+                    if (item.evaluation == null) {
+                        html += '<a style="width: 100%;color: #20c997;" class="btn btn-slide-productos" onclick="idCapture(\'' + cont + '\')" data-toggle="modal" data-target="#exampleModalCenter" role="button">Calificar producto<i class="fas fa-chevron-right"></i></a>';
+                    }
+                    html += '</div>' +
+                        '</div>' +
+                        '</div>';
+                    productos += html;
+                    console.log(item);
+                    cont++;
+                });
+            }
             $("#historial").append(productos);
         },
         error: function(error) {
@@ -78,7 +103,7 @@ function idCapture(captureId) {
     var elementIguality = listaHistorial[captureId];
 
     $("#name-in").text(elementIguality.owner.fullname);
-    $("#image-in").attr("src", "http://138.68.241.20/api/image/" + elementIguality.owner.image);
+    $("#image-in").attr("style", "background-image: url(http://138.68.241.20/api/image/" + elementIguality.owner.image + ");");
 
     $("#text4").text(elementIguality.prereservation.publication.name);
     $("#price-in").text(elementIguality.prereservation.publication.price + ".00 MXN / Día");
@@ -88,6 +113,7 @@ function idCapture(captureId) {
 
     reservacionSeleccionada = elementIguality._id;
     $("#botonGuardar").hide();
+    markStarsAsActive(elementIguality.evaluation.stars);
 
 
 
@@ -128,3 +154,14 @@ function puntuar() {
 $(function() {
     $('.rate-popover').tooltip();
 });
+
+function markStarsAsActive(index) {
+    unmarkActive();
+    for (var i = 0; i <= index - 1; i++) {
+        $($stars.get(i)).addClass('amber-text');
+    }
+}
+
+function unmarkActive() {
+    $stars.removeClass('amber-text');
+}

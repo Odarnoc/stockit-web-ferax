@@ -5,6 +5,17 @@ if(!isset($_SESSION["token"])){
 }
 $key=$_SESSION["token"];
 
+$categoria = 0;
+$busqueda="";
+
+if(isset($_GET["categoria"])){
+    $categoria = $_GET["categoria"];
+}
+
+if(isset($_GET["busqueda"])){
+    $busqueda=$_GET["busqueda"];
+}
+
 ?>
 
 <!doctype html>
@@ -180,6 +191,8 @@ $key=$_SESSION["token"];
     <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
+        var categoriaFiltro = parseInt("<?php echo $categoria; ?>");
+        var busquedaFiltro = "<?php echo $busqueda; ?>";
     </script>
     <script src="js/lista-productos.js"></script>
 

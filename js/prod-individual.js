@@ -83,12 +83,14 @@ $(document).ready(function() {
 
                 '<div class="col-md-4 sticky">' +
                 '<div class="d-checkout-pro-ind">' +
-                '<p class="t1">Públicado por</p>' +
+                '<p class="t1" style="text-align:center;">Públicado por</p>' +
 
                 ' <div class="clearfix d-2">' +
-                '<img src="images/profile-brayam-morando.png" alt="">' +
+                '<center>' +
+                '<div  class="ratio img-responsive img-circle" style="background-image: url(http://138.68.241.20/api/image/' + data.publication.owner.image + ');"></div>' +
                 '<p class="t1">' + data.publication.owner.fullname + '</p>' +
-                '<p class="t2">Chapala, Jalisco.</p>' +
+                '<p class="t2">' + data.publication.location + '</p>' +
+                '</center>' +
                 '</div>' +
 
 
@@ -138,6 +140,7 @@ $(document).ready(function() {
             precioPublication = data.publication.price;
             $("#prod-ineterno").append(productos);
             var hoy = new Date(Date.now());
+            hoy.setDate(hoy.getDate() + 1);
             console.log(hoy);
 
 
