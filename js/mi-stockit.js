@@ -28,7 +28,7 @@ function inicial() {
                     '<p class="p2">' + item.name + '</p>' +
                     '<p class="p4">$' + item.price + '.<sup>00 / día</sup></p>' +
                     '<a class="btn btn-slide-productos" href="editar-articulo.php?id=' + item._id + '" role="button">Editar producto <i class="fas fa-chevron-right"></i></a>' +
-                    '<a style="color: white; width: 100%;" class="btn btn-danger " onclick="eliminar(\'' + item._id + '\')" role="button">Eliminar producto </a>' +
+                    '<a style="color: white; width: 100%;" class="btn btn-danger " onclick="deleteArticulo(\'' + item._id + '\')" role="button">Eliminar producto </a>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
@@ -44,6 +44,22 @@ function inicial() {
     });
 }
 
+function deleteArticulo(id) {
+
+    swal({
+            title: "Deseas eliminar el articulo?",
+            text: "El artículo seleccionado se eliminará!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                eliminar(id);
+            }
+        });
+}
+
 function eliminar(id) {
     console.log(id);
     $.ajax({
@@ -54,7 +70,14 @@ function eliminar(id) {
             xhr.setRequestHeader("Authorization", keyt);
         },
         success: function(data) {
-            location.reload();
+            swal("Se eliminó el artículo seleccionado!", {
+                icon: "success",
+            }).then((willDelete) => {
+                if (willDelete) {
+                    location.reload();
+                }
+            });
+            setTimeout(function(){ location.reload(); }, 5000);
         }
     });
 }

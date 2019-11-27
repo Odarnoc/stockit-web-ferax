@@ -160,7 +160,8 @@ $key=$_SESSION["token"];
     <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
-
+    <!--swall alert-->
+    <script src="js/sweetalert.min.js"></script>
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
 <script src="assets/js/vendor/vendor.min.js"></script>
