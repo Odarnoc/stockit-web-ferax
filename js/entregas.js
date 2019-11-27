@@ -33,7 +33,7 @@ $(document).ready(function() {
                         profile = serverURL + "image/" + item.interesed.image;
                     }
 
-                    var html = '<div class="col-md-4 sticky">' +
+                    var html = '<div class="col-md-4 sticky" style="position: unset;">' +
                         '<div class="d-checkout-pro-ind">' +
                         '<div class="clearfix d-2">' +
                         '<center style="margin-bottom: 1rem;">' +
