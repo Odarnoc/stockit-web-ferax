@@ -96,6 +96,7 @@ $key=$_SESSION["token"];
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="label-form">Categoría</label>
                                     <select class="form-control input-form" style="height:50px;" name="category" id="category" required>
                                         <option hidden value="" selected="selected">Categoria</option>
                                         <option value="1">Accesorios</option>

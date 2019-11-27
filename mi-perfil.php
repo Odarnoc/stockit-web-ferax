@@ -76,7 +76,7 @@ if(!isset($key)){
 
                             <div class="form-group">
                                 <label class="label-form">Teléfono</label>
-                                <input  placeholder="3315859643" type="tel" name="phone" id="tele" class="form-control input-form"  required >
+                                <input  placeholder="Agregar número de teléfono" type="tel" name="phone" id="tele" class="form-control input-form"  required >
 
                             </div>
                             

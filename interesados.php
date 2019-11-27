@@ -111,7 +111,7 @@ $key=$_SESSION["token"];
                 <div class="breadcrumb-content">
                     <h2>Interesados</h2>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.php">Inicio</a></li>
                         <li>Interesados</li>
                     </ul>
                 </div>
@@ -148,7 +148,7 @@ $key=$_SESSION["token"];
                                             <td class="td-img-int"><img id="image-in" class="image-user-table" src="images/profiles/4.jpg" alt=""></td>
                                             <td class="td-name-int" id="name-in">Steph Leroy</td>
                                             <td class="td-cancel-int"><a class="btn btn-cancel-table" href="#" role=""><i class="fas fa-times"></i></a></td>
-                                            <td class="td-check-int"><a class="btn btn-check-table" href="fechas-interesados.html" role=""><i class="fas fa-check"></i></a></td>
+                                            <td class="td-check-int"><a class="btn btn-check-table" href="fechas-interesados.php" role=""><i class="fas fa-check"></i></a></td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -54,7 +54,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="label-form">Contraseña</label>
-                                <input type="password" placeholder="Mayor o igual a 8 caracteres" class="form-control input-form" id="pass" required>
+                                <input type="password" placeholder="Mayor o igual a 8 carácteres" class="form-control input-form" id="pass" required>
                             </div>
                             <button type="submit" id="registrar_but" class="btn btn-form-green">Registrarte ahora</button>
                         </form>
