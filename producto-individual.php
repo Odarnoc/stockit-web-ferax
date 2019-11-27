@@ -4,6 +4,7 @@
         header("Location: iniciar-sesion.php");
     }
     $key=$_SESSION["token"];
+    $user_id=$_SESSION["user_id"];
     
     $idProducto = $_GET['id'];
 ?>
@@ -109,6 +110,7 @@
     <!--Custom scripts-->
     <script>
     var keyt = "<?php echo $key; ?>";
+    var user_id = "<?php echo $user_id; ?>";
     var idProductoJs = "<?php echo $idProducto; ?>";
     </script>
     <script src="js/prod-individual.js"></script>

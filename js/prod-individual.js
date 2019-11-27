@@ -15,6 +15,9 @@ $(document).ready(function() {
         },
 
         success: function(data) {
+            if(user_id == data.publication.owner._id){
+                location.href = "editar-articulo.php?id="+idProductoJs;
+            }
 
             console.log("Datos")
             console.log(data);
