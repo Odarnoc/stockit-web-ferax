@@ -1,0 +1,732 @@
+body,
+.task-panel a.list-group-item i{
+    color: #f2f2f2;
+}
+
+.morris-chart svg text{
+    fill: #f2f2f2;
+}
+
+.morris-hover.morris-default-style,
+.page-wrapper.auth-page{
+    background: #56526b !important;
+}
+
+.txt-grey{
+    color: #c2c2c2 !important;
+}
+
+.sp-logo-wrap .brand-img{
+    width: 6em;
+}
+
+.collapse.in {
+    display: block;
+}
+
+table.dataTable tbody tr{
+    background-color: transparent !important;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1,
+table.dataTable.display tbody tr.even > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_1,
+table.dataTable.order-column tbody tr > .sorting_1,
+table.dataTable.order-column tbody tr > .sorting_2,
+table.dataTable.order-column tbody tr > .sorting_3,
+table.dataTable.display tbody tr > .sorting_1,
+table.dataTable.display tbody tr > .sorting_2,
+table.dataTable.display tbody tr > .sorting_3,
+table.dataTable.display tbody tr.odd > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd > .sorting_1,
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd,
+table.dataTable.hover tbody tr:hover,
+table.dataTable.display tbody tr:hover{
+    background-color: inherit !important;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc{
+    background-image: none !important;
+}
+
+table.dataTable thead .sorting::after,
+table.dataTable thead .sorting_asc::after,
+table.dataTable thead .sorting_desc::after{
+    top: 0.7em !important;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top .nav > li > a .user-auth-img{
+    border-radius: .5em;
+}
+
+.dropdown-toggle::after{
+    display: none;
+}
+
+.btn-group.bootstrap-select .dropdown-toggle:focus{
+    background-color: #212121;
+}
+
+.form-group input.form-control{
+    background-color: #484559 !important;
+    border: none;
+    border-radius: 2em;
+    text-indent: 1em;
+    color: white !important;
+}
+
+select{
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: #212121;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+    height: 25px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    color: #fff !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active{
+    color: #484559 !important;
+}
+
+.page-wrapper{
+    padding: 0;
+    background: #56526b;
+}
+
+.error-bg-img{
+    background: url(../img/errorbg.jpg);
+    background-size: cover;
+}
+
+.card-view,
+.wrapper.theme-3-active .navbar.navbar-inverse.navbar-fixed-top{
+    background: #484559;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width: auto !important;
+}
+
+.checkbox label,
+.form-control::placeholder {
+    color: #c2c2c2 !important;
+}
+
+.btn.btn-success,
+.wizard > .actions a.btn-success,
+.wizard > .actions a.fc-prev-button,
+.wizard > .actions a.fc-next-button,
+.wizard > .actions a.fc-today-button,
+.dt-buttons .btn-success.dt-button,
+.dt-buttons button.dt-button.fc-agendaWeek-button,
+.dt-buttons .dt-button.fc-prev-button,
+.dt-buttons .dt-button.fc-next-button,
+.dt-buttons .dt-button.fc-today-button,
+.tablesaw-sortable th.tablesaw-sortable-head button.btn-success,
+.tablesaw-sortable th.tablesaw-sortable-head button.fc-agendaWeek-button,
+.tablesaw-sortable th.tablesaw-sortable-head button.fc-prev-button,
+.tablesaw-sortable th.tablesaw-sortable-head button.fc-next-button,
+.tablesaw-sortable th.tablesaw-sortable-head button.fc-today-button,
+.sweet-alert button.btn-success, .sweet-alert button.fc-prev-button,
+.sweet-alert button.fc-next-button, .sweet-alert button.fc-today-button,
+.owl-theme .owl-nav .btn-success[class*="owl-"],
+.owl-theme .owl-nav button[class*="owl-"].fc-agendaWeek-button,
+.owl-theme .owl-nav [class*="owl-"].fc-prev-button,
+.owl-theme .owl-nav [class*="owl-"].fc-next-button,
+.owl-theme .owl-nav [class*="owl-"].fc-today-button,
+button.fc-agendaDay-button.fc-state-default.fc-corner-right,
+button.fc-month-button.fc-state-default.fc-corner-left,
+button.fc-agendaWeek-button,
+.fc-prev-button,
+.fc-next-button,
+.fc-today-button{
+    background: #30beb2;
+    border: none;
+}
+
+.form-group.has-error{
+    text-align: center;
+    color: #df5454 !important;
+}
+
+.control-label{
+    text-transform: none;
+}
+
+.page-wrapper {
+    margin-left: 0 !important;
+}
+
+.panel-body:after,
+.panel-body:before,
+.row:after,
+.row:before {
+    display: table;
+    content: " ";
+}
+
+.table-wrap,
+.streamline{
+    width: 100%;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    white-space: nowrap;
+}
+
+.bg-brown{
+    background: #995529 !important;
+}
+
+.bg-gray{
+    background: #c1bfb8 !important;
+}
+
+.bg-black{
+    background: #383734 !important;
+}
+
+h6, .panel-title{
+    font-size: 19px;
+}
+
+/*Start Landing view*/
+.backgroundMain{
+    width: 100%;
+    background-color: #56526b;
+    font-family: Roboto;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: #f2f2f2;
+    padding: 19em 0;
+    background-image: url("../../assets/img/img-bg-desktop.png");
+    background-size: cover;
+}
+
+
+.backgroundMain .ic_logo{
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 0 0 2.5em;
+}
+
+.backgroundMain .fa{
+    margin-top: 0.75em;
+    font-size: 2.25em;
+}
+
+.backgroundMain .fa-apple{
+    margin-right: 1.5em;
+}
+
+.backgroundMain .smarthphone1{
+    width: 100%;
+    margin: 2em auto 2em;
+    display: block;
+    padding: 10em 15em 0;
+    float: left;
+}
+
+.stockealo{
+    max-width: 100%;
+    background: #f8f8f8;
+    width: 100%;
+    font-family: Roboto;
+    font-size: 1em;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.ic_stockit_desktop {
+    max-width: 100%;
+    width: 129px;
+    height: 106px;
+    object-fit: contain;
+}
+
+.stockealo .notBuy,
+.stockealo .hastag{
+    font-weight: bold;
+    color: #54a3df;
+}
+
+.stockealo .notBuy{
+    font-family: Roboto;
+    font-size: 1.3em;
+}
+
+.stockealo .hastag{
+    /*font-family: Montserrat;*/
+    font-size: 3.5em;
+}
+
+.stockealo .description{
+    font-family: Roboto;
+    font-size: 1.5em;
+    line-height: 1.82;
+    text-align: justify;
+    color: #56526b;
+    margin: 0 auto;
+    width: 30%;
+    text-align: center;
+}
+
+.search{
+    background-image: linear-gradient(297deg, #7e789c, #54a3df 53%, #30beb2);
+    padding: 3em 0;
+}
+
+.search .letters{
+    width: 25em;
+    padding-top: 13em;
+    margin-left: 10%;
+    float: left;
+}
+
+.search .searchResRen{
+    opacity: 0.5;
+    font-size: 3.5em;
+    font-weight: bold;
+    letter-spacing: 19px;
+    text-align: left;
+    color: #000000;
+}
+
+.search .searchResRen:nth-child(2){
+    margin-right: 0.25em;
+}
+
+.search .description{
+    opacity: 0.5;
+    font-family: Roboto;
+    font-size: 1.2em;
+    line-height: 1.82;
+    text-align: justify;
+    color: #000000;
+}
+
+.search .phoneStockit{
+    width: 20em;
+    margin-right: 10%;
+    padding: 1em 0 2em;
+}
+
+.textAlignRight{
+    text-align: right;
+}
+
+.oneIncome{
+    background: #f8f8f8;
+    width: 100%;
+    font-family: Roboto;
+    padding: 5em 0 2em;
+}
+
+.oneIncome .title{
+    letter-spacing: normal;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #30beb2;
+}
+
+.oneIncome .description{
+    font-size: 1.25em;
+    line-height: 1.82;
+    text-align: center;
+    color: #56526b;
+    margin: 0 auto;
+    width: 38%;
+}
+
+.oneIncome .img_screens_desktop {
+    max-width: 40%;
+    object-fit: contain;
+    display:block;
+    margin:auto;
+    padding: 1em 0 2.5em;
+}
+
+.categories{
+    width: 100%;
+    background-color: #56526b;
+    padding: 4em 0 0;
+    text-align: center;
+}
+
+.categories .box{
+    width: 6em;
+    display: inline-block;
+    text-align: center;
+    margin-left: 3em;
+    margin-right: 3em;
+    font-weight: bold;
+    margin-bottom: 4em;
+}
+
+.categories .icons{
+    font-size: 1em;
+    margin-bottom: 1em;
+    width: 6em;
+    height: 6em;;
+}
+
+.footer{
+    width: 100%;
+    background-color: #484559;
+    padding: 2em 10em;
+    display: inline-block;
+}
+
+.footer.container-fluid{
+    background-color: transparent;
+    padding: 0 1em !important;
+    display: block;
+}
+
+.footer .ic_logo{
+    width: 12em;
+    display: inline-block;
+    padding-right: 2em;
+}
+
+.footer .socialNetworks{
+    display: inline-block;
+}
+
+.footer .socialNetworks a .fa{
+    padding: 0 2em;
+    font-size: 1.5em;
+    position: relative;
+    bottom: 0.5em;
+}
+
+.footer .stockit{
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 1em;
+    position: relative;
+    top: 1.5em;
+    float: right;
+    display: inline-block;
+    }
+
+    /*Checkboxes and radios*/
+    /**/
+    /*Indent the labels to position radios/checkboxes as hanging controls.*/
+
+    .radio,
+    .checkbox {
+        position: relative;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        float: left;
+    }
+
+    .radio label,
+    .checkbox label {
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+    @media (max-width: 2560){
+        body{
+            font-size: 28px;
+        }
+        .stockealo .description{
+            width: 100%;
+        }
+        .backgroundMain .smarthphone1{
+            padding: 5em 15em 0;
+        }
+    }
+
+    @media (max-width: 1440px){
+        body{
+            font-size: 14px;
+        }
+        .oneIncome .img_screens_desktop{
+            padding: 5em 0 2.5em;
+        }
+        .backgroundMain .smarthphone1{
+            padding: 11em 15em 0;
+        }
+    }
+
+    @media (max-width: 1024px){
+        body{
+            font-size: 10px;
+        }
+        .backgroundMain .smarthphone1{
+            padding: 9em 5em 0;
+        }
+
+        .stockealo .description{
+            width: 40%;
+            font-size: 1.25em;
+        }
+
+        .stockealo{
+            padding: 10em 0 2em;
+        }
+
+        .oneIncome .description{
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 768px){
+        body{
+            font-size: 7px;
+        }
+        .backgroundMain .smarthphone1{
+            padding: 8em 5em 0;
+        }
+
+        .stockealo{
+            padding: 10em 0 2em;
+        }
+
+        .stockealo .description{
+            width: 100%;
+        }
+
+        .search .letters{
+            width: 20em;
+        }
+
+        .search .searchResRen{
+            font-size: 2.5em;
+        }
+
+        .search .img_smarthphone2_desktop{
+            width: 18em;
+        }
+
+        .oneIncome .description{
+            width: 80%;
+        }
+
+        .oneIncome .img_screens_desktop {
+            padding: 2.5em 0 0.5em;
+        }
+    }
+    /*End Landing view*/
+
+    @media (min-width: 768px){
+        .col-sm-1,
+        .col-sm-10,
+        .col-sm-11,
+        .col-sm-12,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-6,
+        .col-sm-7,
+        .col-sm-8,
+        .col-sm-9 {
+            float: left;
+        }
+        .col-sm-12 {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 425px){
+        .backgroundMain{
+            background-position-x: 50%;
+        }
+
+        .backgroundMain .ic_logo{
+            max-width: 59%;
+        }
+
+        .backgroundMain .texts{
+            font-size: 2em;
+        }
+
+        .backgroundMain .smarthphone1{
+            padding: 5.5em 1em 0;
+        }
+
+        .stockealo{
+            padding: 10em 0 18em;
+        }
+
+        .stockealo .notBuy{
+            font-size: 2.5em;
+        }
+
+        .stockealo .hastag{
+            font-size: 6.5em;
+        }
+
+        .stockealo .description{
+            font-size: 3em;
+            padding: 1em;
+        }
+
+        .ic_stockit_desktop{
+            width: 12em;
+        }
+
+        .search .phoneStockit{
+            width: 20em;
+            margin-right: 0;
+            padding: 0;
+            position: absolute;
+            bottom: -45em;
+            left: 20em;
+        }
+
+        .search .letters{
+            float: none;
+            padding-top: 30em;
+            width: 48em;
+        }
+
+        .search .searchResRen{
+            font-size: 7.5em;
+            letter-spacing: normal;
+            text-align: center;
+        }
+
+        .oneIncome .description,
+        .search .description{
+            font-size: 3.2em;
+            padding-bottom: 1em;
+            text-align: justify;
+        }
+
+        .oneIncome .img_screens_desktop{
+            display: none;
+        }
+
+        .oneIncome .title{
+            font-size: 5.5em;
+            padding: 0 0.75em;
+        }
+
+        .categories .box{
+            margin-left: 2em;
+            margin-right: 2em;
+            font-size: 2em;
+        }
+
+        .footer .ic_logo{
+            width: 18em;
+            display: block;
+            padding-right: 0;
+            margin: 0 auto;
+        }
+
+        .footer .socialNetworks{
+            display: block;
+        }
+
+        .footer .socialNetworks a .fa{
+            padding: 1em 2.5em;
+            font-size: 3.5em;
+            bottom: 0;
+        }
+
+        .footer .stockit{
+            font-size: 2em;
+            top: 0;
+            float: none;
+            display: block;
+            text-align: center;
+        }
+    }
+
+    /*iPhone 6 plus*/
+    @media only screen
+    and (max-device-width : 414px)
+    and (max-device-width : 736px)
+    and (orientation : portrait) {
+        .search .phoneStockit{
+            bottom: -70em;
+        }
+        .footer .socialNetworks a .fa {
+            padding: 1em 2.4em;
+        }
+    }
+
+    /*Nexus 6P*/
+    @media only screen
+    and (max-device-width : 412px)
+    and (max-device-width : 732px)
+    and (orientation : portrait) {
+        .search .phoneStockit{
+            bottom: -68em;
+        }
+    }
+
+    @media (max-width: 375px){
+        .search .phoneStockit{
+            left: 17em;
+            bottom: -42em;
+        }
+
+        .search .letters{
+            width: 42em;
+        }
+
+        .footer .socialNetworks a .fa{
+            padding: 1em 2em;
+        }
+    }
+
+    /*iPhone 6*/
+    @media only screen
+    and (max-device-width : 375px)
+    and (max-device-width : 667px)
+    and (orientation : portrait) {
+        .search .phoneStockit{
+            bottom: -76em;
+        }
+    }
+
+    @media (max-width: 320px){
+        .search .phoneStockit{
+            left: 14em;
+        }
+
+        .search .letters{
+            width: 37em;
+        }
+
+        .footer .socialNetworks a .fa{
+            padding: 1em 1.43em;
+        }
+    }
+
+    /*iPhone 5*/
+    @media only screen
+    and (max-device-width : 320px)
+    and (max-device-width : 568px)
+    and (orientation : portrait) {
+        .search .phoneStockit{
+            bottom: -86em;
+        }
+    }

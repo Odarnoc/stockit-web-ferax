@@ -1,1 +1,1 @@
-const serverURL = "http://138.68.241.20/api/";
+const serverURL = "https://server.stockit.app/api/";

@@ -1,0 +1,21 @@
+@media only screen and (max-width: 767px) {
+    .img-1{
+        display: none;
+    }
+    
+    .text-desktop{
+        display: none;
+    }
+    
+    .d-header .t2{
+        font-size: 34px;
+    }
+    
+    .text-movil{
+        display: block;
+    }
+    
+    
+    
+    
+}

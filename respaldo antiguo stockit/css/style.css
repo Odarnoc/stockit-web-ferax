@@ -1,0 +1,83 @@
+header {
+  background-image: url(../images/bg-blue.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.valign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.d-header img {
+  width: 150px;
+}
+
+.d-mant {
+  background-color: #00CF72;
+  color: white;
+  margin-top: 15vh;
+  margin-bottom: 10px;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+
+}
+
+.d-header .t1 {
+  color: rgba(255, 255, 255, .7);
+  font-size: 25px;
+  font-family: "Poppins";
+  font-weight: 300;
+  margin-bottom: 0px;
+
+}
+
+.d-header .t2 {
+  color: white;
+  font-size: 40px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 1;
+
+}
+
+.d-header .t3 {
+  padding-top: 15vh;
+  color: white;
+  font-size: 16px;
+  font-family: "Open Sans";
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+
+body{
+  overflow: hidden;
+}
+
+.d-img{
+  padding-top: 1vh;
+}
+
+.img-1{
+  width: 140%;
+  margin-left: -30vh;
+}
+
+.img-2{
+  display: none;
+}
+
+.text-movil{
+  display: none;
+}
