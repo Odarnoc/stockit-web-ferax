@@ -81,7 +81,7 @@ $key=$_SESSION["token"];
                             <a class="btn btn-mi-cuenta" href="entregas.php" role="button"><i class="fas fa-truck-moving"></i>Entregas</a>
                             </li>
                             <li>
-                            <a class="btn btn-mi-cuenta" href="entregas.php" role="button"><i class="fas fa-home"></i>Direcciones</a>
+                            <a class="btn btn-mi-cuenta" href="direcciones.php" role="button"><i class="fas fa-home"></i>Direcciones</a>
                             </li>
                             <li>
                             <a class="btn btn-mi-cuenta" href="historial.php" role="button"><i class="fas fa-history"></i>Historial</a>

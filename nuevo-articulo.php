@@ -56,7 +56,7 @@ $key=$_SESSION["token"];
 
 </head>
 
-<body>
+<body onload="loadLocations()">
 
         <!-- MainMenu-Area -->
         <?php include("menus/menu_logged_in.php"); ?>
@@ -97,7 +97,7 @@ $key=$_SESSION["token"];
                             </div>
                             <div class="form-group">
                             <label class="label-form">Categoría</label>
-                            <select class="form-control input-form" style="height:50px;padding-bottom: 0;padding-top: 0;" name="category" id="category" required>
+                            <select class="form-control input-form" style="height:50px;padding-bottom: 0;padding-top: 0;" name="category" id="category" onchange="loadCatalog(this)" required>
                                         <option hidden value="" selected="selected">Categoria</option>
                                         <option value="1">Accesorios</option>
                                         <option value="2">Camping</option>
@@ -116,6 +116,12 @@ $key=$_SESSION["token"];
                                     </select>
                             </div>
                             <div class="form-group">
+                            <label class="label-form">Medidas y peso (igual o menor)</label>
+                            <select class="form-control input-form" style="height:50px;padding-bottom: 0;padding-top: 0;" name="catalogId" id="catalogId" required>
+                                <option hidden value="" selected="selected">Seleccione una opción</option>
+                            </select>
+                            </div>
+                            <div class="form-group">
                                 <label class="label-form">Nombre</label>
                                 <input type="text" class="form-control input-form" name="name" id="name" required>
                             </div>
@@ -124,10 +130,15 @@ $key=$_SESSION["token"];
                                 <label class="label-form">Descripción</label>
                                 <textarea class="form-control input-form" rows="2" name="description" id="description" required></textarea>
                             </div>
-
                             <div class="form-group">
-                                <label class="label-form">Dirección</label>
-                                <input type="text" class="form-control input-form" name="location" id="location" required>
+                            <label class="label-form">Dirección</label>
+                            <select class="form-control input-form" style="height:50px;padding-bottom: 0;padding-top: 0;" name="locationId" id="locationId" required>
+                                <option hidden value="" selected="selected">Seleccione una opción</option>           
+                            </select>
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <label class="label-form d-none">Dirección</label>
+                                <input type="text" class="form-control input-form" name="location" id="location" value="-" required>
                             </div>
 
                             <div class="form-group">
