@@ -10,16 +10,18 @@ function getPublication(id) {
         },
         success: function(data) {
             console.log(data);
+            let locationId = data.publication.locationId ? data.publication.locationId._id : '';
+            let catalogId = data.publication.catalogId ? data.publication.catalogId._id : '';
             $('.image-upload').attr("style", "background-image: url(" + serverURL + "image/" + data.publication.images[0] + ");");
             $('.image-upload').addClass('overlay-image-upload');
             $('.image-upload label').css('color', 'rgba(255,255,255,1)');
             $("#name").val(data.publication.name);
             $("#category").val(data.publication.category);
             //Load catalog
-            loadCatalog(data.publication.category, data.publication.catalogId._id);
+            loadCatalog(data.publication.category, catalogId);
             
             //Load locations
-            loadLocations(data.publication.locationId._id);
+            loadLocations(locationId);
             
             $("#description").val(data.publication.description);
             $("#location").val(data.publication.location);
