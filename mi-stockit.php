@@ -52,7 +52,7 @@ $key=$_SESSION["token"];
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">s
     <link rel="stylesheet" href="css/responsive.css">
-
+    <link rel="stylesheet" href="css/mi-stockit.css">
 
     <!-- Main Style CSS (Please use minify version for better website load performance) -->
     <link rel="stylesheet" href="assets/css/style.css">

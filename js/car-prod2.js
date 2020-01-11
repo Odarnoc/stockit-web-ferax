@@ -64,7 +64,7 @@ $(document).ready(function() {
                 var plantillaProductos =
                     '<div class="item" >' +
                     '<div class="thumbnail">' +
-                    '<a href="producto-individual.php?id=' + item._id + '"><img src="' + serverURL + 'image/' + item.images[0] + '" alt="Slide11" ></a>' +
+                    '<a href="producto-individual.php?id=' + item._id + '"><img style="width:100%;height:200px;object-fit:cover;" src="' + serverURL + 'image/' + item.images[0] + '" alt="Slide11" ></a>' +
                     '<div class="info-item-slide">' +
                     '<p class="p1">' + category + '</p>' +
                     '<p class="p2">' + item.name + '</p>' +

@@ -21,8 +21,8 @@ function inicial() {
                 var html =
                     '<div class="col-md-4">' +
                     '<div class="thumbnail">' +
-                    '<div class="d-img-thumbnail">' +
-                    '<img src="' + serverURL + 'image/' + item.images[0] + '" alt="Slide11">' +
+                    '<div class="d-img-thumbnail img-resolution">' +
+                    '<img src="' + serverURL + 'image/' + item.images[0] + '" width="100%" alt="Slide11">' +
                     '</div>' +
                     '<div class="info-item-slide">' +
                     '<p class="p2">' + item.name + '</p>' +

@@ -15,6 +15,12 @@ function getPublication(id) {
             $('.image-upload label').css('color', 'rgba(255,255,255,1)');
             $("#name").val(data.publication.name);
             $("#category").val(data.publication.category);
+            //Load catalog
+            loadCatalog(data.publication.category, data.publication.catalogId._id);
+            
+            //Load locations
+            loadLocations(data.publication.locationId._id);
+            
             $("#description").val(data.publication.description);
             $("#location").val(data.publication.location);
             $("#price").val(data.publication.price);
@@ -35,12 +41,15 @@ function editar() {
     let price = document.getElementById('price').value;
     let description = document.getElementById('description').value;
     let locat = document.getElementById('location').value;
+    let size = $('#catalogId').val();
+    let l = $('#locationId').val();
     if (!imageChange) {
         if (validar(name, "Nombre") &&
             validar(category, "Categoria") &&
             validar(price, "Precio por día") &&
             validar(description, "Descripción") &&
-            validar(locat, "Dirección")) {
+            validar(size, "Medidas y peso (igual o menor)") &&
+            validar(l, "Dirección")) {
             var form = $('#sub')[0];
             var formData = new FormData(form);
             formData.delete("Images");
@@ -56,7 +65,7 @@ function editar() {
                 },
                 success: function(data) {
                     console.log(data);
-                    location.href = "mi-perfil.php";
+                    location.href = "mi-stockit.php";
 
                 },
                 error: function(error) {
@@ -96,4 +105,68 @@ function editar() {
             }
         }
     }
+}
+
+function selectCatalog(select){
+    //console.log(select.value);
+    let category = select.value;
+    loadCatalog(category);
+    /**/
+}
+function loadCatalog(value, id){
+    let category = value;
+    console.log(category);
+    $.ajax({
+        url: serverURL + "catalog/getByCategoryNumber/" + category,
+        method: "GET",
+        contentType: false,
+        processData: false,
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", keyt);
+        },
+        success: function(data) {
+            console.log(data);
+            $('#catalogId').empty()
+            let html = '';
+            data.catalogs.forEach(element => {
+                html += '<option value="'+ element._id +'">'+ element.Weight +'gr.,'+element.width+'cm x '+element.height+'cm x '+element.depth+'cm</option>'
+            });
+            $('#catalogId').append(html);
+            if (id) {
+                $('#catalogId').val(id);
+            }
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+}
+
+function loadLocations(id){
+    $.ajax({
+        url: serverURL + "location/getByUser",
+        method: "GET",
+        contentType: false,
+        processData: false,
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", keyt);
+        },
+        success: function(data) {
+            console.log(data);
+            //$('#locationId').empty()
+            let emision = data.locations.filter(function(address){
+                return address.type === 2
+            })
+            console.log(emision)
+            let html = '';
+            emision.forEach(element => {
+                html += '<option value="'+ element._id +'">'+ element.route +' '+element.streetNumber+', '+element.neighborhood+'</option>'
+            });
+            $('#locationId').append(html);
+            $('#locationId').val(id);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
 }
