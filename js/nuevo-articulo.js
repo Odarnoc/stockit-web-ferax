@@ -58,7 +58,7 @@ function loadCatalog(select){
         success: function(data) {
             console.log(data);
             $('#catalogId').empty()
-            let html = '';
+            let html = '<option hidden value="" selected="selected">Seleccione una opción</option>';
             data.catalogs.forEach(element => {
                 html += '<option value="'+ element._id +'">'+ element.Weight +'gr.,'+element.width+'cm x '+element.height+'cm x '+element.depth+'cm</option>'
             });
@@ -86,7 +86,7 @@ function loadLocations(){
                 return address.type === 2
             })
             console.log(emision)
-            let html = '';
+            let html = '<option hidden value="" selected="selected">Seleccione una opción</option>';
             emision.forEach(element => {
                 html += '<option value="'+ element._id +'">'+ element.route +' '+element.streetNumber+', '+element.neighborhood+'</option>'
             });
