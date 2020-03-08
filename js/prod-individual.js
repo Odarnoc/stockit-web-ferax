@@ -96,9 +96,7 @@ $(document).ready(function() {
                 '<center>' +
                 '<div  class="ratio img-responsive img-circle" style="background-image: url(' + profile + ');"></div>' +
                 '<p class="t1">' + data.publication.owner.fullname + '</p>' +
-                '<p class="t2">' + data.publication.locationId.route +' '+ data.publication.locationId.streetNumber + '-' +
-                data.publication.locationId.internalNumber + ', ' + data.publication.locationId.locality + ', ' + data.publication.locationId.state +
-                ' ' + data.publication.locationId.postalCode + '</p>' +
+                '<p class="t2">' + data.publication.locationId.locality + ', ' + data.publication.locationId.state + '</p>' +
                 '</center>' +
                 '</div>' +
 
