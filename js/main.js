@@ -141,11 +141,32 @@
             }
         });
     };
+	
+var isGeolocation=false;
+var latitude=0;
+var longitude=0;
+	function getLocation() {
+  if (navigator.geolocation) {
+	  isGeolocation=true;
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    alert("Geolocalización es para mejorar la busqueda");
+  }
+}
+
+
+function showPosition(position) {
+  latitude=position.coords.latitude;
+  longitude=position.coords.longitude;
+}
     // Call the functions
     magnifPopup();
     /* Preloader Js
     ===================*/
     $(window).on("load", function () {
+		
+		getLocation();
+		
         $('.preloader').fadeOut(500);
         /*WoW js Active
         =================*/
