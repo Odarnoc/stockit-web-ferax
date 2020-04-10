@@ -1,7 +1,7 @@
 var productos = "";
 $(document).ready(function() {
     $.ajax({
-        url: serverURL + "publication/list",
+        url: serverURL + "publication/listFreeNear10km",
         method: "POST",
         dataType: "json",
         data: "",
