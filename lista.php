@@ -124,11 +124,11 @@ if(isset($_GET["busqueda"])){
                         </div>
                         <div class="shop-product-wrap grid gridview-3 row" id="lista-productos">
                         </div>  
-                        <nav aria-label="...">
+                        <!-- <nav aria-label="...">
   <ul class="pagination pagination-lg" id="paginationCustom">
     
   </ul>
-</nav>
+</nav> -->
                     </div>
                 </div>
             </div>

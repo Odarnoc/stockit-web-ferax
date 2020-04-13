@@ -4,7 +4,8 @@ $(document).ready(function() {
     console.log(categoriaFiltro);
     console.log(busquedaFiltro);
     $.ajax({
-        url: serverURL + "publication/listFreeNear10km",
+        //url: serverURL + "publication/listFreeNear10km",
+        url: serverURL + "publication/list",
         method: "POST",
         dataType: "json",
         data: "",

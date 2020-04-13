@@ -41,13 +41,14 @@ if(isGeolocation){
 		
     }
     $.ajax({
-        url: serverURL + "publication/listFreeNear10km/" + page,
+        //url: serverURL + "publication/listFreeNear10km/" + page,
+        url: serverURL + "publication/listFree/" + page,
         method: "POST",
         dataType: "json",
         data: data,
         success: function(data) {
-            console.log(data);
-            printPagination(data.total, page);
+            //console.log(data);
+            //printPagination(data.total, page);
             $("#lista-productos").empty();
             productos = '';
             var cantProds = 0;
@@ -168,7 +169,7 @@ $.ajax({
         data: "",
         success: function(data) {
             console.log(data);
-            printPagination(data.total, page);
+           // printPagination(data.total, page);
             $("#lista-productos").empty();
             productos = '';
             var cantProds = 0;
@@ -302,24 +303,24 @@ function favorito(id) {
 function loadPage(page){
     loadProducts(+page)
 }
-function printPagination(total = 0, page = 1){
-    $('#paginationCustom').empty();
-    let pagination = ''
-    let pagesNumber = total/10;
-    let pagesArray = pagesNumber.toFixed(2).split(".")
-    let pagesInt = +pagesArray[0]
-    let pagesFloat = +pagesArray[1]
-    console.log(pagesFloat)
-    if (pagesFloat > 0) {
-        pagesInt++;
-    }
-    let active = ''
-    for (let index = 0; index < pagesInt; index++) {
-        active = (index + 1) === page ? 'page-item active' : 'page-item';
-        pagination += '<li class="'+active+'" id="paginator'+(index + 1)+'"><a class="page-link" onClick="loadPage('+(index + 1)+')">'+(index + 1)+'</a></li>'
-    }
-    console.log(pagination)
-    $('#paginationCustom').append(pagination)
+// function printPagination(total = 0, page = 1){
+//     $('#paginationCustom').empty();
+//     let pagination = ''
+//     let pagesNumber = total/10;
+//     let pagesArray = pagesNumber.toFixed(2).split(".")
+//     let pagesInt = +pagesArray[0]
+//     let pagesFloat = +pagesArray[1]
+//     console.log(pagesFloat)
+//     if (pagesFloat > 0) {
+//         pagesInt++;
+//     }
+//     let active = ''
+//     for (let index = 0; index < pagesInt; index++) {
+//         active = (index + 1) === page ? 'page-item active' : 'page-item';
+//         pagination += '<li class="'+active+'" id="paginator'+(index + 1)+'"><a class="page-link" onClick="loadPage('+(index + 1)+')">'+(index + 1)+'</a></li>'
+//     }
+//     console.log(pagination)
+//     $('#paginationCustom').append(pagination)
 
-}
+// }
 //printPagination(11);

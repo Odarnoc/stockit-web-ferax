@@ -32,11 +32,12 @@ var errorResponseHandler = function(error) {
 function addCard() {
     console.log("generando token");
     var nombre = $("#nombre").val();
-    var num = $("#noTarjeta").val();
+    var num = $("#noTarjeta").val() + "";
     var mes = $("#mes").val();
     var anio = $("#anio").val();
     var cvv = $("#cvv").val();
-    if (Conekta.card.validateNumber(num)) {
+
+    if (num.length >= 15 &&  num.length <= 16) {
         if (Conekta.card.validateExpirationDate(mes, anio)) {
             if (Conekta.card.validateCVC(cvv)) {
 
