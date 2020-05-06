@@ -173,13 +173,106 @@ $key=$_SESSION["token"];
                 </div>
             </div>
         </div>
+        <div class="modal" id="modatExtender" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header mh-int-contact">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mb-int-contact">
+                       
+                        <p class="t1" id="productoModal"></p>
+                        
+                        <div>
+                            <div class="d-dias-renta">
+                                <p class="t1" id="fechaVencimiento"></p>
+                                <p class="t2">Fecha de Vencimiento</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-dias-renta">
+                            <input style="text-align:center" class="form-control" type="text" id="daterenta" >
+                            <p class="t2"> Nueva Fecha de Vencimiento</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-dias-renta">
+                                <p class="t1">$ <span id="rentaTotalT"></span><span>.</span><sup>00</sup></p>
+                                <p class="t2">Total</p>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                    <a class="btn btn-extender-renta" id="extender" style="display:none" onclick="extender_renta_b();" role="button">Extender Renta</a>
+                        <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modalCalificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Califica tu experiencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body pt-5 pb-5">
+
+                    <div class="row row-item-calificacion">
+                        <div class="col-lg-12">
+                            <div class="d-calificacion">
+                                <div class="item-calificacion">
+                                    <p class="p-calificacion">¿Como calificarias el estado del articulo?</p>
+                                    <fieldset class="rating star mt-3">
+                                        <input type="radio" id="field6_star5" onclick="calificar(5)" name="rating2" class="radio-rate" value="5" /><label class="full" for="field6_star5"></label>
+                                        <input type="radio" id="field6_star4" onclick="calificar(4)" name="rating2" class="radio-rate" value="4" /><label class="full" for="field6_star4"></label>
+                                        <input type="radio" id="field6_star3" onclick="calificar(3)" name="rating2" class="radio-rate" value="3" /><label class="full" for="field6_star3"></label>
+                                        <input type="radio" id="field6_star2" onclick="calificar(2)" name="rating2" class="radio-rate" value="2" /><label class="full" for="field6_star2"></label>
+                                        <input type="radio" id="field6_star1" onclick="calificar(1)" name="rating2" class="radio-rate" value="1" /><label class="full" for="field6_star1"></label>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row row-item-calificacion">
+                        <div class="col-lg-12">
+                            <div class="d-calificacion">
+                                <div class="item-calificacion">
+                                    <p class="p-calificacion">¿Como calificarias la atención del arrendador?</p>
+                                    <fieldset class="rating star mt-3">
+                                        <input type="radio" id="field7_star5" onclick="calificar2(5)" name="rating3" class="radio-rate" value="5" /><label class="full" for="field7_star5"></label>
+                                        <input type="radio" id="field7_star4" onclick="calificar2(4)" name="rating3" class="radio-rate" value="4" /><label class="full" for="field7_star4"></label>
+                                        <input type="radio" id="field7_star3" onclick="calificar2(3)" name="rating3" class="radio-rate" value="3" /><label class="full" for="field7_star3"></label>
+                                        <input type="radio" id="field7_star2" onclick="calificar2(2)" name="rating3" class="radio-rate" value="2" /><label class="full" for="field7_star2"></label>
+                                        <input type="radio" id="field7_star1" onclick="calificar2(1)" name="rating3" class="radio-rate" value="1" /><label class="full" for="field7_star1"></label>
+                                    </fieldset>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                <a class="btn btn-extender-renta" id="encuesta" style="display:none" onclick="enviar_encuesta();" role="button">Enviar Encuesta</a>
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>
     <!-- Footer-Area-End -->
 
 
-    <!-- JS
+      <!-- JS
 ============================================ -->
 
     <!-- jQuery JS -->
@@ -224,12 +317,17 @@ $key=$_SESSION["token"];
     <!-- Ajax Mail JS -->
     <script src="assets/js/ajax-mail.js"></script>
 
+    <script src="js/moment.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+
     <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+
     <!-- Vendor & Plugins JS (Please remove the comment from below vendor.min.js & plugins.min.js for better website load performance and remove js files from avobe) -->
     <!--
 <script src="assets/js/vendor/vendor.min.js"></script>
 <script src="assets/js/plugins/plugins.min.js"></script>
 -->
+
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
@@ -237,6 +335,47 @@ $key=$_SESSION["token"];
     <!--Custom scripts-->
     <script>
         var keyt = "<?php echo $key; ?>";
+    </script>
+    <script>
+        $(document).ready(function() {
+          
+        });
+
+        $('#myCarousel').carousel({
+            interval: 5000
+        });
+
+        /*  RADIO STAR CALIFICACION */
+
+        $("label").click(function() {
+            $(this).parent().find("label").css({
+                "background-color": "rgba(0,0,0,.15)"
+            });
+            $(this).css({
+                "background-color": "#F3B71B"
+            });
+            $(this).nextAll().css({
+                "background-color": "#F3B71B"
+            });
+        });
+
+        $(".star label").click(function() {
+            $(this).parent().find("label").css({
+                "color": "rgba(0,0,0,.15)"
+            });
+            $(this).css({
+                "color": "#F3B71B"
+            });
+            $(this).nextAll().css({
+                "color": "#F3B71B"
+            });
+            $(this).css({
+                "background-color": "transparent"
+            });
+            $(this).nextAll().css({
+                "background-color": "transparent"
+            });
+        });
     </script>
 
 <script src="js/rentas.js"></script>

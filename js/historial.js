@@ -81,7 +81,7 @@ $(document).ready(function() {
                         '</div>' +
                         '</div>';
                     if (item.evaluation == null) {
-                        html += '<a style="width: 100%;color: #20c997;font-size: 1rem;" class="btn btn-slide-productos" onclick="idCapture(\'' + cont + '\')" data-toggle="modal" data-target="#exampleModalCenter" role="button">Calificar producto<i class="fas fa-chevron-right"></i></a>';
+                        //html += '<a style="width: 100%;color: #20c997;font-size: 1rem;" class="btn btn-slide-productos" onclick="idCapture(\'' + cont + '\')" data-toggle="modal" data-target="#exampleModalCenter" role="button">Calificar producto<i class="fas fa-chevron-right"></i></a>';
                     }
                     html += '</div>' +
                         '</div>' +

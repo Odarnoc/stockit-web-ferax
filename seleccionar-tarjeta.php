@@ -6,6 +6,10 @@
     $key=$_SESSION["token"];
 
     $idPreReservation = $_GET['id'];
+    $dias=null;
+    if(isset($_GET['dias'])){
+        $dias=$_GET['dias'];
+    }
 ?>
 
 <!doctype html>
@@ -63,6 +67,15 @@
                         <form class="form-seleccionar-tarjeta">
 
                             <div class="form-row" id="tarjetas">
+                            <div class="form-group col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tarjetaData" id="exampleRadios4" value="electronico" checked>
+                                        <label class="form-check-label" for="exampleRadios4">
+                                            Dinero electrónico
+                                        </label>
+                                    </div>
+                                    <p class="p-check-label">Disponible: <b id="balance_text">$00.00</b> </p>
+                                </div>
 
                             </div>
 
@@ -125,6 +138,7 @@
     <script>
         var keyt = "<?php echo $key; ?>";
         var idPreReservation = "<?php echo $idPreReservation; ?>";
+        var dias= "<?php echo $dias; ?>";
     </script>
     <script src="js/seleccioner-tarjeta.js"></script>
 

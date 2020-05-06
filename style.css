@@ -2388,6 +2388,197 @@ ul.breadcrumb li a:hover {
     font-weight: 600;
 }
 
+/***** RATING *****/
+
+.rating {
+    border: none;
+    margin: 0px;
+    float: left;
+    margin-bottom: -10px;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating.star > label {
+    color: rgba(0, 0, 0, .13);
+    margin-left: 25px;
+    border-radius: 0;
+    height: 48px;
+    float: right;
+    width: 44px;
+}
+
+fieldset.rating.star > label:before {
+    margin-top: 0;
+    padding: 0px;
+    font-size: 42px;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\2605";
+    position: relative;
+    top: -9px;
+}
+
+.rating > label:before {
+    margin-top: 2px;
+    padding: 5px 12px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating.star > label {
+    background-color: transparent !important;
+}
+
+.rating > label {
+    color: #fff;
+    margin-bottom: 0px;
+    background-color: rgba(0, 0, 0, .13);
+    border-radius: 2px;
+    height: 16px;
+    float: right;
+    width: 16px;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating:not(:checked) > label:hover,
+/* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+    background-color: #F3B71B !important;
+    cursor: pointer;
+}
+
+/* hover previous stars in list */
+
+.rating > input:checked + label:hover,
+/* hover current star when changing rating */
+.rating > label:hover ~ input:checked ~ label,
+/* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+    background-color: #F3B71B !important;
+    cursor: pointer;
+}
+
+.rating.star:not(:checked) > label:hover,
+/* hover current star */
+.rating.star:not(:checked) > label:hover ~ label {
+    color: #F3B71B !important;
+    background-color: transparent !important;
+    cursor: pointer;
+}
+
+/* hover previous stars in list */
+
+.rating.star > input:checked + label:hover,
+/* hover current star when changing rating.star */
+.rating.star > label:hover ~ input:checked ~ label,
+/* lighten current selection */
+.rating.star > input:checked ~ label:hover ~ label {
+    color: #F3B71B !important;
+    cursor: pointer;
+    background-color: transparent !important;
+}
+
+.star_rating {
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid #F3B71B;
+    padding: 3px 30px 72px 35px;
+    box-shadow: 0 0 15px #F3B71B;
+    margin-top: 2%;
+    border-radius: 14px;
+}
+
+.rating.star {
+    margin-left: 16%;
+}
+
+@media screen and (max-width: 500px) {
+    .star_rating {
+        width: 100%;
+        padding: 3px 8px 72px 6px;
+    }
+
+    .rating.star {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        float: none;
+    }
+
+    .rating.star > label {
+        margin: 1px;
+        width: 19%;
+    }
+}
+
+.p-calificacion {
+    font-size: 17px;
+    font-weight: 700;
+    font-family: "Nunito";
+    text-align: center;
+    margin-bottom: 15px;
+    color: #01293C;
+    display: block;
+}
+
+.modal-calificar .modal-footer {
+    border: none;
+}
+
+.modal-calificar .modal-body{
+    padding-top: 40px;
+}
+
+.d-calificacion {
+    display: block;
+}
+
+.row-item-calificacion{
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 30px;
+}
+.btn-extender-renta {
+    margin-left:5%; ;
+    width: 90%;
+    background-color: #00CF72;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    font-family: "Open Sans";
+    font-size: 13px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+.btn-calificar-renta {
+    margin-left:5%; ;
+    width: 90%;
+    background-color: #FFD682;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    font-family: "Open Sans";
+    font-size: 13px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+
 .btn-rentar-pro-ind:hover {
     background-color: rgba(0, 207, 114, .9);
     color: white;
