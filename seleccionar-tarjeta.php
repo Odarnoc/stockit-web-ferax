@@ -1,15 +1,15 @@
 <?php
-    session_start();
-    if(!isset($_SESSION["token"])){
-        header("Location: iniciar-sesion.php");
-    }
-    $key=$_SESSION["token"];
+session_start();
+if (!isset($_SESSION["token"])) {
+    header("Location: iniciar-sesion.php");
+}
+$key = $_SESSION["token"];
 
-    $idPreReservation = $_GET['id'];
-    $dias=null;
-    if(isset($_GET['dias'])){
-        $dias=$_GET['dias'];
-    }
+$idPreReservation = $_GET['id'];
+$dias = null;
+if (isset($_GET['dias'])) {
+    $dias = $_GET['dias'];
+}
 ?>
 
 <!doctype html>
@@ -49,7 +49,7 @@
 
     <!-- MainMenu-Area -->
 
-    <?php include("menus/menu_logged_in.php"); ?>
+    <?php include "menus/menu_logged_in.php";?>
 
     <!-- MainMenu-Area -->
 
@@ -62,9 +62,10 @@
                     <div class="d-form-registrarte">
                         <p class="p-title">Tarjetas</p>
                         <p class="p-sub-title">Seleccionar un metodo de pago.</p>
-
+                        <p class="p-sub-title" data-toggle="modal" data-target="#modatExtender"><i class="fas fa-plus"></i> Nueva tarjeta</p>
 
                         <form class="form-seleccionar-tarjeta">
+
 
                             <div class="form-row" id="tarjetas">
                             <div class="form-group col-md-6">
@@ -82,10 +83,16 @@
                             <div class="form-row">
 
                                 <div class="form-group col-md-12">
-                                    
+
                                 </div>
                             </div>
                         </form>
+                        <div class="row">
+                        <div class="col-lg-6 col-md-6 col-6" >
+							<button type="button" onclick='enviar_pago_oxxo()' class="btn btn-oxxo"><img
+									src="/images/oxxo-logo.png" alt="">Pago en OXXO</button>
+                        </div>
+</div>
 
 
                         <div class="row row-btns-revisar">
@@ -111,10 +118,69 @@
         </div>
 
     </section>
+    <div class="modal" id="modatExtender" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Tarjeta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                        <div class="modal-body modal-body-interesados">
+                            <form class="form-tarjeta">
+
+                                <div class="row">
+
+                                    <div class="form-group col-md-6 ">
+                                        <label class="label-form">Nombre en la tarjeta</label>
+                                        <input type="text" class="form-control input-form" id="nombre" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 ">
+                                        <label class="label-form">Número de tarjeta</label>
+                                        <input type="number" class="form-control input-form" id="noTarjeta" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 ">
+                                        <label class="label-form">Mes de vencimiento</label>
+                                        <input type="text" class="form-control input-form" id="mes" placeholder="MM"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 ">
+                                        <label class="label-form">Año de vencimiento</label>
+                                        <input type="text" class="form-control input-form" id="anio" placeholder="YYYY"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 ">
+                                        <label class="label-form">CVV</label>
+                                        <input type="number" class="form-control input-form" id="cvv" required>
+                                    </div>
+
+                                </div>
+                                <input type="button" class="btn btn-form-green" onclick="addCard()" value="Agregar Tarjeta">
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                        <div class="col-md-8">
+                           
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     <!-- Footer -->
-    <?php include("footer/footer.php"); ?>
+    <?php include "footer/footer.php";?>
     <!-- Footer-Area-End -->
 
 
@@ -133,6 +199,7 @@
     <script src="js/main.js"></script>
     <!--swall alert-->
     <script src="js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdn.conekta.io/js/latest/conekta.js"></script>
 
     <!--Custom scripts-->
     <script>
@@ -141,6 +208,9 @@
         var dias= "<?php echo $dias; ?>";
     </script>
     <script src="js/seleccioner-tarjeta.js"></script>
+    <script src="js/add-card.js"></script>
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+	<script src="js/mercadopago.js"></script>
 
     <script>
     $('#myCarousel').carousel({

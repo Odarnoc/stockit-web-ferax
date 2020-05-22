@@ -7,6 +7,7 @@ var objeto;
 var dias = 0;
 var calif = 0;
 var calif2 = 0;
+var calif3 = 0;
 var reserva;
 $(document).ready(function () {
   getList();
@@ -50,25 +51,28 @@ function getList() {
           var formato = item.prereservation.publication;
           var funcion = "datosInteresado";
           var botones = "";
+          var reduce = 1;
+          if (item.prereservation.daysReservation.length > 1) {
+            reduce = 1;
+          }
+          var d1 = new Date(
+            item.prereservation.daysReservation[
+              item.prereservation.daysReservation.length - reduce
+            ]
+          );
+          var d3 = new Date(
+            item.prereservation.daysReservation[
+              item.prereservation.daysReservation.length - 1
+            ]
+          );
+          var d2 = new Date();
+          var d5 = new Date();
+          var d4 = new Date();
+          d2.setDate(d2.getDate() - 1);
+          d5.setDate(d1.getDate() + 10);
           if (item.interesed._id == data.user_id) {
             funcion = "datosOwner";
-            var reduce = 1;
-            if (item.prereservation.daysReservation.length > 2) {
-              reduce = 2;
-            }
-            var d1 = new Date(
-              item.prereservation.daysReservation[
-                item.prereservation.daysReservation.length - reduce
-              ]
-            );
-            var d3 = new Date(
-              item.prereservation.daysReservation[
-                item.prereservation.daysReservation.length - 1
-              ]
-            );
-            var d2 = new Date();
-            var d4 = new Date();
-            d2.setDate(d2.getDate() - 2);
+           
 
             if (d2 <= d1) {
               botones =
@@ -76,7 +80,8 @@ function getList() {
                 cont +
                 ')" role="button">Extender Renta</a>';
             } else {
-              if (item.prereservation.califOne == 0) {
+              console.log(d5);
+              if (item.prereservation.califOne == 0 && d5 >= new Date()) {
                 botones =
                   '<a class="btn btn-calificar-renta" onclick="calificar_articulo(' +
                   cont +
@@ -86,66 +91,69 @@ function getList() {
               }
             }
           } else {
-            var d3 = new Date(
-              item.prereservation.daysReservation[
-                item.prereservation.daysReservation.length - 1
-              ]
-            );
-            var d2 = new Date();
-            if (d3 <= d2 && !item.ended) {
+         
+            if (!item.ended && d5 >= new Date()) {
               botones =
-                '<a class="btn btn-calificar-renta" onclick="terminar_renta(' +
+                '<a class="btn btn-calificar-renta" onclick="calificar_interesado(' +
                 cont +
                 ')" role="button">Terminar Renta</a>';
             }
           }
-          if (ended == 0) {
-            var html =
-              '<div class="col-md-4">' +
-              '<div class="thumbnail">' +
-              '<div class="d-img-thumbnail">' +
-              '<Button onclick="' +
-              funcion +
-              "(" +
-              cont +
-              ')" data-toggle="modal" data-target="#exampleModalCenter">' +
-              '<img src="' +
-              serverURL +
-              "image/" +
-              formato.images[0] +
-              '" alt="Slide11">' +
-              "</div>" +
-              '<div class="info-item-slide">' +
-              '<p class="p2">' +
-              formato.name +
-              "</p>" +
-              '<p class="p4">$' +
-              formato.price +
-              ".<sup>00 / día</sup></p>" +
-              "</div>" +
-              '<div class="row">' +
-              '<div class="col-6" style="text-align: center">' +
-              '<p><i class="far fa-flag"></i>  Inicia</p>' +
-              "<p>" +
-              String(item.prereservation.daysReservation[0]).substr(0, 10) +
-              "</p>" +
-              "</div>" +
-              '<div class="col-6" style="text-align: center">' +
-              '<p><i class="fas fa-flag-checkered"></i>  Termina</p>' +
-              "<p>" +
-              String(
-                item.prereservation.daysReservation[
-                  item.prereservation.daysReservation.length - 1
-                ]
-              ).substr(0, 10) +
-              "</p>" +
-              "</div>" +
-              "</Button>" +
-              botones +
-              "</div>" +
-              "</div>" +
-              "</div>";
-            productos += html;
+          console.log(ended);
+          if (ended != 1) {
+            var imagen = "";
+            console.log(formato);
+            if (formato != null) {
+              if (formato.images.length > 0) {
+                imagen = formato.images[0];
+              }
+              var html =
+                '<div class="col-md-4">' +
+                '<div class="thumbnail">' +
+                '<div class="d-img-thumbnail">' +
+                '<Button onclick="' +
+                funcion +
+                "(" +
+                cont +
+                ')" data-toggle="modal" data-target="#exampleModalCenter">' +
+                '<img src="' +
+                serverURL +
+                "image/" +
+                imagen +
+                '" alt="Slide11">' +
+                "</div>" +
+                '<div class="info-item-slide">' +
+                '<p class="p2">' +
+                formato.name +
+                "</p>" +
+                '<p class="p4">$' +
+                formato.price +
+                ".<sup>00 / día</sup></p>" +
+                "</div>" +
+                '<div class="row">' +
+                '<div class="col-6" style="text-align: center">' +
+                '<p><i class="far fa-flag"></i>  Inicia</p>' +
+                "<p>" +
+                String(item.prereservation.daysReservation[0]).substr(0, 10) +
+                "</p>" +
+                "</div>" +
+                '<div class="col-6" style="text-align: center">' +
+                '<p><i class="fas fa-flag-checkered"></i>  Termina</p>' +
+                "<p>" +
+                String(
+                  item.prereservation.daysReservation[
+                    item.prereservation.daysReservation.length - 1
+                  ]
+                ).substr(0, 10) +
+                "</p>" +
+                "</div>" +
+                "</Button>" +
+                botones +
+                "</div>" +
+                "</div>" +
+                "</div>";
+              productos += html;
+            }
           }
           cont++;
           //console.log(item);
@@ -243,6 +251,13 @@ function calificar_articulo(dato) {
   reserva = objetselect;
   $("#modalCalificar").modal("toggle");
 }
+function calificar_interesado(dato) {
+  var objetselect = listaproductos[dato];
+  console.log(objetselect.prereservation);
+  objeto = objetselect.prereservation;
+  reserva = objetselect;
+  $("#modalCalificar2").modal("toggle");
+}
 function extender_renta(dato) {
   var objetselect = listaproductos[dato];
   $("#rentaTotalT").empty().append(0);
@@ -323,12 +338,12 @@ function initialize_datepicker(fechain) {
     var fechaFin = new Date(fecha).getTime();
 
     var diff = fechaFin - fechaInicio;
-    dias = diff / (1000 * 60 * 60 * 24);
+    dias = parseInt(diff / (1000 * 60 * 60 * 24));
     console.log(dias);
     console.log(precio);
     $("#rentaTotalT")
       .empty()
-      .append(dias * precio);
+      .append(parseInt(dias) * precio);
     if (dias != 0) {
       $("#extender").show();
     }
@@ -345,6 +360,11 @@ function calificar(valor) {
   } else {
     $("#encuesta").hide();
   }
+}
+function calificar3(valor) {
+  calif3 = valor;
+
+  $("#encuesta2").show();
 }
 function calificar2(valor) {
   calif2 = valor;
@@ -391,41 +411,31 @@ function enviar_encuesta() {
     },
   });
 }
-function terminar_renta(dato) {
-  var objetselect = listaproductos[dato];
-  swal({
-    type: "info",
-    title: "¿Seguro que deseas marcar la renta como terminada?",
-    confirmButtonText: "Aceptar",
-    buttons: ["Cancelar", true],
-    cancelButtonText: "Cancelar",
-  }).then((value) => {
-    if(value){
-      var urlWS = serverURL + "reservation/endRent/" + objetselect._id;
-      $.ajax({
-        url: urlWS,
-        method: "POST",
-        dataType: "json",
+function terminar_renta() {
+  $("#modalCalificar2").modal("hide");
+  var urlWS = serverURL + "reservation/endRent/" + reserva._id;
+  $.ajax({
+    url: urlWS,
+    method: "POST",
+    dataType: "json",
 
-        beforeSend: function (xhr) {
-          /* Authorization header */
-          xhr.setRequestHeader("Authorization", keyt);
-        },
-        success: function (data) {
-          if (data.message == "saved.success") {
-            getList();
-          }
-        },
-        error: function (error) {
-          if (error.responseJSON.errors.details) {
-            var mensaje = "";
-            error.responseJSON.errors.details.forEach(function (item) {
-              mensaje += item.message;
-            });
-            swal("Error!", mensaje, "error");
-          }
-        },
-      });
-    }
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader("Authorization", keyt);
+    },
+    success: function (data) {
+      if (data.message == "saved.success") {
+        getList();
+      }
+    },
+    error: function (error) {
+      if (error.responseJSON.errors.details) {
+        var mensaje = "";
+        error.responseJSON.errors.details.forEach(function (item) {
+          mensaje += item.message;
+        });
+        swal("Error!", mensaje, "error");
+      }
+    },
   });
 }

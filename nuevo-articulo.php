@@ -131,7 +131,8 @@ $key=$_SESSION["token"];
                                 <textarea class="form-control input-form" rows="2" name="description" id="description" required></textarea>
                             </div>
                             <div class="form-group">
-                            <label class="label-form">Dirección</label>
+                            <label class="label-form">Dirección</label><br>
+                            <label class="label-form" data-toggle="modal" data-target="#modatExtender"><i class="fas fa-plus"></i> Agregar nueva dirección</label>
                             <select class="form-control input-form" style="height:50px;padding-bottom: 0;padding-top: 0;" name="locationId" id="locationId" required>
                                 <option hidden value="" selected="selected">Seleccione una opción</option>           
                             </select>
@@ -156,11 +157,88 @@ $key=$_SESSION["token"];
             </div>
         </div>
     </section>
-
-
-    <!-- Footer -->
+   <!-- Footer -->
     <?php include("footer/footer.php"); ?>
+
     <!-- Footer-Area-End -->
+    <div class="modal" id="modatExtender" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Renta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                        <div class="modal-body modal-body-interesados">
+                        <form class="form-nuevo-articulo" id="sub">
+                            <div class="form-group">
+                            <label class="label-form">Tipo</label>
+                            <select class="form-control input-form fa" style="height:50px;padding-bottom: 0;padding-top: 0;" name="type" id="type" required>
+                                        <option hidden value="" selected="selected">Tipo</option>
+                                        <option value="2" class="fa">&#xf4df Emisión</option>
+                                        <option value="1" class="fa">&#xf015 Recepción</option>
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-form">Calle</label>
+                                <input type="text" class="form-control input-form" name="route" id="route" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form">Número exterior</label>
+                                <input type="text" class="form-control input-form" name="streetNumber" id="streetNumber" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-form">Número interior</label>
+                                <input type="text" class="form-control input-form" name="internalNumber" id="internalNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-form">Código postal</label>
+                                <input type="number" class="form-control input-form" name="postalCode" id="postalCode" required>
+                                <button type="button" class="btn btn-primary" onclick="buscarPorCodigoPostal()">Buscar</button>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-form">Colonia</label>
+                                <input type="text" class="form-control input-form" name="neighborhood" id="neighborhood" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-form">Municipio</label>
+                                <input type="text" class="form-control input-form" name="locality" id="locality" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-form">Estado</label>
+                                <input type="text" class="form-control input-form" name="state" id="state" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-form">País</label>
+                                <input type="text" class="form-control input-form" name="country" id="country" required disabled value="MX">
+                            </div>
+                           
+                            <input type="button" class="btn btn-form-green" onclick="guardarDireccion()" value="Agregar Dirección">
+
+                        </form>
+                        </div>
+                        <div class="modal-footer">
+
+                        <div class="col-md-8">
+                           
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+   
+
+
+    
 
 
     <!--Vendor-JS-->
@@ -189,5 +267,6 @@ $key=$_SESSION["token"];
     </script>
     <script src="js/sweetalert.min.js"></script>
     <script src="js/validador.js"></script>
+    <script src="js/nueva-direccion_prod.js"></script>
     <script src="js/nuevo-articulo.js"></script>
 </body></html>

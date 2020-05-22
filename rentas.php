@@ -266,6 +266,43 @@ $key=$_SESSION["token"];
             </div>
         </div>
     </div>
+    <div class="modal" id="modalCalificar2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Califica tu experiencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body pt-5 pb-5">
+
+                    <div class="row row-item-calificacion">
+                        <div class="col-lg-12">
+                            <div class="d-calificacion">
+                                <div class="item-calificacion">
+                                    <p class="p-calificacion">¿Como calificarias al arrendatario?</p>
+                                    <fieldset class="rating star mt-3">
+                                        <input type="radio" id="field8_star5" onclick="calificar3(5)" name="rating4" class="radio-rate" value="5" /><label class="full" for="field8_star5"></label>
+                                        <input type="radio" id="field8_star4" onclick="calificar3(4)" name="rating4" class="radio-rate" value="4" /><label class="full" for="field8_star4"></label>
+                                        <input type="radio" id="field8_star3" onclick="calificar3(3)" name="rating4" class="radio-rate" value="3" /><label class="full" for="field8_star3"></label>
+                                        <input type="radio" id="field8_star2" onclick="calificar3(2)" name="rating4" class="radio-rate" value="2" /><label class="full" for="field8_star2"></label>
+                                        <input type="radio" id="field8_star1" onclick="calificar3(1)" name="rating4" class="radio-rate" value="1" /><label class="full" for="field8_star1"></label>
+                                    </fieldset>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                <a class="btn btn-extender-renta" id="encuesta2" style="display:none" onclick="terminar_renta();" role="button">Terminar Renta</a>
+                    <button type="button" class="btn btn-cancelar-modal" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 
     <!-- Footer -->
     <?php include("footer/footer.php"); ?>

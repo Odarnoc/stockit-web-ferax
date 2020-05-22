@@ -81,6 +81,7 @@ function loadLocations(){
         },
         success: function(data) {
             console.log(data);
+            $('#locationId').empty();
             //$('#locationId').empty()
             let emision = data.locations.filter(function(address){
                 return address.type === 2

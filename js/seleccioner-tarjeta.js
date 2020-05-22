@@ -1,4 +1,20 @@
+let prereserva;
 $(document).ready(function () {
+  $.ajax({
+    url: serverURL + "prereservation/showComplete/" + idPreReservation,
+    method: "POST",
+    dataType: "json",
+    data: "",
+    beforeSend: function (xhr) {
+      /* Authorization header */
+      xhr.setRequestHeader("Authorization", keyt);
+    },
+    success: function (data) {
+    
+      prereserva=data.prereservation;
+      console.log(prereserva);
+    }
+  });
   $.ajax({
     url: serverURL + "payMethod/list",
     method: "POST",
@@ -50,7 +66,7 @@ $(document).ready(function () {
   });
 });
 
-function continuar() {
+function continuar(oxxo=null) {
   var radioValue = $("input[name='tarjetaData']:checked").val();
   if (radioValue == undefined || radioValue == null || radioValue == "") {
     swal("Error!", "Seleccione una tarjeta para continuar", "error");
@@ -70,9 +86,16 @@ function continuar() {
       };
       console.log(datajson);
     }
+
     var urlWS=serverURL + "prereservation/pay/" + idPreReservation;
-    if(dias!=null){
+    if(dias!=""){
       urlWS=serverURL + "prereservation/extend/" + idPreReservation
+    }
+    if(oxxo!=null){
+      urlWS=serverURL + "prereservation/oxxoPay/" + idPreReservation
+      datajson = {
+        oxxo_url: oxxo
+      };
     }
       $.ajax({
         url: urlWS,
@@ -86,7 +109,11 @@ function continuar() {
         success: function (data) {
           console.log(data);
           if (data.message == "pay.success") {
-            location.href = "pago-confirmado.php";
+            if(oxxo!=null){
+            location.href = "pago-enproceso.php";
+            }else{
+              location.href = "pago-confirmado.php";
+            }
           } else if (data.message == "payment.made.previously") {
             swal("Error!", "Esta reservacion ya ha sido solicitada", "error");
           }
